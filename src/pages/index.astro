@@ -38,25 +38,25 @@ const solutions: InfoCardProps[] = [
     icon: "🛡️",
     title: "Prevent Deprecation",
     description:
-      "Vote to keep APIs you depend on alive. Stop breaking changes from blindsiding your team three sprints from now.",
+      "Lock critical versions, sustain maintenance, and prevent dependencies from silently breaking your stack.",
   },
   {
     icon: "⚡",
     title: "Request Features",
     description:
-      "Need TypeScript support? Better error handling? Move features from someday to funded and prioritized.",
+      "Direct funding toward specific features, APIs, or improvements your product actually needs.",
   },
   {
     icon: "🎓",
     title: "Sponsor Mentorship",
     description:
-      "Fund students to contribute under maintainer guidance. Build the next generation while getting real commits merged.",
+      "Fund students and junior developers to work with maintainers and gain real-world open-source experience. You can also nominate and pay developers from your own circles to participate.",
   },
   {
     icon: "🤖",
-    title: "AI Customization",
+    title: "AI for Open Source",
     description:
-      "Get a personalized AI interface trained on the project. Ask questions, generate examples, debug faster.",
+      "Fund shared AI tooling across open-source projects—available only to contributors, not extractive platforms.",
   },
 ];
 ---
@@ -98,9 +98,8 @@ const solutions: InfoCardProps[] = [
           class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 space-y-4"
         >
           Scan your project now to see if any dependencies have deprecated
-          functionality lurking in your stack.
+          functionality
         </p>
-        <p>Stop watching them break, shape the tools you actually use.</p>
       </div>
     </div>
   </section>
@@ -120,9 +119,7 @@ const solutions: InfoCardProps[] = [
       <div class="flex flex-col md:flex-row gap-8 items-start">
         <div class="space-y-2">
           <p class="text-lg md:text-xl text-slate-700 dark:text-slate-300">
-            You're a using OSS libraries on your production code. You are
-            trusting npm packages you didn't write.<br />
-            You've watched
+            You're a using OSS libraries on your production code. You've watched
           </p>
           <ul
             class="space-y-4 text-slate-700 dark:text-slate-300 flex flex-row gap-3 mt-4"
@@ -191,18 +188,29 @@ const solutions: InfoCardProps[] = [
     <!-- What's the solution? -->
     <section id="ara-layer-section" class="space-y-8 mt-8">
       <h3 class="text-3xl md:text-4xl text-slate-800 dark:text-slate-200 mb-8">
-        Pay for what you use.<br />
-        Direct where it goes.<br />
-        Create unified AI interface for open-source.
+        Pay for what you use. Decide where it goes.<br />
+        Be a stakeholder in the unified AI interface for open source.
       </h3>
 
       <div class="flex flex-col md:flex-row gap-8 items-start">
-        <div class="space-y-2">
+        <div class="space-y-4">
           <p class="text-lg md:text-xl text-slate-700 dark:text-slate-300">
-            Ara isn't another GitHub Sponsors link gathering dust. It's a direct
-            line between your engineering needs and maintainer capacity. Monthly
-            funding gets you real influence over roadmaps, not just warm
-            feelings.
+            Ara is a <strong>collective funding model</strong> for open source<br
+            />
+            that collectively creates a shared AI interface owned by all funders.<br
+            />
+            You fund maintainer time for the dependencies you rely on.<br />
+            As more users fund those projects, your contribution is repaid proportionally.<br
+            />
+            The more funders a project has, the lower cost for everyone.
+          </p>
+          <p class="text-lg md:text-xl text-slate-700 dark:text-slate-300">
+            This is not donations. It's <strong
+              >shared ownership of maintenance</strong
+            >.
+          </p>
+          <p class="text-lg md:text-xl text-slate-700 dark:text-slate-300">
+            When you fund a project on Ara, you choose how your funding is used:
           </p>
         </div>
       </div>
@@ -213,245 +221,327 @@ const solutions: InfoCardProps[] = [
         </div>
       </div>
 
-      <!-- Decorative separator -->
-
-      <!-- Two Rules Section -->
-      <section id="two-rules-section" class="space-y-12 my-16">
-        <DecorativeStarSeparator />
-        <h3
-          class="text-3xl md:text-4xl text-slate-800 dark:text-slate-200 text-center mb-8"
+      <div class="mt-12">
+        <p
+          class="text-lg md:text-xl text-slate-700 dark:text-slate-300 text-center italic"
         >
-          Why this won't turn into vaporware
-        </h3>
-
-        <div class="trust-point">
-          <h3
-            class="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200"
-          >
-            Transparent fund allocation
-          </h3>
-          <p>
-            Every dollar tracked. See exactly where your funding goes, who it
-            pays, and what gets built. Public ledger, zero handwaving.
-          </p>
-        </div>
-
-        <div class="trust-point">
-          <h3
-            class="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200"
-          >
-            Maintainers stay in control
-          </h3>
-          <p>
-            This isn't corporate takeover disguised as sponsorship. Maintainers
-            choose which funded requests to accept. You fund, they decide,
-            everyone wins.
-          </p>
-        </div>
-
-        <div class="trust-point">
-          <h3
-            class="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200"
-          >
-            No lock-in, ever
-          </h3>
-          <p>
-            Monthly funding. Cancel anytime. The code stays open source. Your
-            influence is proportional to your support, period.
-          </p>
-        </div>
-
-        <div class="trust-point">
-          <h3
-            class="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200"
-          >
-            Built by people who ship code
-          </h3>
-          <p>
-            Not VC-funded suits. Not well-meaning activists. Engineers who've
-            dealt with unmaintained dependencies and want to fix the incentive
-            structure.
-          </p>
-        </div>
-      </section>
-
-      <!-- Decorative separator -->
-      <DecorativeStarSeparator />
-
-      <!-- FAQ Section -->
-      <section id="faq-section" class="space-y-8 mt-8">
-        <h3
-          class="text-3xl md:text-4xl text-slate-800 dark:text-slate-200 text-center mb-8"
-        >
-          Questions skeptics ask
-        </h3>
-        <FAQ client:only="react" />
-      </section>
-
-      <!-- Decorative separator -->
-      <DecorativeSeparator />
-
-      <!-- Footer CTA Section -->
-      <section id="footer-cta-section" class="text-center space-y-6">
-        <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400">
-          For maintainers • users • people learning programming
+          Ara turns open source from charity into coordination—<br />
+          where usage, funding, and maintenance finally align.
         </p>
-        <h2 class="text-3xl md:text-4xl text-slate-800 dark:text-slate-200">
-          Stop hoping your dependencies survive.<br />
-          Start ensuring they do.
-        </h2>
-        <div class="flex justify-center">
-          <AddProjectButton client:only="react" />
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Social Links -->
-      <section class="text-center space-y-4">
-        <p class="text-lg text-slate-600 dark:text-slate-400 mt-2">
-          Also, let's stay connected!
-        </p>
-        <div class="flex items-center justify-center gap-6 flex-wrap">
-          {
-            Object.values(socialLinks).map((link) => (
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="p-3 rounded-lg backdrop-blur-md bg-white/30 dark:bg-slate-900/30 border border-slate-200/40 dark:border-slate-700/40 hover:bg-white/40 dark:hover:bg-slate-900/40 transition-all"
-                aria-label={link.label}
-              >
-                {link.type === "telegram" ? (
-                  <TelegramIcon class="text-[#0088cc]" />
-                ) : link.type === "discord" ? (
-                  <DiscordIcon class="text-[#5865F2]" />
-                ) : link.type === "github" ? (
-                  <GitHubIcon class="text-slate-800 dark:text-slate-200" />
-                ) : link.type === "linkedin" ? (
-                  <LinkedInIcon class="text-[#0077B5]" />
-                ) : link.type === "twitter" ? (
-                  <TwitterIcon class="text-blue-500" />
-                ) : link.type === "bluesky" ? (
-                  <BlueskyIcon class="text-[#00A3FF]" />
-                ) : null}
-              </a>
-            ))
-          }
-        </div>
-      </section>
+    <DecorativeStarSeparator />
 
-      <!-- Notice Section -->
-      <section class="text-center space-y-4 mt-8">
-        <div
-          class="backdrop-blur-md bg-white/30 dark:bg-slate-900/30 border border-slate-300/40 dark:border-slate-700/40 rounded-xl p-6 max-w-2xl mx-auto"
+    <!-- Free-rider problem section -->
+    <section id="free-rider-section" class="space-y-8 mt-8">
+      <h2 class="text-3xl md:text-4xl text-slate-800 dark:text-slate-200 mb-8">
+        The free-rider problem, solved
+      </h2>
+      <p class="text-lg md:text-xl text-slate-700 dark:text-slate-300 mb-8">
+        You're thinking: "If I pay to fix a bug, why would anyone else
+        contribute when they get it for free?" Here's why Ara is different.
+      </p>
+
+      <div class="trust-point">
+        <h3
+          class="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200"
         >
-          <p class="text-base md:text-lg text-slate-700 dark:text-slate-300">
-            Ara is currently a solo-dev work. More about me is on{" "}
+          Dynamic linear fee sharing
+        </h3>
+        <p>
+          <strong>You pay upfront. Later users pay you back.</strong> When you fund
+          maintainer time for a fix or feature, you're not donating—you're investing.
+          Each new company that joins and benefits from that work pays a proportional
+          share back to early contributors. The maintainer gets paid once. You get
+          reimbursed as the user base grows.
+        </p>
+      </div>
+
+      <div class="trust-point">
+        <h3
+          class="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200"
+        >
+          Example: Bug fix economics
+        </h3>
+        <p>
+          Company A pays $1,000 to fix a critical bug. Company B joins 3 months
+          later and also needs that fix working. Company B pays $500—half goes
+          to the maintainer for ongoing support, half reimburses Company A.
+          Company C joins, pays $333. By the time 10 companies are using it,
+          Company A has been reimbursed $700 and only paid $300 net for a fix
+          everyone needed.
+        </p>
+      </div>
+
+      <div class="trust-point">
+        <h3
+          class="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200"
+        >
+          Early contributors become stakeholders
+        </h3>
+        <p>
+          You're not just paying for code. You're buying equity in the project's
+          sustainability. The more successful the project becomes, the more your
+          initial contribution gets repaid. This aligns everyone's incentives:
+          early funders want the project to grow, maintainers get paid fairly,
+          late adopters pay their fair share.
+        </p>
+      </div>
+
+      <div class="trust-point">
+        <h3
+          class="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200"
+        >
+          Free riders still exist—but they get locked out of what matters
+        </h3>
+        <p>
+          Anyone can fork the code (it's open source). But they can't access the
+          AI interface (owned collectively by contributors), can't request
+          maintainer time, can't vote on priorities, and can't get reimbursed
+          when new users join. Fork if you want—you're just choosing to pay 100%
+          of costs alone instead of sharing them collectively.
+        </p>
+      </div>
+    </section>
+
+    <DecorativeStarSeparator />
+
+    <!-- Two Rules Section -->
+    <section id="two-rules-section" class="space-y-12 my-16">
+      <h3
+        class="text-3xl md:text-4xl text-slate-800 dark:text-slate-200 text-center mb-8"
+      >
+        Why this won't turn into vaporware
+      </h3>
+
+      <div class="trust-point">
+        <h3
+          class="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200"
+        >
+          Transparent fund allocation
+        </h3>
+        <p>
+          Every dollar tracked. See exactly where your funding goes, who it
+          pays, and what gets built. Public ledger, zero handwaving.
+        </p>
+      </div>
+
+      <div class="trust-point">
+        <h3
+          class="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200"
+        >
+          Maintainers stay in control
+        </h3>
+        <p>
+          This isn't corporate takeover disguised as sponsorship. Maintainers
+          choose which funded requests to accept. You fund, they decide,
+          everyone wins.
+        </p>
+      </div>
+
+      <div class="trust-point">
+        <h3
+          class="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200"
+        >
+          No lock-in, ever
+        </h3>
+        <p>
+          Monthly funding. Cancel anytime. The code stays open source. Your
+          influence is proportional to your support, period.
+        </p>
+      </div>
+
+      <div class="trust-point">
+        <h3
+          class="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200"
+        >
+          Built by people who ship code
+        </h3>
+        <p>
+          Not VC-funded suits. Not well-meaning activists. Engineers who've
+          dealt with unmaintained dependencies and want to fix the incentive
+          structure.
+        </p>
+      </div>
+    </section>
+
+    <!-- Decorative separator -->
+    <DecorativeStarSeparator />
+
+    <!-- FAQ Section -->
+    <section id="faq-section" class="space-y-8 mt-8">
+      <h3
+        class="text-3xl md:text-4xl text-slate-800 dark:text-slate-200 text-center mb-8"
+      >
+        Questions skeptics ask
+      </h3>
+      <FAQ client:only="react" />
+    </section>
+
+    <!-- Decorative separator -->
+    <DecorativeSeparator />
+
+    <!-- Footer CTA Section -->
+    <section id="footer-cta-section" class="text-center space-y-6">
+      <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400">
+        For maintainers • users • people learning programming
+      </p>
+      <h2 class="text-3xl md:text-4xl text-slate-800 dark:text-slate-200">
+        Stop hoping your dependencies survive.<br />
+        Start ensuring they do.
+      </h2>
+      <div class="flex justify-center">
+        <AddProjectButton client:only="react" />
+      </div>
+    </section>
+
+    <!-- Social Links -->
+    <section class="text-center space-y-4">
+      <p class="text-lg text-slate-600 dark:text-slate-400 mt-2">
+        Also, let's stay connected!
+      </p>
+      <div class="flex items-center justify-center gap-6 flex-wrap">
+        {
+          Object.values(socialLinks).map((link) => (
             <a
-              href="/people"
-              class="text-blue-600 dark:text-blue-400 hover:underline font-semibold"
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-3 rounded-lg backdrop-blur-md bg-white/30 dark:bg-slate-900/30 border border-slate-200/40 dark:border-slate-700/40 hover:bg-white/40 dark:hover:bg-slate-900/40 transition-all"
+              aria-label={link.label}
             >
-              /people
+              {link.type === "telegram" ? (
+                <TelegramIcon class="text-[#0088cc]" />
+              ) : link.type === "discord" ? (
+                <DiscordIcon class="text-[#5865F2]" />
+              ) : link.type === "github" ? (
+                <GitHubIcon class="text-slate-800 dark:text-slate-200" />
+              ) : link.type === "linkedin" ? (
+                <LinkedInIcon class="text-[#0077B5]" />
+              ) : link.type === "twitter" ? (
+                <TwitterIcon class="text-blue-500" />
+              ) : link.type === "bluesky" ? (
+                <BlueskyIcon class="text-[#00A3FF]" />
+              ) : null}
             </a>
-            .
-          </p>
-        </div>
-      </section>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Notice Section -->
+    <section class="text-center space-y-4 mt-8">
+      <div
+        class="backdrop-blur-md bg-white/30 dark:bg-slate-900/30 border border-slate-300/40 dark:border-slate-700/40 rounded-xl p-6 max-w-2xl mx-auto"
+      >
+        <p class="text-base md:text-lg text-slate-700 dark:text-slate-300">
+          Ara is currently a solo-dev work. More about me is on{" "}
+          <a
+            href="/people"
+            class="text-blue-600 dark:text-blue-400 hover:underline font-semibold"
+          >
+            /people
+          </a>
+          .
+        </p>
+      </div>
     </section>
   </div>
-
-  <style is:global>
-    @keyframes scan {
-      0% {
-        transform: translateY(-100%);
-      }
-      100% {
-        transform: translateY(100%);
-      }
-    }
-    @keyframes shimmer {
-      0% {
-        background-position: -200% 0;
-      }
-      100% {
-        background-position: 200% 0;
-      }
-    }
-    @keyframes pulse {
-      0%,
-      100% {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    @keyframes pulse-subtle {
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.95;
-        transform: scale(1.01);
-      }
-    }
-    .animate-pulse-subtle {
-      animation: pulse-subtle 3s ease-in-out infinite;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-
-    /* Ensure galaxy background doesn't move - disable all transforms */
-    [data-galaxy-backgrounds] {
-      transform: none !important;
-      will-change: auto !important;
-    }
-
-    .event-notification {
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    /* Hide scrollbar for horizontal scroll */
-    .scrollbar-hide {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
-
-    .scrollbar-hide::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
-    }
-
-    /* Ensure video panel and hero section are clickable */
-    [data-landing-video-panel] {
-      pointer-events: auto !important;
-    }
-
-    section[slot="hero"] {
-      pointer-events: auto !important;
-    }
-
-    .trust-point {
-      margin-bottom: 32px;
-      padding-left: 32px;
-      position: relative;
-    }
-
-    .trust-point::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #22c55e;
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
-  </style>
 </Layout>
+
+<style is:global>
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.95;
+      transform: scale(1.01);
+    }
+  }
+  .animate-pulse-subtle {
+    animation: pulse-subtle 3s ease-in-out infinite;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /* Ensure galaxy background doesn't move - disable all transforms */
+  [data-galaxy-backgrounds] {
+    transform: none !important;
+    will-change: auto !important;
+  }
+
+  .event-notification {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* Hide scrollbar for horizontal scroll */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  /* Ensure video panel and hero section are clickable */
+  [data-landing-video-panel] {
+    pointer-events: auto !important;
+  }
+
+  section[slot="hero"] {
+    pointer-events: auto !important;
+  }
+
+  .trust-point {
+    margin-bottom: 32px;
+    padding-left: 32px;
+    position: relative;
+  }
+
+  .trust-point::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+</style>
