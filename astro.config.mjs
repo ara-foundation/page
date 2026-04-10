@@ -48,6 +48,8 @@ export default defineConfig({
       watch: {
         usePolling: false,
         interval: 100,
+        // Vercel adapter output under .vercel/ is not source; watching it triggers extra rebuilds.
+        ignored: ['**/.vercel/**'],
       }
     }
   }
