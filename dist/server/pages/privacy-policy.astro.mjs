@@ -1,6 +1,6 @@
 import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_EFpbLn-l.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_pK5YVrdC.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_uq0DwUiJ.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_CUYspLTV.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_DOjqMmXE.mjs';
 /* empty css                                          */
 export { renderers } from '../renderers.mjs';
 

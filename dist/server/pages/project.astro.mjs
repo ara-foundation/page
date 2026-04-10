@@ -1,7 +1,7 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../chunks/astro/server_EFpbLn-l.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_pK5YVrdC.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_uq0DwUiJ.mjs';
-import { B as BackButton } from '../chunks/BackButton_q5pMCV3M.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_CUYspLTV.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_DOjqMmXE.mjs';
+import { B as BackButton } from '../chunks/BackButton_PFiVsvps.mjs';
 import { a as getGalaxySpace, k as getSBOMByProjectId, g as getUserStar } from '../chunks/sbom_DPjiDJ8j.mjs';
 import { g as getGalaxyById, d as getAllGalaxies } from '../chunks/galaxy_DZYFcC87.mjs';
 import { g as getProjectById } from '../chunks/project_D5RoIw13.mjs';
@@ -9,7 +9,7 @@ import { g as getStarById, b as getStarByUserId } from '../chunks/star_C-7xRUFB.
 import { g as getAuthUserById } from '../chunks/auth_CQWknQ_2.mjs';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { useState } from 'react';
-import { P as PageLikePanel } from '../chunks/PageLikePanel_Ba3gAVV_.mjs';
+import { P as PageLikePanel } from '../chunks/PageLikePanel_DUAdkjd6.mjs';
 export { renderers } from '../renderers.mjs';
 
 const LabelValue = ({ label, value }) => /* @__PURE__ */ jsxs("div", { className: "flex justify-between items-center py-1", children: [

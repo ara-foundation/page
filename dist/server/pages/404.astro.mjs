@@ -1,9 +1,9 @@
 import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_EFpbLn-l.mjs';
-import { $ as $$PanelViewLayout } from '../chunks/PanelViewLayout_B9yuOd0u.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_uq0DwUiJ.mjs';
+import { $ as $$PanelViewLayout } from '../chunks/PanelViewLayout_BtzllT4y.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_DOjqMmXE.mjs';
 import { H as Hyperspeed } from '../chunks/Hyperspeed_DO-OOdAF.mjs';
 import { a as mockUserStars } from '../chunks/mock-data_BUp0vQNE.mjs';
-import { C as Component } from '../chunks/SocialLink_aBJu88wy.mjs';
+import { C as Component } from '../chunks/SocialLink_C52hytjF.mjs';
 /* empty css                               */
 export { renderers } from '../renderers.mjs';
 

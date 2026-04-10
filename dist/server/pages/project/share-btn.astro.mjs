@@ -1,7 +1,7 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../../chunks/astro/server_EFpbLn-l.mjs';
-import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_B9yuOd0u.mjs';
-import { P as Panel } from '../../chunks/MenuPanel_B5lD5fa_.mjs';
-import { M as MenuName } from '../../chunks/PageTransitionProvider_uq0DwUiJ.mjs';
+import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_BtzllT4y.mjs';
+import { P as Panel } from '../../chunks/MenuPanel_CJ5rbfpP.mjs';
+import { M as MenuName } from '../../chunks/PageTransitionProvider_DOjqMmXE.mjs';
 import { ObjectId } from 'mongodb';
 import { g as getGalaxyById } from '../../chunks/galaxy_DZYFcC87.mjs';
 import { g as getProjectById } from '../../chunks/project_D5RoIw13.mjs';

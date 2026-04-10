@@ -25,7 +25,7 @@ How to interact with Ara App Galaxy? Here is the short video explainaing it
 
 ------------------------------------------------------------------------
 
-## 🔑 Blockchain Disclaimaer
+## 🔑 Blockchain Disclamer
 
 [![Base Sepolia Testnet](https://img.shields.io/badge/base-sepolia-testnet-live-orange)](https://ara.foundation)
 

@@ -1,40 +1,85 @@
 ---
 import MinimalDarkLayout from "@/layouts/MinimalDarkLayout.astro";
 import SocialLink from "@/components/utilitified_decorations/SocialLink";
-import { socialLinks } from "@/types/ara";
+import { socialLinks, type SocialLink as AraSocialLink } from "@/types/ara";
 
 const whitepaperUrl =
   "https://docs.google.com/document/d/1Zls4ORhzHje0t6WPOlAw-IjzizotYrmwCPElaCHFPz8/edit?usp=sharing";
 
+const araFoundationGithub: AraSocialLink = {
+  url: "https://github.com/ara-foundation",
+  type: "github",
+  category: "external",
+  useCustomIcon: false,
+  label: "Ara Foundation on GitHub",
+};
+
 const footerSocial = [
+  araFoundationGithub,
   socialLinks.twitter,
   socialLinks.bluesky,
   socialLinks.linkedin,
+];
+
+const philosophyGaps: { num: string; title: string; body: string }[] = [
+  {
+    num: "I",
+    title: "Software is treated as information, not execution.",
+    body: "A problem endemic to computer science as a field. The internet and computers are framed as information technology rather than as software executors — which shapes every architectural decision that follows.",
+  },
+  {
+    num: "II",
+    title: "Blockchain has no links.",
+    body: "Links are the core primitive of the web. Blockchain's design omits them entirely, producing isolated networks rather than a connected web.",
+  },
+  {
+    num: "III",
+    title: "Self-sufficient networks.",
+    body: "A blockchains made self-sufficiency an architectural decision. Holders and miners became the key stakeholders, which gave the network no structural incentive to grow its adoption and actively prevented it.",
+  },
+  {
+    num: "IV",
+    title: "No incentive for UI and UX.",
+    body: "A great application is three things equally: its data, its logic, and its interface. Blockchain incentivizes the data layer. Logic and interface are left without a protocol-level reward.",
+  },
+  {
+    num: "V",
+    title: "No distribution layer.",
+    body: "Without a package manager, app store, or recommendation system, applications cannot reach users regardless of their quality. Whoever builds the discovery layer controls what gets seen. On the current web, that became the business model of platforms. Blockchain Decentralization has no answer to this.",
+  },
+];
+
+const blockchainArchitecturePoints: string[] = [
+  "Each node issues its own coin.",
+  "More users onboard, the more popular a coin becomes.",
+  "Node coins act as the reputation of the node.",
+  "User–developer payments are outside of the Ara framework.",
+  "The Ara network's coin, ARAK, is a randomly alchemized combination of node coins.",
 ];
 ---
 
 <MinimalDarkLayout title="Ara">
   <div
-    class="mx-auto max-w-3xl px-6 pb-24 pt-12 text-left md:px-8 md:pt-16 [&_p]:text-pretty [&_li]:text-pretty"
+    class="mx-auto max-w-3xl px-6 pb-24 pt-12 text-left md:px-8 md:pt-16 [&_p]:text-pretty"
   >
     <!-- Hero -->
     <section class="space-y-8">
       <p
-        class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500"
+        class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-600 dark:text-neutral-500"
       >
-        Web3
+        What Web3 should be
       </p>
       <h1
-        class="text-3xl font-normal leading-tight text-white md:text-4xl md:leading-tight"
+        class="text-3xl font-normal leading-tight text-neutral-900 md:text-4xl md:leading-tight dark:text-white"
       >
         Web3 is a creative workspace built on collective wisdom.
       </h1>
-      <div class="space-y-4 text-base leading-relaxed text-neutral-300">
+      <div class="space-y-4 text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
         <p>
-          The first open protocol designed to build apps, create content, and
-          manage data. Join the movement that unlocks collective power, rewards
-          creative contributions, and decentralizes discovery, all without
-          compromising privacy or sacrificing speed.
+          Blockchain promised a decentralization and user-centric internet for
+          over a decade. Ara is the framework that adds the missing pieces:
+          semantics, a user-owned execution environment, and decentralized
+          discovery, all without dismantling the internet or existing chains.
         </p>
       </div>
       <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium">
@@ -42,342 +87,365 @@ const footerSocial = [
           href={whitepaperUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn-primary text-white decoration-white/30 underline-offset-4 transition-colors hover:decoration-white"
+          class="btn btn-primary text-neutral-900 decoration-neutral-400 underline-offset-4 transition-colors hover:decoration-neutral-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white"
         >
-          Read whitepaper on bitcointalk →
+          Read the whitepaper on bitcointalk →
         </a>
       </div>
     </section>
 
-    <!-- History -->
-    <section class="mt-20 border-t border-white/10 pt-16 md:mt-24 md:pt-20">
-      <p
-        class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500"
-      >
-        How we got here: a brief history
-      </p>
-      <h2 class="mt-4 text-2xl font-normal text-white md:text-3xl">
-        First came the speech. With it, man became a creative workspace.
-      </h2>
-      <p class="mt-6 text-base leading-relaxed text-neutral-300">
-        The first era of humanity was built on the power of speech. This was
-        necessary but not sufficient. The whitepaper traces five eras—and the
-        gaps that set up the next one:
-      </p>
-      <ol
-        class="mt-8 grid list-none grid-cols-[1.75rem_1fr] gap-x-4 gap-y-6 text-neutral-300"
-      >
-        <li class="contents">
-          <span
-            class="pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-500"
-            >1.</span
-          >
-          <span class="leading-relaxed">
-            The first era of human civilization was built on speech. It was the
-            era of the spoken word.
-          </span>
-        </li>
-        <li class="contents">
-          <span
-            class="pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-500"
-            >2.</span
-          >
-          <span class="leading-relaxed">
-            The second era was built on writing. It was the era of the written
-            word—the book and the library.
-          </span>
-        </li>
-        <li class="contents">
-          <span
-            class="pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-500"
-            >3.</span
-          >
-          <span class="leading-relaxed">
-            The third era is built on the internet. It is the era of the digital
-            word—the website and the web.
-          </span>
-        </li>
-        <li class="contents">
-          <span
-            class="pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-500"
-            >4.</span
-          >
-          <span class="leading-relaxed">
-            The fourth era is built on Web3. It is the era of the decentralized
-            word—the protocol and the network.
-          </span>
-        </li>
-        <li class="contents">
-          <span
-            class="pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-500"
-            >5.</span
-          >
-          <span class="leading-relaxed">
-            The fifth era is built on the creative workspace. It is the era of
-            collective wisdom.
-          </span>
-        </li>
-      </ol>
-    </section>
-
-    <!-- The solution -->
+    <!-- Philosophy -->
     <section
-      id="components"
-      class="mt-20 border-t border-white/10 pt-16 md:mt-24 md:pt-20"
+      class="mt-20 border-t border-neutral-200 pt-16 md:mt-24 md:pt-20 dark:border-white/10"
     >
       <p
-        class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500"
+        class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-600 dark:text-neutral-500"
       >
-        The solution
+        Why blockchain alone is not enough
       </p>
-      <h2 class="mt-4 text-2xl font-normal text-white md:text-3xl">
+      <h2 class="mt-4 text-2xl font-normal text-neutral-900 md:text-3xl dark:text-white">
+        Five reasons the current Web3 cannot become a creative workspace.
+      </h2>
+      <p class="mt-6 text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+        Blockchain solved trust and removed the central ledger. That was
+        necessary but not sufficient. The whitepaper identifies five structural
+        gaps that remain:
+      </p>
+      <ul
+        class="mt-10 list-none border-y border-neutral-200 text-base leading-relaxed text-neutral-700 dark:border-white/10 dark:text-neutral-300"
+      >
+        {
+          philosophyGaps.map((item) => (
+            <li class="flex gap-x-3 border-b border-neutral-200 py-6 last:border-b-0 md:gap-x-4 md:py-7 dark:border-white/10">
+              <span
+                class="shrink-0 pt-0.5 min-w-6 font-mono text-sm tabular-nums text-neutral-600 dark:text-neutral-500"
+                aria-hidden="true"
+              >
+                {item.num}
+              </span>
+              <div class="flex-1 space-y-2">
+                <div class="font-medium text-neutral-800 dark:text-neutral-200">
+                  {item.title}
+                </div>
+                <div class="italic leading-relaxed text-neutral-600 dark:text-neutral-400">
+                  {item.body}
+                </div>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- System architecture -->
+    <section
+      id="mechanisms"
+      class="mt-20 border-t border-neutral-200 pt-16 md:mt-24 md:pt-20 dark:border-white/10"
+    >
+      <p
+        class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-600 dark:text-neutral-500"
+      >
+        The framework
+      </p>
+      <h2 class="mt-4 text-2xl font-normal text-neutral-900 md:text-3xl dark:text-white">
         Three components. One coherent system.
       </h2>
-      <div class="mt-10 space-y-10">
-        <div class="border-b border-white/10 pb-10">
-          <p
-            class="text-xs font-medium uppercase tracking-[0.15em] text-neutral-500"
-          >
-            Protocol
-          </p>
-          <p class="mt-1 text-sm font-medium text-neutral-200">Arada</p>
-          <p class="mt-3 text-base leading-relaxed text-neutral-300">
-            The protocol is the foundation of the network. It is a set of rules
-            that govern how data is stored, shared, and accessed. It is open,
-            transparent, and decentralized.
-          </p>
-        </div>
-        <div class="border-b border-white/10 pb-10">
-          <p
-            class="text-xs font-medium uppercase tracking-[0.15em] text-neutral-500"
-          >
-            Application
-          </p>
-          <p class="mt-1 text-sm font-medium text-neutral-200">
-            Shared consensus &amp; semantics
-          </p>
-          <p class="mt-3 text-base leading-relaxed text-neutral-300">
-            A protocol agreement by shared consensus. Ara semantics and
-            <code
-              class="rounded-md bg-white/10 px-2 py-0.5 font-mono text-sm text-neutral-200"
-              >ara.json</code
+      <div
+        class="mt-10 border-t border-neutral-200 pt-10 dark:border-white/10"
+      >
+        <div
+          class="grid gap-8 border-b border-neutral-200 pb-10 md:grid-cols-[minmax(0,12rem)_1fr] md:gap-x-10 md:gap-y-0 dark:border-white/10"
+        >
+          <div>
+            <p
+              class="text-xs font-medium uppercase tracking-[0.15em] text-neutral-600 dark:text-neutral-500"
             >
-            produce a credible description of software behavior. The result is a common,
-            universal language across the network.
+              Desktop shell
+            </p>
+            <p
+              class="mt-3 font-serif text-xl font-normal text-neutral-900 md:text-2xl dark:text-white"
+            >
+              Maydan
+            </p>
+          </div>
+          <p
+            class="self-start text-base leading-relaxed text-neutral-700 md:pt-1 dark:text-neutral-300"
+          >
+            The environment where software ownership becomes tangible. Users
+            open, compose, and reshape apps here, combining them as lego
+            components or modifying interfaces with spatial and custom-made
+            data.
           </p>
         </div>
-        <div>
+        <div
+          class="grid gap-8 border-b border-neutral-200 py-10 md:grid-cols-[minmax(0,12rem)_1fr] md:gap-x-10 md:gap-y-0 dark:border-white/10"
+        >
+          <div>
+            <p
+              class="text-xs font-medium uppercase tracking-[0.15em] text-neutral-600 dark:text-neutral-500"
+            >
+              Blockchain A
+            </p>
+            <p
+              class="mt-3 font-serif text-xl font-normal text-neutral-900 md:text-2xl dark:text-white"
+            >
+              Arada
+            </p>
+          </div>
           <p
-            class="text-xs font-medium uppercase tracking-[0.15em] text-neutral-500"
+            class="self-start text-base leading-relaxed text-neutral-700 md:pt-1 dark:text-neutral-300"
           >
-            Interface
+            A protocol agreement by shared semantic<sup class="ml-0.5">
+              <a
+                href="https://en.wikipedia.org/wiki/Semantic_Web"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-normal text-neutral-600 underline decoration-neutral-400/80 underline-offset-2 transition-colors hover:text-neutral-900 hover:decoration-neutral-600 dark:text-neutral-400 dark:decoration-neutral-500/60 dark:hover:text-neutral-200 dark:hover:decoration-neutral-300"
+                >[1]</a
+              >
+            </sup>
+            layer. Developers publish
+            <code
+              class="rounded-md bg-neutral-100 px-2 py-0.5 font-mono text-sm text-neutral-800 dark:bg-white/10 dark:text-neutral-200"
+              >ara.json</code
+            >, a machine-readable description of their software&apos;s meaning.
+            Registered apps provides a software ownership at the users computer.
           </p>
-          <p class="mt-1 text-sm font-medium text-neutral-200">Maydan</p>
-          <p class="mt-3 text-base leading-relaxed text-neutral-300">
-            A decentralized interface that allows anyone to build and use
-            applications. It sits on top of the protocol and opens space for
-            new, innovative ways to interact with data.
+        </div>
+        <div
+          class="grid gap-8 pt-10 md:grid-cols-[minmax(0,12rem)_1fr] md:gap-x-10 md:gap-y-0"
+        >
+          <div>
+            <p
+              class="text-xs font-medium uppercase tracking-[0.15em] text-neutral-600 dark:text-neutral-500"
+            >
+              Blockchain B
+            </p>
+            <p
+              class="mt-3 font-serif text-xl font-normal text-neutral-900 md:text-2xl dark:text-white"
+            >
+              Aramak
+            </p>
+          </div>
+          <p
+            class="self-start text-base leading-relaxed text-neutral-700 md:pt-1 dark:text-neutral-300"
+          >
+            A decentralized recommendation engine tracking collective wisdom.
+            Software surfaces through real user behavior, not platform curation.
+            No central authority owns the outcome.
           </p>
         </div>
       </div>
     </section>
 
     <!-- How it works -->
-    <section class="mt-20 border-t border-white/10 pt-16 md:mt-24 md:pt-20">
+    <section
+      id="how-it-works"
+      class="mt-20 border-t border-neutral-200 pt-16 md:mt-24 md:pt-20 dark:border-white/10"
+    >
       <p
-        class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500"
+        class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-600 dark:text-neutral-500"
       >
         How it works
       </p>
-      <h2 class="mt-4 text-2xl font-normal text-white md:text-3xl">
-        From build to discovery
-      </h2>
       <ol
-        class="mt-10 grid list-none grid-cols-[1.75rem_1fr] gap-x-4 gap-y-6 text-neutral-300"
+        class="mt-10 list-none border-y border-neutral-200 text-base leading-relaxed text-neutral-700 dark:border-white/10 dark:text-neutral-300"
       >
-        <li class="contents">
+        <li
+          class="flex gap-x-3 border-b border-neutral-200 py-6 md:gap-x-4 md:py-7 dark:border-white/10"
+        >
           <span
-            class="pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-500"
-            >1.</span
+            class="w-6 shrink-0 pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-600 md:w-7 dark:text-neutral-500"
+            aria-hidden="true">1.</span
           >
-          <span class="leading-relaxed">
-            A developer creates a new tool or application using the Ara
-            framework and
-            <code class="rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm"
+          <div class="flex-1">
+            A developer generates their project&apos;s semantics using the Ara
+            SDK, then pushes
+            <code
+              class="rounded-md bg-neutral-100 px-2 py-0.5 font-mono text-sm text-neutral-800 dark:bg-white/10 dark:text-neutral-200"
               >ara.json</code
             >
-            to describe and ship behavior.
-          </span>
+            to their git server.
+          </div>
         </li>
-        <li class="contents">
+        <li
+          class="flex gap-x-3 border-b border-neutral-200 py-6 md:gap-x-4 md:py-7 dark:border-white/10"
+        >
           <span
-            class="pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-500"
-            >2.</span
+            class="w-6 shrink-0 pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-600 md:w-7 dark:text-neutral-500"
+            aria-hidden="true">2.</span
           >
-          <span class="leading-relaxed">
-            The application is deployed to the decentralized network—registered
-            on
-            <strong class="font-medium text-neutral-200">Arada</strong> and reachable
-            across the stack.
-          </span>
+          <div class="flex-1">
+            Then a developer registers app on Arada by entering the app
+            semantic.
+          </div>
         </li>
-        <li class="contents">
+        <li
+          class="flex gap-x-3 border-b border-neutral-200 py-6 md:gap-x-4 md:py-7 dark:border-white/10"
+        >
           <span
-            class="pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-500"
-            >3.</span
+            class="w-6 shrink-0 pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-600 md:w-7 dark:text-neutral-500"
+            aria-hidden="true">3.</span
           >
-          <span class="leading-relaxed">
-            Users work through <strong class="font-medium text-neutral-200"
-              >Maydan</strong
-            >: discovery and access to applications and services without relying
-            on a single central authority.
-          </span>
+          <div class="flex-1">
+            A user opens the app within Maydan. The shell reads the semantics
+            and grants
+            <strong
+              class="font-medium text-neutral-800 underline decoration-neutral-400 underline-offset-[0.2em] dark:text-neutral-200 dark:decoration-neutral-500"
+              >software ownership</strong
+            >, the ability to compose, modify, and control the interface.
+          </div>
         </li>
-        <li class="contents">
+        <li class="flex gap-x-3 py-6 md:gap-x-4 md:py-7">
           <span
-            class="pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-500"
-            >4.</span
+            class="w-6 shrink-0 pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-600 md:w-7 dark:text-neutral-500"
+            aria-hidden="true">4.</span
           >
-          <span class="leading-relaxed">
-            Automatic discovery and indexing—driven in part by
-            <strong class="font-medium text-neutral-200">Aramak</strong>—helps
-            people find content and data without a centralized search
-            gatekeeper.
-          </span>
+          <div class="flex-1">
+            Aramak delivers the app through automatic discovery and refines its
+            recommendations continuously through real user behavior, with no
+            platform in between.
+          </div>
         </li>
       </ol>
     </section>
 
-    <!-- A new way to build -->
-    <section class="mt-20 border-t border-white/10 pt-16 md:mt-24 md:pt-20">
-      <p
-        class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500"
+    <!-- Software ownership -->
+    <section
+      id="software-ownership"
+      class="mt-20 border-t border-neutral-200 pt-16 md:mt-24 md:pt-20 dark:border-white/10"
+    >
+      <h2
+        class="text-xl font-normal italic leading-snug text-neutral-900 md:text-2xl md:leading-snug dark:text-white"
       >
-        A new way to build
-      </p>
-      <h2 class="mt-4 text-2xl font-normal text-white md:text-3xl">
-        More than a toolkit
+        Software ownership
       </h2>
-      <p class="mt-6 text-base leading-relaxed text-neutral-300">
-        The Ara framework is more than just a set of tools. It is a new way to
-        build applications and services that are decentralized, open, and
-        transparent.
+      <p class="mt-6 text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+        Software ownership does not exist in the current web. Ara introduces it
+        as both a protocol commitment and a user capability.
       </p>
       <div class="mt-10 grid gap-6 md:grid-cols-2">
         <article
-          class="rounded-xl border border-white/10 bg-white/[0.03] p-6 md:p-8"
+          class="rounded-xl border border-neutral-200 bg-neutral-50 p-6 md:p-8 dark:border-white/10 dark:bg-white/[0.03]"
         >
-          <h3
-            class="text-sm font-medium uppercase tracking-wide text-neutral-400"
+          <p
+            class="font-mono text-[0.65rem] font-medium uppercase tracking-[0.12em] text-neutral-600 md:text-xs md:tracking-[0.15em] dark:text-neutral-500"
           >
-            A protocol agreement
-          </h3>
-          <p class="mt-4 text-sm leading-relaxed text-neutral-300">
-            “This software is non-toxic, and business or personal.” Respects
-            users. Built for public, verifiable contributions.
+            For open-source maintainers
+          </p>
+          <p class="mt-4 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+            A protocol agreement: &ldquo;This software is user-centric, not
+            business or personal.&rdquo; Registration on Arada is a public,
+            on-chain commitment.
           </p>
         </article>
         <article
-          class="rounded-xl border border-white/10 bg-white/[0.03] p-6 md:p-8"
+          class="rounded-xl border border-neutral-200 bg-neutral-50 p-6 md:p-8 dark:border-white/10 dark:bg-white/[0.03]"
         >
-          <h3
-            class="text-sm font-medium uppercase tracking-wide text-neutral-400"
+          <p
+            class="font-mono text-[0.65rem] font-medium uppercase tracking-[0.12em] text-neutral-600 md:text-xs md:tracking-[0.15em] dark:text-neutral-500"
           >
-            Marketplace of logic components
-          </h3>
-          <p class="mt-4 text-sm leading-relaxed text-neutral-300">
-            Compose logic components, or reshape interface elements so
-            applications can manipulate data the way you intend. The choice is
-            yours to shape.
+            For Maydan users
+          </p>
+          <p class="mt-4 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+            Mashup apps as lego components, or modify interface elements with
+            spatial and custom-made data. The shell is yours to shape.
           </p>
         </article>
       </div>
     </section>
 
-    <!-- The future of the web -->
-    <section class="mt-20 border-t border-white/10 pt-16 md:mt-24 md:pt-20">
-      <p
-        class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500"
+    <!-- Blockchain architecture -->
+    <section
+      id="blockchain-architecture"
+      class="mt-20 border-t border-neutral-200 pt-16 md:mt-24 md:pt-20 dark:border-white/10"
+    >
+      <h2
+        class="text-xl font-normal italic leading-snug text-neutral-900 md:text-2xl md:leading-snug dark:text-white"
       >
-        The future of the web
-      </p>
-      <h2 class="mt-4 text-2xl font-normal text-white md:text-3xl">
-        The network is built on collective wisdom.
+        Blockchain architectures, redefined.
       </h2>
-      <p class="mt-6 text-base leading-relaxed text-neutral-300">
-        The network is built on the contributions of its users. It is built on
-        the collective wisdom of its members, and it is this wisdom that drives
-        the network forward.
+      <p class="mt-6 text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+        Ara has no predefined token. Instead of a single chain with a hardcoded
+        coin, any node can issue its own coin and popularize it. The network
+        rewards whoever drives real adoption.
       </p>
       <ul
-        class="mt-8 grid list-none grid-cols-[1.25rem_1fr] gap-x-4 gap-y-5 text-neutral-300"
+        class="mt-10 list-none border-y border-neutral-200 text-base leading-relaxed text-neutral-700 dark:border-white/10 dark:text-neutral-300"
       >
-        <li class="contents">
-          <span class="pt-1 text-neutral-500" aria-hidden="true">•</span>
-          <span>Each node has an equal voice.</span>
-        </li>
-        <li class="contents">
-          <span class="pt-1 text-neutral-500" aria-hidden="true">•</span>
-          <span>Users can contribute to the development of the network.</span>
-        </li>
-        <li class="contents">
-          <span class="pt-1 text-neutral-500" aria-hidden="true">•</span>
-          <span>Built on the collective wisdom of the users.</span>
-        </li>
-        <li class="contents">
-          <span class="pt-1 text-neutral-500" aria-hidden="true">•</span>
-          <span>Open and transparent, with no central authority.</span>
-        </li>
-        <li class="contents">
-          <span class="pt-1 text-neutral-500" aria-hidden="true">•</span>
-          <span>
-            The network is built on the power of the protocol and the network.
-          </span>
-        </li>
+        {
+          blockchainArchitecturePoints.map((line) => (
+            <li class="flex gap-x-3 border-b border-neutral-200 py-6 last:border-b-0 md:gap-x-4 md:py-7 dark:border-white/10">
+              <span
+                class="shrink-0 pt-1 text-neutral-600 dark:text-neutral-500"
+                aria-hidden="true"
+              >
+                •
+              </span>
+              <div class="flex-1 leading-relaxed">{line}</div>
+            </li>
+          ))
+        }
       </ul>
     </section>
 
     <!-- Get started -->
     <section
       id="get-started"
-      class="mt-20 border-t border-white/10 pt-16 md:mt-24 md:pt-20"
+      class="mt-20 border-t border-neutral-200 pt-16 md:mt-24 md:pt-20 dark:border-white/10"
     >
-      <h2 class="text-2xl font-normal text-white md:text-3xl">Get started</h2>
-      <p class="mt-6 text-base leading-relaxed text-neutral-300">
-        The Ara framework is the foundation of the new internet. It is the
-        foundation of a new way to build applications and services that are
-        decentralized, open, and transparent.
+      <p
+        class="font-mono text-[0.65rem] font-medium uppercase tracking-[0.18em] text-neutral-600 md:text-xs md:tracking-[0.2em] dark:text-neutral-500"
+      >
+        Go deeper
+      </p>
+      <p
+        class="mt-6 font-serif text-base italic leading-relaxed text-neutral-700 dark:text-neutral-300"
+      >
+        The
+        <a
+          href={whitepaperUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-neutral-900 underline decoration-neutral-400 underline-offset-[0.2em] transition-colors hover:decoration-neutral-600 dark:text-neutral-200 dark:decoration-neutral-500 dark:hover:decoration-neutral-300"
+          >whitepaper on Bitcointalk</a
+        >
+        lays out the full argument: the five structural reasons blockchain alone
+        cannot become Web3, and the complete architecture of Ara&apos;s solution.
+        All technical discussion, questions, and critique belong there.
       </p>
       <a
-        href={whitepaperUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-8 inline-block text-sm font-medium text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white"
+        href="/about"
+        class="mt-10 inline-block font-mono text-xs font-medium uppercase tracking-[0.15em] text-neutral-600 underline decoration-neutral-400/80 underline-offset-[0.25em] transition-colors hover:text-neutral-900 hover:decoration-neutral-500 dark:text-neutral-500 dark:decoration-neutral-500/70 dark:hover:text-neutral-300 dark:hover:decoration-neutral-400"
       >
-        Join the network →
+        About the author →
       </a>
     </section>
 
     <footer
-      class="mt-20 border-t border-white/10 pt-10 text-sm text-neutral-500"
+      class="mt-20 border-t border-neutral-200 pt-10 text-sm text-neutral-600 dark:border-white/10 dark:text-neutral-500"
       aria-label="Site footer"
     >
       <div
         class="flex flex-col gap-10 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between"
       >
         <nav
-          class="flex flex-row gap-3 text-neutral-400"
+          class="flex flex-row gap-3 text-neutral-600 dark:text-neutral-400"
           aria-label="Primary footer links"
         >
           <a
             href={whitepaperUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-fit hover:text-neutral-200"
+            class="w-fit hover:text-neutral-900 dark:hover:text-neutral-200"
           >
             Whitepaper
           </a>
-          <a href="/about" class="w-fit hover:text-neutral-200">About Me</a>
+          <a
+            href="/about"
+            class="w-fit hover:text-neutral-900 dark:hover:text-neutral-200"
+            >About Author</a
+          >
         </nav>
         <div
           class="flex flex-wrap items-center gap-2"
@@ -388,7 +456,7 @@ const footerSocial = [
               <SocialLink
                 client:load
                 link={link}
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-neutral-400 transition-colors hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-neutral-100 hover:text-neutral-900 dark:border-white/10 dark:bg-white/[0.03] dark:text-neutral-400 dark:hover:border-white/20 dark:hover:bg-white/[0.06] dark:hover:text-white"
               />
             ))
           }
