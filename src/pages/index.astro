@@ -1,50 +1,34 @@
 ---
 import MinimalDarkLayout from "@/layouts/MinimalDarkLayout.astro";
-import SocialLink from "@/components/utilitified_decorations/SocialLink";
-import { socialLinks, type SocialLink as AraSocialLink } from "@/types/ara";
+import { companyInfo } from "@/types/ara";
 
 const whitepaperUrl = "https://bitcointalk.org/index.php?topic=5579945.new";
-
-const araFoundationGithub: AraSocialLink = {
-  url: "https://github.com/ara-foundation",
-  type: "github",
-  category: "external",
-  useCustomIcon: false,
-  label: "Ara Foundation on GitHub",
-};
-
-const footerSocial = [
-  araFoundationGithub,
-  socialLinks.twitter,
-  socialLinks.bluesky,
-  socialLinks.linkedin,
-];
 
 const philosophyGaps: { num: string; title: string; body: string }[] = [
   {
     num: "I",
-    title: "Software is treated as information, not execution.",
-    body: "A problem endemic to computer science as a field. The internet and computers are framed as information technology rather than as software executors — which shapes every architectural decision that follows.",
+    title: "Too much focus on data, not software.",
+    body: "The internet and computers are framed as Information Technology rather than as software executors.",
   },
   {
     num: "II",
-    title: "Blockchain has no links.",
-    body: "Links are the core primitive of the web. Blockchain's design omits them entirely, producing isolated networks rather than a connected web.",
+    title: "Blockchain design misses core component of the Web.",
+    body: "Links are the core components of the web. Blockchain are isolated networks more akin to VPNs than the web.",
   },
   {
     num: "III",
     title: "Self-sufficient networks.",
-    body: "A blockchains made self-sufficiency an architectural decision. Holders and miners became the key stakeholders, which gave the network no structural incentive to grow its adoption and actively prevented it.",
+    body: "Token holders and miners became the key stakeholders, which gave the network no structural incentive to grow its adoption.",
   },
   {
     num: "IV",
     title: "No incentive for UI and UX.",
-    body: "A great application is three things equally: its data, its logic, and its interface. Blockchain incentivizes the data layer. Logic and interface are left without a protocol-level reward.",
+    body: 'A great application is three things equally: its data, its logic, and its interface. Blockchain incentivizes the data layer. Logic and interface are left to the "killer dapp" makers.',
   },
   {
     num: "V",
     title: "No distribution layer.",
-    body: "Without a package manager, app store, or recommendation system, applications cannot reach users regardless of their quality. Whoever builds the discovery layer controls what gets seen. On the current web, that became the business model of platforms. Blockchain Decentralization has no answer to this.",
+    body: "Which platform works today without a distribution mechanism or recommendation system? Blockchains have no answer to this.",
   },
 ];
 
@@ -71,16 +55,26 @@ const blockchainArchitecturePoints: string[] = [
       <h1
         class="text-3xl font-normal leading-tight text-neutral-900 md:text-4xl md:leading-tight dark:text-white"
       >
-        Web3 is a creative workspace built on collective wisdom.
+        A creative workspace on collective wisdom.
       </h1>
+      <div class="flex flex-wrap items-center gap-2">
+        <span
+          class="inline-flex items-center rounded-full border border-neutral-300 bg-neutral-100 px-3 py-1 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-neutral-700 dark:border-white/15 dark:bg-white/[0.04] dark:text-neutral-300"
+        >
+          · In development
+        </span>
+      </div>
       <div
         class="space-y-4 text-base leading-relaxed text-neutral-700 dark:text-neutral-300"
       >
         <p>
-          Blockchain promised a decentralization and user-centric internet for
-          over a decade. Ara is the framework that adds the missing pieces:
-          semantics, a user-owned execution environment, and decentralized
-          discovery, all without dismantling the internet or existing chains.
+          Ara is a framework that consists and a client environment for the
+          malleable softwares and a dual-blockchain: protocol agreement, a
+          decentralized recommendation engine.
+
+          <br />This framework aims for the <i>&quot;software ownership&quot;</i
+          >
+          .
         </p>
       </div>
       <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium">
@@ -107,14 +101,15 @@ const blockchainArchitecturePoints: string[] = [
       <h2
         class="mt-4 text-2xl font-normal text-neutral-900 md:text-3xl dark:text-white"
       >
-        Five reasons the current Web3 cannot become a creative workspace.
+        Five reasons overseen by blockchain believers
       </h2>
       <p
         class="mt-6 text-base leading-relaxed text-neutral-700 dark:text-neutral-300"
       >
-        Blockchain solved trust and removed the central ledger. That was
-        necessary but not sufficient. The whitepaper identifies five structural
-        gaps that remain:
+        Blockchain removed the central authority for reliance. That was
+        necessary but not sufficient. The whitepaper identifies five gaps to to
+        go beyond desperate people cheering up for any news on twitter and scam
+        reputation. :)
       </p>
       <ul
         class="mt-10 list-none border-y border-neutral-200 text-base leading-relaxed text-neutral-700 dark:border-white/10 dark:text-neutral-300"
@@ -155,7 +150,7 @@ const blockchainArchitecturePoints: string[] = [
       <h2
         class="mt-4 text-2xl font-normal text-neutral-900 md:text-3xl dark:text-white"
       >
-        Three components. One coherent system.
+        Three coherent components.
       </h2>
       <div class="mt-10 border-t border-neutral-200 pt-10 dark:border-white/10">
         <div
@@ -264,8 +259,7 @@ const blockchainArchitecturePoints: string[] = [
             aria-hidden="true">1.</span
           >
           <div class="flex-1">
-            A developer generates their project&apos;s semantics using the Ara
-            SDK, then pushes
+            A developer generates app semantics using the Ara SDK, then pushes
             <code
               class="rounded-md bg-neutral-100 px-2 py-0.5 font-mono text-sm text-neutral-800 dark:bg-white/10 dark:text-neutral-200"
               >ara.json</code
@@ -280,10 +274,7 @@ const blockchainArchitecturePoints: string[] = [
             class="w-6 shrink-0 pt-0.5 text-right font-mono text-sm tabular-nums text-neutral-600 md:w-7 dark:text-neutral-500"
             aria-hidden="true">2.</span
           >
-          <div class="flex-1">
-            Then a developer registers app on Arada by entering the app
-            semantic.
-          </div>
+          <div class="flex-1">Then registers app on Arada.</div>
         </li>
         <li
           class="flex gap-x-3 border-b border-neutral-200 py-6 md:gap-x-4 md:py-7 dark:border-white/10"
@@ -293,12 +284,12 @@ const blockchainArchitecturePoints: string[] = [
             aria-hidden="true">3.</span
           >
           <div class="flex-1">
-            A user opens the app within Maydan. The shell reads the semantics
-            and grants
+            A user opens the app within Maydan. It reads the semantics and
+            grants
             <strong
               class="font-medium text-neutral-800 underline decoration-neutral-400 underline-offset-[0.2em] dark:text-neutral-200 dark:decoration-neutral-500"
               >software ownership</strong
-            >, the ability to compose, modify, and control the interface.
+            > to the user.
           </div>
         </li>
         <li class="flex gap-x-3 py-6 md:gap-x-4 md:py-7">
@@ -307,9 +298,8 @@ const blockchainArchitecturePoints: string[] = [
             aria-hidden="true">4.</span
           >
           <div class="flex-1">
-            Aramak delivers the app through automatic discovery and refines its
-            recommendations continuously through real user behavior, with no
-            platform in between.
+            Aramak trains on user behavior and recommends other user's practices
+            by similar semantics.
           </div>
         </li>
       </ol>
@@ -328,8 +318,8 @@ const blockchainArchitecturePoints: string[] = [
       <p
         class="mt-6 text-base leading-relaxed text-neutral-700 dark:text-neutral-300"
       >
-        Software ownership does not exist in the current web. Ara introduces it
-        as both a protocol commitment and a user capability.
+        Maydan enables software ownership for the user if that software is
+        registered on Arada, but what is this?
       </p>
       <div class="mt-10 grid gap-6 md:grid-cols-2">
         <article
@@ -344,8 +334,7 @@ const blockchainArchitecturePoints: string[] = [
             class="mt-4 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
           >
             A protocol agreement: &ldquo;This software is user-centric, not
-            business or personal.&rdquo; Registration on Arada is a public,
-            on-chain commitment.
+            business or personal.&rdquo;
           </p>
         </article>
         <article
@@ -354,13 +343,13 @@ const blockchainArchitecturePoints: string[] = [
           <p
             class="font-mono text-[0.65rem] font-medium uppercase tracking-[0.12em] text-neutral-600 md:text-xs md:tracking-[0.15em] dark:text-neutral-500"
           >
-            For Maydan users
+            For users and me
           </p>
           <p
             class="mt-4 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
           >
-            Mashup apps as lego components, or modify interface elements with
-            spatial and custom-made data. The shell is yours to shape.
+            Mashup apps as lego components, and modify the applications
+            interfaces.
           </p>
         </article>
       </div>
@@ -371,18 +360,16 @@ const blockchainArchitecturePoints: string[] = [
       id="blockchain-architecture"
       class="mt-20 border-t border-neutral-200 pt-16 md:mt-24 md:pt-20 dark:border-white/10"
     >
-      <h2
-        class="text-xl font-normal italic leading-snug text-neutral-900 md:text-2xl md:leading-snug dark:text-white"
-      >
-        Blockchain architectures, redefined.
-      </h2>
       <p
-        class="mt-6 text-base leading-relaxed text-neutral-700 dark:text-neutral-300"
+        class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-600 dark:text-neutral-500"
       >
-        Ara has no predefined token. Instead of a single chain with a hardcoded
-        coin, any node can issue its own coin and popularize it. The network
-        rewards whoever drives real adoption.
+        Blockchain architectures redesigned
       </p>
+      <h2
+        class="mt-8 text-xl font-normal italic leading-snug text-neutral-900 md:text-2xl md:leading-snug dark:text-white"
+      >
+        Node runners incentivized to grow the network
+      </h2>
       <ul
         class="mt-10 list-none border-y border-neutral-200 text-base leading-relaxed text-neutral-700 dark:border-white/10 dark:text-neutral-300"
       >
@@ -424,14 +411,19 @@ const blockchainArchitecturePoints: string[] = [
           >whitepaper on Bitcointalk</a
         >
         lays out the full argument: the five structural reasons blockchain alone cannot
-        become Web3, and the complete architecture of Ara&apos;s solution. All technical
-        discussion, questions, and critique belong there.
+        become Web3, and the complete architecture of Ara&apos;s solution. For a map
+        of where to discuss each Ara topic, see{" "}
+        <a
+          href="/aratalk"
+          class="text-neutral-900 underline decoration-neutral-400 underline-offset-[0.2em] transition-colors hover:decoration-neutral-600 dark:text-neutral-200 dark:decoration-neutral-500 dark:hover:decoration-neutral-300"
+          >AraTalk</a
+        >.
       </p>
       <a
-        href="/about"
+        href="/aratalk"
         class="mt-10 inline-block font-mono text-xs font-medium uppercase tracking-[0.15em] text-neutral-600 underline decoration-neutral-400/80 underline-offset-[0.25em] transition-colors hover:text-neutral-900 hover:decoration-neutral-500 dark:text-neutral-500 dark:decoration-neutral-500/70 dark:hover:text-neutral-300 dark:hover:decoration-neutral-400"
       >
-        About the author →
+        Discuss on AraTalk →
       </a>
     </section>
 
@@ -439,42 +431,9 @@ const blockchainArchitecturePoints: string[] = [
       class="mt-20 border-t border-neutral-200 pt-10 text-sm text-neutral-600 dark:border-white/10 dark:text-neutral-500"
       aria-label="Site footer"
     >
-      <div
-        class="flex flex-col gap-10 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between"
-      >
-        <nav
-          class="flex flex-row gap-3 text-neutral-600 dark:text-neutral-400"
-          aria-label="Primary footer links"
-        >
-          <a
-            href={whitepaperUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-fit hover:text-neutral-900 dark:hover:text-neutral-200"
-          >
-            Whitepaper
-          </a>
-          <a
-            href="/about"
-            class="w-fit hover:text-neutral-900 dark:hover:text-neutral-200"
-            >About Author</a
-          >
-        </nav>
-        <div
-          class="flex flex-wrap items-center gap-2"
-          aria-label="Social media"
-        >
-          {
-            footerSocial.map((link) => (
-              <SocialLink
-                client:load
-                link={link}
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-neutral-100 hover:text-neutral-900 dark:border-white/10 dark:bg-white/[0.03] dark:text-neutral-400 dark:hover:border-white/20 dark:hover:bg-white/[0.06] dark:hover:text-white"
-              />
-            ))
-          }
-        </div>
-      </div>
+      <p class="text-neutral-600 dark:text-neutral-500">
+        © {companyInfo.copyrightYear} Ara Foundation.
+      </p>
     </footer>
   </div>
 </MinimalDarkLayout>
