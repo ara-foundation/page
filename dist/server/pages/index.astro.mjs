@@ -1,24 +1,10 @@
-import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead, p as addAttribute } from '../chunks/astro/server_EFpbLn-l.mjs';
-import { $ as $$MinimalDarkLayout } from '../chunks/MinimalDarkLayout_CSIRAPK0.mjs';
-import { S as SocialLink } from '../chunks/SocialLink_C52hytjF.mjs';
-import { s as socialLinks } from '../chunks/Analytics_Day3AV4c.mjs';
+import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead, p as addAttribute } from '../chunks/astro/server_DQ3wOqi7.mjs';
+import { $ as $$MinimalDarkLayout } from '../chunks/MinimalDarkLayout_BjSaFA6C.mjs';
+import { e as companyInfo } from '../chunks/Analytics__czfT5tp.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {
-  const whitepaperUrl = "https://docs.google.com/document/d/1Zls4ORhzHje0t6WPOlAw-IjzizotYrmwCPElaCHFPz8/edit?usp=sharing";
-  const araFoundationGithub = {
-    url: "https://github.com/ara-foundation",
-    type: "github",
-    category: "external",
-    useCustomIcon: false,
-    label: "Ara Foundation on GitHub"
-  };
-  const footerSocial = [
-    araFoundationGithub,
-    socialLinks.twitter,
-    socialLinks.bluesky,
-    socialLinks.linkedin
-  ];
+  const whitepaperUrl = "https://bitcointalk.org/index.php?topic=5579945.new";
   const philosophyGaps = [
     {
       num: "I",
@@ -55,7 +41,9 @@ const $$Index = createComponent(($$result, $$props, $$slots) => {
   ];
   return renderTemplate`${renderComponent($$result, "MinimalDarkLayout", $$MinimalDarkLayout, { "title": "Ara" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="mx-auto max-w-3xl px-6 pb-24 pt-12 text-left md:px-8 md:pt-16 [&_p]:text-pretty"> <!-- Hero --> <section class="space-y-8"> <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-600 dark:text-neutral-500">
 What Web3 should be
-</p> <h1 class="text-3xl font-normal leading-tight text-neutral-900 md:text-4xl md:leading-tight dark:text-white">
+</p> <div class="flex flex-wrap items-center gap-3"> <span class="inline-flex items-center rounded-full border border-neutral-300 bg-neutral-100 px-3 py-1 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-neutral-700 dark:border-white/15 dark:bg-white/[0.04] dark:text-neutral-300">
+Novel idea · In development
+</span> </div> <h1 class="text-3xl font-normal leading-tight text-neutral-900 md:text-4xl md:leading-tight dark:text-white">
 Web3 is a creative workspace built on collective wisdom.
 </h1> <div class="space-y-4 text-base leading-relaxed text-neutral-700 dark:text-neutral-300"> <p>
 Blockchain promised a decentralization and user-centric internet for
@@ -149,14 +137,14 @@ Go deeper
 </p> <p class="mt-6 font-serif text-base italic leading-relaxed text-neutral-700 dark:text-neutral-300">
 The
 <a${addAttribute(whitepaperUrl, "href")} target="_blank" rel="noopener noreferrer" class="text-neutral-900 underline decoration-neutral-400 underline-offset-[0.2em] transition-colors hover:decoration-neutral-600 dark:text-neutral-200 dark:decoration-neutral-500 dark:hover:decoration-neutral-300">whitepaper on Bitcointalk</a>
-lays out the full argument: the five structural reasons blockchain alone
-        cannot become Web3, and the complete architecture of Ara&apos;s solution.
-        All technical discussion, questions, and critique belong there.
-</p> <a href="/about" class="mt-10 inline-block font-mono text-xs font-medium uppercase tracking-[0.15em] text-neutral-600 underline decoration-neutral-400/80 underline-offset-[0.25em] transition-colors hover:text-neutral-900 hover:decoration-neutral-500 dark:text-neutral-500 dark:decoration-neutral-500/70 dark:hover:text-neutral-300 dark:hover:decoration-neutral-400">
-About the author →
-</a> </section> <footer class="mt-20 border-t border-neutral-200 pt-10 text-sm text-neutral-600 dark:border-white/10 dark:text-neutral-500" aria-label="Site footer"> <div class="flex flex-col gap-10 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between"> <nav class="flex flex-row gap-3 text-neutral-600 dark:text-neutral-400" aria-label="Primary footer links"> <a${addAttribute(whitepaperUrl, "href")} target="_blank" rel="noopener noreferrer" class="w-fit hover:text-neutral-900 dark:hover:text-neutral-200">
-Whitepaper
-</a> <a href="/about" class="w-fit hover:text-neutral-900 dark:hover:text-neutral-200">About Author</a> </nav> <div class="flex flex-wrap items-center gap-2" aria-label="Social media"> ${footerSocial.map((link) => renderTemplate`${renderComponent($$result2, "SocialLink", SocialLink, { "client:load": true, "link": link, "className": "flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-neutral-100 hover:text-neutral-900 dark:border-white/10 dark:bg-white/[0.03] dark:text-neutral-400 dark:hover:border-white/20 dark:hover:bg-white/[0.06] dark:hover:text-white", "client:component-hydration": "load", "client:component-path": "@/components/utilitified_decorations/SocialLink", "client:component-export": "default" })}`)} </div> </div> </footer> </div> ` })}`;
+lays out the full argument: the five structural reasons blockchain alone cannot
+        become Web3, and the complete architecture of Ara&apos;s solution. For a map of
+        where to discuss each Ara topic, see${" "} <a href="/aratalk" class="text-neutral-900 underline decoration-neutral-400 underline-offset-[0.2em] transition-colors hover:decoration-neutral-600 dark:text-neutral-200 dark:decoration-neutral-500 dark:hover:decoration-neutral-300">AraTalk</a>.
+</p> <a href="/aratalk" class="mt-10 inline-block font-mono text-xs font-medium uppercase tracking-[0.15em] text-neutral-600 underline decoration-neutral-400/80 underline-offset-[0.25em] transition-colors hover:text-neutral-900 hover:decoration-neutral-500 dark:text-neutral-500 dark:decoration-neutral-500/70 dark:hover:text-neutral-300 dark:hover:decoration-neutral-400">
+Discuss on AraTalk →
+</a> </section> <footer class="mt-20 border-t border-neutral-200 pt-10 text-sm text-neutral-600 dark:border-white/10 dark:text-neutral-500" aria-label="Site footer"> <p class="text-neutral-600 dark:text-neutral-500">
+© ${companyInfo.copyrightYear} Ara Foundation.
+</p> </footer> </div> ` })}`;
 }, "/home/medet/ara-app/src/pages/index.astro", void 0);
 
 const $$file = "/home/medet/ara-app/src/pages/index.astro";

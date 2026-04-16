@@ -1,6 +1,6 @@
-import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead, p as addAttribute } from '../chunks/astro/server_EFpbLn-l.mjs';
-import { $ as $$MinimalDarkLayout } from '../chunks/MinimalDarkLayout_CSIRAPK0.mjs';
-import { s as socialLinks } from '../chunks/Analytics_Day3AV4c.mjs';
+import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead, p as addAttribute } from '../chunks/astro/server_DQ3wOqi7.mjs';
+import { $ as $$MinimalDarkLayout } from '../chunks/MinimalDarkLayout_BjSaFA6C.mjs';
+import { s as socialLinks } from '../chunks/Analytics__czfT5tp.mjs';
 export { renderers } from '../renderers.mjs';
 
 const medetSocialLinks = [
@@ -42,7 +42,7 @@ const medetSocialLinks = [
 ];
 
 const $$About = createComponent(($$result, $$props, $$slots) => {
-  const whitepaperUrl = "https://docs.google.com/document/d/1Zls4ORhzHje0t6WPOlAw-IjzizotYrmwCPElaCHFPz8/edit?usp=sharing";
+  const whitepaperUrl = "https://bitcointalk.org/index.php?topic=5579945.new";
   const linkedinUrl = medetSocialLinks.find((l) => l.type === "linkedin").url;
   const emailUrl = medetSocialLinks.find((l) => l.type === "email").url;
   const experiments = [

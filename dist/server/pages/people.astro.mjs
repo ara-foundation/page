@@ -1,7 +1,7 @@
-import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_EFpbLn-l.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_CUYspLTV.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_DOjqMmXE.mjs';
-import { B as BackButton } from '../chunks/BackButton_PFiVsvps.mjs';
+import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_DQ3wOqi7.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_C82t1Lp3.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_BM2AB-f-.mjs';
+import { B as BackButton } from '../chunks/BackButton_D90RMYov.mjs';
 import { a as mockUserStars } from '../chunks/mock-data_BUp0vQNE.mjs';
 /* empty css                                  */
 export { renderers } from '../renderers.mjs';

@@ -1,7 +1,7 @@
-import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate, m as maybeRenderHead, p as addAttribute } from '../../chunks/astro/server_EFpbLn-l.mjs';
-import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_BtzllT4y.mjs';
-import { P as Panel } from '../../chunks/MenuPanel_CJ5rbfpP.mjs';
-import { B as Badge, M as MenuName } from '../../chunks/PageTransitionProvider_DOjqMmXE.mjs';
+import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate, m as maybeRenderHead, p as addAttribute } from '../../chunks/astro/server_DQ3wOqi7.mjs';
+import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout__eg4UQ-w.mjs';
+import { P as Panel } from '../../chunks/MenuPanel_D5qA_Q7Y.mjs';
+import { B as Badge, M as MenuName } from '../../chunks/PageTransitionProvider_BM2AB-f-.mjs';
 import { ObjectId } from 'mongodb';
 import { g as getGalaxyById } from '../../chunks/galaxy_DZYFcC87.mjs';
 import { g as getProjectById } from '../../chunks/project_D5RoIw13.mjs';
@@ -9,24 +9,23 @@ import { jsxs, jsx, Fragment } from 'react/jsx-runtime';
 import * as React from 'react';
 import { useState, useEffect, memo, useRef, useMemo, useCallback } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { c as cn, E as ElectricBorder, t as truncateStr, S as SocialLink } from '../../chunks/SocialLink_C52hytjF.mjs';
-import { g as getStrictContext, S as Slot, C as Component } from '../../chunks/Tooltip_kjx78egp.mjs';
-import { u as useControlledState, B as BasePanel } from '../../chunks/accordion_CZvjMzi-.mjs';
-import { P as PageLikePanel } from '../../chunks/PageLikePanel_DUAdkjd6.mjs';
-import { g as getAnimationColors, B as Button } from '../../chunks/Button_4S4mWFnd.mjs';
-import { g as getIcon, s as socialLinks } from '../../chunks/Analytics_Day3AV4c.mjs';
-import { P as PanelFooter, F as Followings } from '../../chunks/PanelStat_CN7W-yJ-.mjs';
+import { c as cn, E as ElectricBorder, t as truncateStr, g as getIcon, s as socialLinks, b as SocialLink } from '../../chunks/Analytics__czfT5tp.mjs';
+import { g as getStrictContext, S as Slot, C as Component } from '../../chunks/Tooltip_Ps3GnPOv.mjs';
+import { u as useControlledState, B as BasePanel } from '../../chunks/accordion_CYby_79H.mjs';
+import { P as PageLikePanel } from '../../chunks/PageLikePanel_CPnXkG4M.mjs';
+import { g as getAnimationColors, B as Button } from '../../chunks/Button_B4HkqOQx.mjs';
+import { P as PanelFooter, F as Followings } from '../../chunks/PanelStat_Bnw-nWcb.mjs';
 import NumberFlow from '@number-flow/react';
 import * as RadixSlider from '@radix-ui/react-slider';
 import { Checkbox as Checkbox$1 } from 'radix-ui';
-import { A as AuthStar, T as TimeAgo } from '../../chunks/timeago-react_NgQ4CDfW.mjs';
+import { A as AuthStar, T as TimeAgo } from '../../chunks/timeago-react_BAL7OPS1.mjs';
 import { A as AvatarList, P as ProfileRating } from '../../chunks/AvatarList_QbL7je5L.mjs';
 import { useDrop, useDrag, DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import { a as authClient, g as getAuthUserById } from '../../chunks/auth_lyMRoh8h.mjs';
+import { a as authClient, g as getAuthUserById } from '../../chunks/auth_ipNrKfVc.mjs';
 import { a as ISSUE_EVENT_TYPES } from '../../chunks/issue_Dl_7o4gD.mjs';
-import { a as actions } from '../../chunks/virtual_D7oIjIGt.mjs';
-import { g as getStarById, a as getStarByUserId } from '../../chunks/star_0t9rBAfg.mjs';
+import { a as actions } from '../../chunks/virtual_2-AggwCs.mjs';
+import { g as getStarById, a as getStarByUserId } from '../../chunks/star_DT2Zxl9Y.mjs';
 import { P as PATCH_EVENT_TYPES, a as PATCH_KEYWORD } from '../../chunks/patch_D1PjuDPm.mjs';
 export { renderers } from '../../renderers.mjs';
 
@@ -1902,7 +1901,7 @@ const $$Astro = createAstro();
 const $$Roadmap = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Roadmap;
-  const whitepaperUrl = "https://docs.google.com/document/d/1Zls4ORhzHje0t6WPOlAw-IjzizotYrmwCPElaCHFPz8/edit?usp=sharing";
+  const whitepaperUrl = "https://bitcointalk.org/index.php?topic=5579945.new";
   const araFoundationGithub = {
     url: "https://github.com/ara-foundation",
     type: "github",

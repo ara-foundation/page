@@ -1,6 +1,6 @@
-import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_EFpbLn-l.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_CUYspLTV.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_DOjqMmXE.mjs';
+import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_DQ3wOqi7.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_C82t1Lp3.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_BM2AB-f-.mjs';
 /* empty css                                          */
 export { renderers } from '../renderers.mjs';
 
