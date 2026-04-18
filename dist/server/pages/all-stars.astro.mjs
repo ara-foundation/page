@@ -1,7 +1,7 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_C82t1Lp3.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_BM2AB-f-.mjs';
-import { B as BackButton } from '../chunks/BackButton_D90RMYov.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Bg6Ix_fh.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_CcvOYXE8.mjs';
+import { B as BackButton } from '../chunks/BackButton_BCkP4KG1.mjs';
 import { g as getGalaxyById, d as getAllGalaxies } from '../chunks/galaxy_DZYFcC87.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';

@@ -1,10 +1,10 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout__eg4UQ-w.mjs';
-import { M as MenuName } from '../../chunks/PageTransitionProvider_BM2AB-f-.mjs';
+import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_GKLbOgKM.mjs';
+import { M as MenuName } from '../../chunks/PageTransitionProvider_CcvOYXE8.mjs';
 import { ObjectId } from 'mongodb';
 import { g as getGalaxyById } from '../../chunks/galaxy_DZYFcC87.mjs';
 import { g as getProjectById } from '../../chunks/project_D5RoIw13.mjs';
-import { B as BackButton } from '../../chunks/BackButton_D90RMYov.mjs';
+import { B as BackButton } from '../../chunks/BackButton_BCkP4KG1.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Astro = createAstro();

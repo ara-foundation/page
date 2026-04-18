@@ -1,7 +1,7 @@
 import { j as createComponent, m as maybeRenderHead, x as renderComponent, r as renderTemplate, p as addAttribute } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_C82t1Lp3.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_BM2AB-f-.mjs';
-import { S as StarIcon, s as socialLinks } from '../chunks/Analytics__czfT5tp.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Bg6Ix_fh.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_CcvOYXE8.mjs';
+import { S as StarIcon, s as socialLinks } from '../chunks/Analytics_B_TfxMA7.mjs';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import 'clsx';
 import { motion } from 'motion/react';
