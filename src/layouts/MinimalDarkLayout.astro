@@ -11,7 +11,7 @@ interface Props {
 
 const { title = "Ara" } = Astro.props;
 
-const whitepaperUrl = "https://bitcointalk.org/index.php?topic=5579945.new";
+const whitepaperUrl = "/ara.pdf";
 
 const headerSocial: AraSocialLink[] = [
   socialLinks.github,
@@ -57,12 +57,7 @@ const headerSocial: AraSocialLink[] = [
             <a href="/aratalk" class="hover:text-neutral-900 dark:hover:text-neutral-200">
               Discuss
             </a>
-            <a
-              href={whitepaperUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="hover:text-neutral-900 dark:hover:text-neutral-200"
-            >
+            <a href={whitepaperUrl} class="hover:text-neutral-900 dark:hover:text-neutral-200">
               Whitepaper
             </a>
             <a href="/about" class="hover:text-neutral-900 dark:hover:text-neutral-200">
@@ -87,12 +82,7 @@ const headerSocial: AraSocialLink[] = [
           <a href="/aratalk" class="hover:text-neutral-900 dark:hover:text-neutral-200">
             Discuss
           </a>
-          <a
-            href={whitepaperUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-neutral-900 dark:hover:text-neutral-200"
-          >
+          <a href={whitepaperUrl} class="hover:text-neutral-900 dark:hover:text-neutral-200">
             Whitepaper
           </a>
           <a href="/about" class="hover:text-neutral-900 dark:hover:text-neutral-200">

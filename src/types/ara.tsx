@@ -198,7 +198,7 @@ export const socialLinks: Record<SocialLinkType, SocialLink> = {
     },
     // External links
     github: {
-        url: 'https://github.com/ara-foundation/app',
+        url: 'https://github.com/ara-foundation',
         type: 'github',
         category: 'external',
         useCustomIcon: false,

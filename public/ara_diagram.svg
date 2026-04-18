@@ -1,0 +1,93 @@
+<!--
+  Diagram geometry is mirrored in src/components/landing/AraIntersectionDiagram.tsx
+  for the interactive homepage version — keep both in sync when editing layout.
+-->
+<svg width="100%" viewBox="0 0 680 580" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Ara intersection</title>
+<desc>Solid connectors from Ara outward to the four corner ideas and software ownership / semantic pillars.</desc>
+
+<defs>
+  <marker id="arr" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="4.5" markerHeight="4.5" orient="auto">
+    <path d="M1 1.5 L6.5 4 L1 6.5" fill="none" stroke="context-stroke" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <style>
+    .hex       { fill: none; stroke: #C8C4BB; }
+    .node-bg   { fill: none; stroke: #1a1a18; }
+    .node-title{ font-family: Georgia, 'Times New Roman', serif; font-size: 13px; font-weight: bold; fill: #1a1a18; }
+    .node-sub  { font-family: Georgia, 'Times New Roman', serif; font-size: 11px; fill: #5a5a55; }
+    .pill-bg   { fill: #1a1a18; }
+    .pill-text { font-family: Georgia, 'Times New Roman', serif; font-size: 12px; fill: #FAF9F6; letter-spacing: 0.4px; }
+    .ara-bg    { fill: #1a1a18; }
+    .ara-text  { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: bold; fill: #FAF9F6; letter-spacing: 0.8px; }
+    .arr-line  { stroke: #1a1a18; fill: none; stroke-linecap: round; opacity: 0.88; }
+    .ck-bg     { fill: #FAF9F6; stroke: #1a1a18; stroke-width: 1; }
+    .ck-mark   { fill: none; stroke: #1a1a18; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    @media (prefers-color-scheme: dark) {
+      .hex       { stroke: #5c5c58; }
+      .node-bg   { fill: #2c2c2a; stroke: #9a9a92; }
+      .node-title{ fill: #F1EFE8; }
+      .node-sub  { fill: #B4B2A9; }
+      .pill-bg   { fill: #F1EFE8; }
+      .pill-text { fill: #1a1a18; }
+      .ara-bg    { fill: #F1EFE8; }
+      .ara-text  { fill: #1a1a18; }
+      .arr-line  { stroke: #F1EFE8; opacity: 0.9; }
+      .ck-bg     { fill: #2c2c2a; stroke: #F1EFE8; }
+      .ck-mark   { stroke: #F1EFE8; }
+    }
+  </style>
+</defs>
+
+<polygon class="hex" points="340,58 555,168 555,398 340,508 125,398 125,168" stroke-width="1.25" stroke-dasharray="6 4"/>
+
+<!-- Ara outward (marker at outer end); verticals on x=340 through Ara center -->
+<line class="arr-line" x1="317.6" y1="257.3" x2="266.8" y2="205" stroke-width="1" marker-end="url(#arr)"/>
+<line class="arr-line" x1="362.4" y1="257.3" x2="415" y2="205" stroke-width="1" marker-end="url(#arr)"/>
+<line class="arr-line" x1="322" y1="298.3" x2="267.4" y2="367.6" stroke-width="1" marker-end="url(#arr)"/>
+<line class="arr-line" x1="358" y1="298.3" x2="414.3" y2="367.6" stroke-width="1" marker-end="url(#arr)"/>
+<line class="arr-line" x1="340" y1="256" x2="340" y2="68" stroke-width="1" marker-end="url(#arr)"/>
+<line class="arr-line" x1="340" y1="300" x2="340" y2="512" stroke-width="1" marker-end="url(#arr)"/>
+
+<g>
+  <circle class="ck-bg" cx="272" cy="211" r="11"/>
+  <path class="ck-mark" d="M267 211 L271 215 L278 207"/>
+</g>
+<g>
+  <circle class="ck-bg" cx="408" cy="211" r="11"/>
+  <path class="ck-mark" d="M403 211 L407 215 L414 207"/>
+</g>
+<g>
+  <circle class="ck-bg" cx="272" cy="361" r="11"/>
+  <path class="ck-mark" d="M267 361 L271 365 L278 357"/>
+</g>
+<g>
+  <circle class="ck-bg" cx="408" cy="361" r="11"/>
+  <path class="ck-mark" d="M403 361 L407 365 L414 357"/>
+</g>
+
+<rect class="pill-bg" x="210" y="34" width="260" height="34" rx="17"/>
+<text class="pill-text" x="340" y="56" text-anchor="middle">software ownership</text>
+
+<rect class="pill-bg" x="210" y="512" width="260" height="34" rx="17"/>
+<text class="pill-text" x="340" y="534" text-anchor="middle">software semantic</text>
+
+<rect class="node-bg" x="52" y="132" width="196" height="58" rx="5" stroke-width="1"/>
+<text class="node-title" x="150" y="155" text-anchor="middle">Malleable systems</text>
+<text class="node-sub" x="150" y="176" text-anchor="middle">No platform to compete</text>
+
+<rect class="node-bg" x="432" y="132" width="196" height="58" rx="5" stroke-width="1"/>
+<text class="node-title" x="530" y="155" text-anchor="middle">Blockchain</text>
+<text class="node-sub" x="530" y="176" text-anchor="middle">Needs a real use case</text>
+
+<rect class="node-bg" x="52" y="390" width="196" height="58" rx="5" stroke-width="1"/>
+<text class="node-title" x="150" y="413" text-anchor="middle">Semantic web</text>
+<text class="node-sub" x="150" y="434" text-anchor="middle">Built for data, didn't work</text>
+
+<rect class="node-bg" x="432" y="390" width="196" height="58" rx="5" stroke-width="1"/>
+<text class="node-title" x="530" y="413" text-anchor="middle">Open source</text>
+<text class="node-sub" x="530" y="434" text-anchor="middle">Needs sustainability</text>
+
+<rect class="ara-bg" x="286" y="256" width="108" height="44" rx="5"/>
+<text class="ara-text" x="340" y="284" text-anchor="middle">Ara</text>
+</svg>

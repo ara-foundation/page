@@ -26,7 +26,7 @@ const Component: React.FC<Props> = ({ children, content, openDelay = 50, tooltip
   return (
     <TooltipProvider openDelay={openDelay}>
       <Tooltip>
-        <TooltipTrigger className={``}>
+        <TooltipTrigger asChild className="">
           {children}
         </TooltipTrigger>
         <TooltipContent
