@@ -46,30 +46,6 @@ function TooltipBody({ text }: { text: string }) {
   );
 }
 
-/** Circular “?” matching diagram checkmark circles — only used beside checkmarks. */
-function DiagramHelpMark() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" className="shrink-0" aria-hidden="true">
-      <circle
-        className="fill-[#FAF9F6] stroke-[#1a1a18] dark:fill-[#2c2c2a] dark:stroke-[#F1EFE8]"
-        cx="12"
-        cy="12"
-        r="11"
-        strokeWidth="1"
-      />
-      <text
-        x="12"
-        y="12"
-        className="fill-[#1a1a18] font-serif text-[13px] font-semibold dark:fill-[#F1EFE8]"
-        dominantBaseline="central"
-        textAnchor="middle"
-      >
-        ?
-      </text>
-    </svg>
-  );
-}
-
 function TermBadge({
   text,
   ariaLabel,
@@ -108,11 +84,13 @@ function CheckHelpBadge({
     <Tooltip sideOffset={10}>
       <TooltipTrigger asChild>
         <span
-          className="inline-flex cursor-help select-none items-center"
+          className="inline-flex translate-y-px cursor-help select-none items-center"
           tabIndex={0}
           aria-label={ariaLabel}
         >
-          <DiagramHelpMark />
+          <Badge variant="info" static className="px-1 py-0 text-[0.65rem] leading-none">
+            ?
+          </Badge>
         </span>
       </TooltipTrigger>
       <TooltipContent className={tooltipSurface} layout="preserve-aspect">

@@ -490,15 +490,25 @@ function TooltipTrigger({
   const handlePointerDown = React.useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
       onPointerDown?.(e);
+      const isTouchLikePointer = e.pointerType === 'touch' || e.pointerType === 'pen';
+      if (!isTouchLikePointer) return;
+
       if (currentTooltip?.id === id) {
         suppressNextFocusRef.current = true;
         hideImmediate();
         Promise.resolve().then(() => {
           suppressNextFocusRef.current = false;
         });
+        return;
       }
+
+      suppressNextFocusRef.current = true;
+      handleOpen();
+      Promise.resolve().then(() => {
+        suppressNextFocusRef.current = false;
+      });
     },
-    [onPointerDown, currentTooltip?.id, id, hideImmediate],
+    [onPointerDown, currentTooltip?.id, id, hideImmediate, handleOpen],
   );
 
   const handleMouseEnter = React.useCallback(
