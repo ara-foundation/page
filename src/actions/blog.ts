@@ -1,8 +1,7 @@
 import { defineAction } from 'astro:actions'
 import { z } from 'astro:schema'
 import { createBlog, getBlogById, getBlogsByAuthor, getAllBlogs } from '@/server-side/blog'
-import { getStarById, getStarByUserId } from '@/server-side/star'
-import { auth } from '@/lib/auth'
+import { getStarById } from '@/server-side/star'
 import type { Blog } from '@/types/blog'
 
 export const server = {
@@ -18,41 +17,8 @@ export const server = {
             projectTypes: z.array(z.string()).optional(),
             draft: z.boolean().default(false),
         }),
-        handler: async ({ starId, title, content, description, tags, projects, projectTypes, draft }, { request }): Promise<{ success: boolean; error?: string; blogId?: string }> => {
+        handler: async ({ starId, title, content, description, tags, projects, projectTypes, draft }): Promise<{ success: boolean; error?: string; blogId?: string }> => {
             try {
-                // Check authentication
-                const session = await auth.api.getSession({
-                    headers: request.headers,
-                });
-
-                if (!session || !session.user) {
-                    return {
-                        success: false,
-                        error: 'Authentication required. Please log in to create a blog post',
-                    };
-                }
-
-                const authenticatedUserId = session.user.id;
-
-                // Get the star for the authenticated user
-                const authenticatedUserStar = await getStarByUserId(authenticatedUserId);
-                if (!authenticatedUserStar || !authenticatedUserStar._id) {
-                    return {
-                        success: false,
-                        error: 'User profile not found. Please ensure your account is set up correctly.',
-                    };
-                }
-
-                // Verify that the authenticated user's star ID matches the starId parameter
-                const authenticatedStarId = String(authenticatedUserStar._id);
-                const requestedStarId = String(starId);
-                if (authenticatedStarId !== requestedStarId) {
-                    return {
-                        success: false,
-                        error: 'You can only create blog posts for your own account',
-                    };
-                }
-
                 // Get star to verify it exists
                 const star = await getStarById(starId);
                 if (!star) {
