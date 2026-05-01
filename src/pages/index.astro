@@ -1,6 +1,9 @@
 ---
 import MinimalDarkLayout from "@/layouts/MinimalDarkLayout.astro";
-import { companyInfo } from "@/types/ara";
+import SocialLink from "@/components/utilitified_decorations/SocialLink";
+import { companyInfo, socialLinks } from "@/types/ara";
+
+const joinSocial = [socialLinks.linkedin, socialLinks.twitter, socialLinks.bluesky];
 ---
 
 <MinimalDarkLayout title="Ara">
@@ -469,33 +472,15 @@ import { companyInfo } from "@/types/ara";
             Otherwise follow on
           </p>
           <div class="pilot-social">
-            <a
-              href="https://www.linkedin.com/in/ahmetson"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              class="pilot-social-link"
-            >
-              in
-            </a>
-            <a
-              href="https://x.com/MAhmetson"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X (Twitter)"
-              class="pilot-social-link"
-            >
-              X
-            </a>
-            <a
-              href="https://bsky.app/profile/ahmetson.bsky.social"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Bluesky"
-              class="pilot-social-link"
-            >
-              B
-            </a>
+            {
+              joinSocial.map((link) => (
+                <SocialLink
+                  client:load
+                  link={link}
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-neutral-100 hover:text-neutral-900 dark:border-white/10 dark:bg-white/[0.03] dark:text-neutral-400 dark:hover:border-white/20 dark:hover:bg-white/[0.06] dark:hover:text-white"
+                />
+              ))
+            }
           </div>
           <p class="pilot-signoff">With passion, Medet Ahmetson!</p>
         </div>
