@@ -1,15 +1,19 @@
 ---
 import MinimalDarkLayout from "@/layouts/MinimalDarkLayout.astro";
 import SocialLink from "@/components/utilitified_decorations/SocialLink";
+import Link from "@/components/custom-ui/Link";
 import { companyInfo, socialLinks } from "@/types/ara";
 
-const joinSocial = [socialLinks.linkedin, socialLinks.twitter, socialLinks.bluesky];
+const joinSocial = [
+  socialLinks.linkedin,
+  socialLinks.twitter,
+  socialLinks.bluesky,
+];
 ---
 
 <MinimalDarkLayout title="Ara">
   <div class="ara-main">
     <div class="hero">
-      <p class="hero-mono">ara.foundation</p>
       <h1 class="hero-slogan">
         <em>Creative workspace</em> 💻<br />
         on collective wisdom 🌐
@@ -19,6 +23,17 @@ const joinSocial = [socialLinks.linkedin, socialLinks.twitter, socialLinks.blues
         semantically. <br />It brings ownership over computer to users. Lead
         designer is
         <a href="https://ahmetson.com/">Medet Ahmetson</a>.
+      </p>
+      <div class="hero-cta">
+        <Link uri="https://cascadefund.org" asNewTab focus>
+          Visit CascadeFund
+        </Link>
+        or
+        <Link uri="/roadmap" className="hero-cta-link">view roadmap </Link>
+      </div>
+      <p class="hero-cta-subtext">
+        Are you an open-source maintainer? Join our CascadeFund to organize
+        open-source projects semantically.
       </p>
     </div>
 
@@ -460,29 +475,16 @@ const joinSocial = [socialLinks.linkedin, socialLinks.twitter, socialLinks.blues
           <div class="pilot-tag">Pilot version</div>
           <h2 class="pilot-heading">Join us.</h2>
           <p class="pilot-body">
-            Before making computers communicate and share user experience on
-            software use, we need to solve another problem: open-source is not
-            sustainable. Our current phase is solving that and seeks a grant.
-            For more information reach out to me on
-            <a href="mailto:medet@ara.foundation">medet@ara.foundation</a>.
+            Before making computers communicate for malleable software, we need
+            to solve another problem: open-source is not sustainable. Our
+            current phase is solving that.
+            <Link uri="https://cascadefund.org" focus asNewTab
+              >Visit CascadeFund</Link
+            >
           </p>
           <p class="pilot-body pilot-body-extra">
-            For technical readers to dig deeper check out our
-            <a href="/ara.pdf" target="_blank" rel="noopener">whitepaper</a>.
-            Otherwise follow on
+            CascadeFund is for those who care about open-source.
           </p>
-          <div class="pilot-social">
-            {
-              joinSocial.map((link) => (
-                <SocialLink
-                  client:load
-                  link={link}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-neutral-100 hover:text-neutral-900 dark:border-white/10 dark:bg-white/[0.03] dark:text-neutral-400 dark:hover:border-white/20 dark:hover:bg-white/[0.06] dark:hover:text-white"
-                />
-              ))
-            }
-          </div>
-          <p class="pilot-signoff">With passion, Medet Ahmetson!</p>
         </div>
         <div class="reveal reveal-d">
           <div class="pilot-roadmap">
@@ -717,6 +719,29 @@ const joinSocial = [socialLinks.linkedin, socialLinks.twitter, socialLinks.blues
     color: var(--text);
     text-decoration: underline;
     text-underline-offset: 3px;
+  }
+
+  .ara-main .hero-cta {
+    margin-top: 1.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.9rem 1.4rem;
+  }
+
+  .ara-main .hero-cta-link {
+    font-family: "DM Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .ara-main .hero-cta-subtext {
+    margin: 0.75rem 0 0;
+    max-width: 860px;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--dim);
   }
 
   .ara-main section {
