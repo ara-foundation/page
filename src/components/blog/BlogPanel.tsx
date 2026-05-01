@@ -2,12 +2,9 @@
 import React, { useEffect, useState } from 'react'
 import { BasePanel } from '@/components/panel'
 import Badge from '@/components/badge/Badge'
-import AuthStar from '@/components/auth/AuthStar'
 import TimeAgo from 'timeago-react'
 import type { Blog } from '@/types/blog'
-import type { AuthUser } from '@/types/auth'
 import { getStarById } from '@/client-side/star'
-import { getAuthUserById } from '@/client-side/auth'
 import { getIcon } from '@/components/icon'
 
 interface BlogPanelProps extends Blog {
@@ -16,7 +13,8 @@ interface BlogPanelProps extends Blog {
 
 const BlogPanel: React.FC<BlogPanelProps> = (blog) => {
     const [blogData, setBlogData] = useState<Blog>(blog)
-    const [authorUser, setAuthorUser] = useState<AuthUser | null>(null)
+    const [authorName, setAuthorName] = useState<string>('Unknown')
+    const [authorIcon, setAuthorIcon] = useState<string | undefined>(undefined)
     const [isLoadingAuthor, setIsLoadingAuthor] = useState(false)
 
     // Update blogData when blog prop changes
@@ -24,19 +22,14 @@ const BlogPanel: React.FC<BlogPanelProps> = (blog) => {
         setBlogData(blog)
     }, [blog._id, blog.title, blog.content, blog.author])
 
-    // Fetch author user: blog.author (starId) -> star -> star.userId -> authUser
+    // Fetch author details from star profile only
     useEffect(() => {
         if (blogData.author) {
             setIsLoadingAuthor(true)
-            // Step 1: Get star by starId (blog.author)
             getStarById(blogData.author)
-                .then(async (star) => {
-                    if (star && star.userId) {
-                        // Step 2: Get auth user by userId from star
-                        const authUser = await getAuthUserById(star.userId)
-                        if (authUser) {
-                            setAuthorUser(authUser)
-                        }
+                .then((star) => {
+                    if (star) {
+                        setAuthorName(star._id?.slice(0, 8) || 'Unknown')
                     }
                 })
                 .catch((error) => {
@@ -130,17 +123,13 @@ const BlogPanel: React.FC<BlogPanelProps> = (blog) => {
                                 ) : (
                                     <>
                                         <span className="text-sm">By</span>
-                                        <AuthStar
-                                            src={authorUser?.image}
-                                            className="w-8 h-8"
-                                            starId={blogData.author}
+                                        <img
+                                            src={authorIcon || 'https://api.dicebear.com/9.x/identicon/svg?seed=ara'}
+                                            alt={authorName}
+                                            className="w-8 h-8 rounded-full"
                                         />
                                         <span className="text-sm font-medium">
-                                            {authorUser?.name ||
-                                                authorUser?.username ||
-                                                authorUser?.displayUsername ||
-                                                authorUser?.email?.split('@')[0] ||
-                                                'Unknown'}
+                                            {authorName}
                                         </span>
                                     </>
                                 )}

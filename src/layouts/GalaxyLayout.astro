@@ -10,14 +10,9 @@ import { MenuItemProps } from "@/components/menu/MenuItem";
 import { GravityStarsBackground } from "@/components/animate-ui/components/backgrounds/gravity-stars";
 import { GradientBackground } from "@/components/animate-ui/components/backgrounds/gradient";
 import Galaxy from "@/components/Galaxy";
-import GalaxyLayoutBody from "@/components/all-stars/GalaxyLayoutBody";
-import Space from "@/components/all-stars/Space";
-import { UserStar as UserStarData } from "@/types/all-stars";
 import BrowseTracker from "@/components/navigation/BrowseTracker";
 import PageTransitionProvider from "@/components/navigation/PageTransitionProvider";
 import Analytics from "./Analytics.astro";
-import RandomSlotDistributor from "@/components/layout/RandomSlotDistributor";
-import type { Galaxy as GalaxyType } from "@/types/galaxy";
 
 interface Props {
   active?: string;
@@ -29,25 +24,12 @@ interface Props {
   minZoom?: number;
   maxZoom?: number;
   maxGalaxyContent?: number;
-  stars?: UserStarData[];
   projectGoal?: number;
   projectId?: string;
   projectX?: number;
   projectY?: number;
-  projectGalaxies?: Array<{
-    x: number;
-    y: number;
-    projectName: string;
-    projectId?: string;
-    galaxyData?: any;
-    tags?: string[];
-    leaderboardPosition?: number;
-  }>;
   isStatic?: boolean;
   disableGalaxyBackground?: boolean;
-  random?: boolean;
-  randomSlot?: string[];
-  randomItems?: GalaxyType[];
 }
 const {
   hideLinks,
@@ -58,14 +40,9 @@ const {
   minZoom,
   maxZoom,
   maxGalaxyContent,
-  stars,
   projectId,
-  projectGalaxies,
   isStatic = false,
   disableGalaxyBackground = true,
-  random = false,
-  randomSlot = ["left", "center", "right"],
-  randomItems = [],
 } = Astro.props;
 
 if (Astro.locals.session) {
@@ -144,19 +121,12 @@ if (Astro.locals.session) {
         <slot name="header-navbar" />
       </Header>
     </div>
-    <!-- Content Container Body - Will be transformed by GalaxyZoomWrapper -->
+    <!-- Content Container Body -->
     <div
       id="galaxy-space"
       class="z-2 relative border border-red-500/20 pointer-events-none"
       style="transform-origin: center center;"
     >
-      <Space
-        client:only="react"
-        users={stars || []}
-        className="z-10 pointer-events-auto"
-        galaxyId={projectId}
-        projectGalaxies={projectGalaxies}
-      />
       <section class="mt-6">
         <slot name="hero" class="pointer-events-auto" />
       </section>
@@ -164,42 +134,9 @@ if (Astro.locals.session) {
         centerPercents="3/5"
         className="mx-auto py-16 space-x-8 px-8 min-h-[calc(100vh-4rem)] pointer-events-auto"
       >
-        <slot name="left" class="mr-4" slot="left">
-          {
-            random && randomItems.length > 0 && (
-              <RandomSlotDistributor
-                client:only="react"
-                items={randomItems}
-                slots={randomSlot}
-                slotName="left"
-              />
-            )
-          }
-        </slot>
-        <slot name="center" class="mx-4" slot="center">
-          {
-            random && randomItems.length > 0 && (
-              <RandomSlotDistributor
-                client:only="react"
-                items={randomItems}
-                slots={randomSlot}
-                slotName="center"
-              />
-            )
-          }
-        </slot>
-        <slot name="right" class="ml-4" slot="right">
-          {
-            random && randomItems.length > 0 && (
-              <RandomSlotDistributor
-                client:only="react"
-                items={randomItems}
-                slots={randomSlot}
-                slotName="right"
-              />
-            )
-          }
-        </slot>
+        <slot name="left" class="mr-4" slot="left" />
+        <slot name="center" class="mx-4" slot="center" />
+        <slot name="right" class="ml-4" slot="right" />
       </ThreeColumnGrid>
     </div>
     <!-- Content Container Footer -->
@@ -208,16 +145,6 @@ if (Astro.locals.session) {
       <Footer />
     </div>
 
-    <!-- Meta UI -->
-    <GalaxyLayoutBody
-      client:only="react"
-      projectName={projectName}
-      initialZoom={initialZoom}
-      minZoom={minZoom}
-      maxZoom={maxZoom}
-      maxGalaxyContent={maxGalaxyContent}
-      projectId={projectId}
-    />
     <PageTransitionProvider client:load />
   </body>
 </html>

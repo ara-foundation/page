@@ -6,7 +6,6 @@ import { authClient } from '@/client-side/auth';
 import { createBlog } from '@/client-side/blog';
 import { getStarByUserId } from '@/client-side/star';
 import { cn } from '@/lib/utils';
-import type { AuthUser } from '@/types/auth';
 
 interface CreateBlogFormProps {
     authorId: string;
@@ -133,7 +132,7 @@ const CreateBlogForm: React.FC<CreateBlogFormProps> = ({ authorId, onSuccess, on
             return;
         }
 
-        const user = session?.user as AuthUser | undefined;
+        const user = session?.user as { id?: string; email?: string } | undefined;
         if (!user?.id || !user?.email) {
             alert('Please log in to create a blog post');
             return;

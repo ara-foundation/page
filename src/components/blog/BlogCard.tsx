@@ -5,11 +5,8 @@ import { getIcon } from '../icon'
 import type { Blog } from '@/types/blog'
 import Badge from '../badge/Badge'
 import PanelFooter from '../panel/PanelFooter'
-import AuthStar from '../auth/AuthStar'
 import TimeAgo from 'timeago-react'
-import type { AuthUser } from '@/types/auth'
 import { getStarById } from '@/client-side/star'
-import { getAuthUserById } from '@/client-side/auth'
 import { BasePanel } from '../panel'
 import { cn } from '@/lib/utils'
 
@@ -18,23 +15,17 @@ interface BlogCardProps extends Blog {
 }
 
 const BlogCard: React.FC<BlogCardProps> = (blog) => {
-    const [authorUser, setAuthorUser] = useState<AuthUser | null>(null)
+    const [authorName, setAuthorName] = useState<string>('Unknown')
     const [isLoadingAuthor, setIsLoadingAuthor] = useState(false)
 
-    // Fetch author user: blog.author (starId) -> star -> star.userId -> authUser
+    // Fetch author details from star profile only
     useEffect(() => {
         if (blog.author) {
-            console.log('fetching author user for blog', blog.author)
             setIsLoadingAuthor(true)
-            // Step 1: Get star by starId (blog.author)
             getStarById(blog.author)
-                .then(async (star) => {
-                    if (star && star.userId) {
-                        // Step 2: Get auth user by userId from star
-                        const authUser = await getAuthUserById(star.userId)
-                        if (authUser) {
-                            setAuthorUser(authUser)
-                        }
+                .then((star) => {
+                    if (star) {
+                        setAuthorName(star._id?.slice(0, 8) || 'Unknown')
                     }
                 })
                 .catch((error) => {
@@ -129,18 +120,13 @@ const BlogCard: React.FC<BlogCardProps> = (blog) => {
                             ) : (
                                 <>
                                     <span>By</span>
-                                    <AuthStar
-                                        src={authorUser?.image}
-                                        className="w-6 h-6"
-                                        starId={blog.author}
-                                        noLink={true}
+                                    <img
+                                        src={'https://api.dicebear.com/9.x/identicon/svg?seed=ara'}
+                                        alt={authorName}
+                                        className="w-6 h-6 rounded-full"
                                     />
                                     <span>
-                                        {authorUser?.name ||
-                                            authorUser?.username ||
-                                            authorUser?.displayUsername ||
-                                            authorUser?.email?.split('@')[0] ||
-                                            'Unknown'}
+                                        {authorName}
                                     </span>
                                 </>
                             )}

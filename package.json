@@ -13,14 +13,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "db:up": "./scripts/check-docker.sh && docker compose up -d",
-    "db:down": "./scripts/check-docker.sh && docker compose down",
-    "db:stats": "./scripts/check-docker.sh && docker compose ps",
-    "db:sync": "tsx scripts/sync-db.ts",
-    "db:setup-auth": "tsx scripts/setup-auth.ts",
-    "db:setup-stars": "tsx scripts/setup-stars.ts",
-    "db:fix-auth-indexes": "tsx scripts/fix-auth-indexes.ts"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.1",

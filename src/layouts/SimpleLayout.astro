@@ -8,12 +8,9 @@ import ThreeColumnGrid from "@/components/grid/ThreeColumnGrid.astro";
 import GridBackgrounded from "./GridBackgrounded";
 import { MenuItemProps } from "@/components/menu/MenuItem";
 import { GradientBackground } from "@/components/animate-ui/components/backgrounds/gradient";
-import { UserStar as UserStarData } from "@/types/all-stars";
 import BrowseTracker from "@/components/navigation/BrowseTracker";
 import PageTransitionProvider from "@/components/navigation/PageTransitionProvider";
 import Analytics from "./Analytics.astro";
-import RandomSlotDistributor from "@/components/layout/RandomSlotDistributor";
-import type { Galaxy as GalaxyType } from "@/types/galaxy";
 
 interface Props {
   active?: string;
@@ -21,29 +18,7 @@ interface Props {
   hideAuth?: boolean;
   additional?: MenuItemProps[];
   projectName?: string;
-  initialZoom?: number;
-  minZoom?: number;
-  maxZoom?: number;
-  maxGalaxyContent?: number;
-  stars?: UserStarData[];
-  projectGoal?: number;
-  projectId?: string;
-  projectX?: number;
-  projectY?: number;
-  projectGalaxies?: Array<{
-    x: number;
-    y: number;
-    projectName: string;
-    projectId?: string;
-    galaxyData?: any;
-    tags?: string[];
-    leaderboardPosition?: number;
-  }>;
   isStatic?: boolean;
-  disableGalaxyBackground?: boolean;
-  random?: boolean;
-  randomSlot?: string[];
-  randomItems?: GalaxyType[];
 }
 const {
   hideLinks,
@@ -51,9 +26,6 @@ const {
   additional,
   projectName,
   isStatic = false,
-  random = false,
-  randomSlot = ["left", "center", "right"],
-  randomItems = [],
 } = Astro.props;
 
 if (Astro.locals.session) {
@@ -120,42 +92,9 @@ if (Astro.locals.session) {
         centerPercents="3/5"
         className="mx-auto py-16 space-x-8 px-8 min-h-[calc(100vh-4rem)] pointer-events-auto"
       >
-        <slot name="left" class="mr-4" slot="left">
-          {
-            random && randomItems.length > 0 && (
-              <RandomSlotDistributor
-                client:only="react"
-                items={randomItems}
-                slots={randomSlot}
-                slotName="left"
-              />
-            )
-          }
-        </slot>
-        <slot name="center" class="mx-4" slot="center">
-          {
-            random && randomItems.length > 0 && (
-              <RandomSlotDistributor
-                client:only="react"
-                items={randomItems}
-                slots={randomSlot}
-                slotName="center"
-              />
-            )
-          }
-        </slot>
-        <slot name="right" class="ml-4" slot="right">
-          {
-            random && randomItems.length > 0 && (
-              <RandomSlotDistributor
-                client:only="react"
-                items={randomItems}
-                slots={randomSlot}
-                slotName="right"
-              />
-            )
-          }
-        </slot>
+        <slot name="left" class="mr-4" slot="left" />
+        <slot name="center" class="mx-4" slot="center" />
+        <slot name="right" class="ml-4" slot="right" />
       </ThreeColumnGrid>
     </div>
     <!-- Content Container Footer -->

@@ -1,5 +1,4 @@
 import React from 'react'
-import AuthStar from './auth/AuthStar'
 import AvatarList from './AvatarList'
 import ProfileRating from './rating/ProfileRating'
 import TimeAgo from 'timeago-react'
@@ -35,7 +34,11 @@ const ByAuthor: React.FC<ByAuthorProps> = ({
             <AvatarList contributors={author} showLastRating={true} />
           ) : (
             <>
-              <AuthStar src={author?.icon} uri={author?.uri} className='w-7! h-7!' />
+              <img
+                src={author?.icon || 'https://api.dicebear.com/9.x/identicon/svg?seed=ara'}
+                alt={author?.nickname || 'author'}
+                className='w-7 h-7 rounded-full'
+              />
               {author.rating && <ProfileRating {...author.rating} />}
             </>
           )}

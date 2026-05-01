@@ -1,6 +1,9 @@
 import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
 import { useEffect, useRef } from 'react';
-import { GALAXY_ZOOM_EVENTS } from '@/types/galaxy';
+
+const GALAXY_ZOOM_EVENTS = {
+  ZOOM_CHANGE: 'galaxy-zoom-change'
+} as const;
 
 const vertexShader = `
 attribute vec2 uv;
