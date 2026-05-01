@@ -1,7 +1,7 @@
 import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$GalaxyLayout } from '../../chunks/GalaxyLayout_Bg6Ix_fh.mjs';
-import { M as MenuName } from '../../chunks/PageTransitionProvider_CcvOYXE8.mjs';
-import { B as BackButton } from '../../chunks/BackButton_BCkP4KG1.mjs';
+import { $ as $$GalaxyLayout } from '../../chunks/GalaxyLayout_Ct6HZhHl.mjs';
+import { M as MenuName } from '../../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
+import { B as BackButton } from '../../chunks/BackButton_CrfcobeW.mjs';
 import { a as mockUserStars } from '../../chunks/mock-data_BUp0vQNE.mjs';
 export { renderers } from '../../renderers.mjs';
 
@@ -16,9 +16,9 @@ const $$404 = createComponent(($$result, $$props, $$slots) => {
 </h1> <p class="text-xl md:text-3xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
 The user you're looking for doesn't exist or has been removed.
 </p> </div>`, "left": ($$result2) => renderTemplate`${renderComponent($$result2, "BackButton", BackButton, { "slot": "left", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/custom-ui/BackButton", "client:component-export": "default" })}` })}`;
-}, "/home/medet/ara-app/src/pages/star/404.astro", void 0);
+}, "/home/medet/ara/page/src/pages/star/404.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/star/404.astro";
+const $$file = "/home/medet/ara/page/src/pages/star/404.astro";
 const $$url = "/star/404";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

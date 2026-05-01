@@ -1,6 +1,6 @@
 import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Bg6Ix_fh.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_CcvOYXE8.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Ct6HZhHl.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
 /* empty css                                          */
 export { renderers } from '../renderers.mjs';
 
@@ -121,9 +121,9 @@ We believe privacy should be simple and transparent. So here's the deal,
 </p> <p class="text-sm opacity-70 mt-4 text-right max-w-2xl mx-auto">
 Written by Medet Ahmetson.
 </p> </div> </section>` })} `;
-}, "/home/medet/ara-app/src/pages/privacy-policy.astro", void 0);
+}, "/home/medet/ara/page/src/pages/privacy-policy.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/privacy-policy.astro";
+const $$file = "/home/medet/ara/page/src/pages/privacy-policy.astro";
 const $$url = "/privacy-policy";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

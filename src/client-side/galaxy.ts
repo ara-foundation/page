@@ -72,40 +72,6 @@ export async function createGalaxyFromGit(params: RepositoryAnalysis, readmeCont
 }
 
 /**
- * Create blockchain transaction for galaxy
- */
-export async function createGalaxyBlockchainTransaction(
-    galaxyId: string
-): Promise<{ success: boolean; data?: any; error?: string }> {
-    try {
-        const session = await authClient.getSession();
-        const user = session?.data?.user as AuthUser | undefined;
-        if (!user?.id) {
-            return { success: false, error: 'User not logged in' };
-        }
-        console.log(`Creating blockchain transaction for galaxy ${galaxyId} by user ${user.id}`);
-        const result = await actions.createGalaxyBlockchainTransaction({
-            galaxyId,
-            userId: user.id,
-        });
-
-        if (result.data?.success && result.data.data) {
-            return {
-                success: true,
-                data: result.data.data,
-            };
-        }
-        return {
-            success: false,
-            error: result.data?.error || 'Failed to create blockchain transaction',
-        };
-    } catch (error) {
-        console.error('Error creating blockchain transaction:', error);
-        return { success: false, error: 'An error occurred' };
-    }
-}
-
-/**
  * Update project README content
  */
 export async function updateProjectReadme(

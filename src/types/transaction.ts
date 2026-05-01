@@ -1,10 +1,12 @@
-import type { Donation } from './crypto-sockets';
 import type { ReceiverInfoProps } from '@/components/maintainer/ReceiverInfo';
 
 // Re-export ReceiverInfoProps for convenience
 export type { ReceiverInfoProps };
 
-export interface Transaction extends Donation {
+export interface Transaction {
+  _id?: string;
+  initiateTxId?: string;
+  hyperpayTxId?: string;
   // User info who made the donation
   user: {
     nickname: string;
@@ -23,10 +25,10 @@ export interface Transaction extends Donation {
     stars: number;
   };
   // Additional fields for display
-  blockchainTx?: string; // Maps to initiateTxId or hyperpayTxId
+  blockchainTx?: string;
   receipt?: string;
-  amount: number; // Maps to spendUsdAmount
-  date: number; // Maps to createdAt (Unix timestamp in milliseconds)
-  memo?: string; // Already in Donation, but kept for compatibility
+  amount: number;
+  date: number;
+  memo?: string;
 }
 

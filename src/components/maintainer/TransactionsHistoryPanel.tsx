@@ -122,8 +122,8 @@ const TransactionsHistoryPanel: React.FC<TransactionsHistoryPanelProps> = ({
                 </td>
               </tr>
             ) : (
-              filteredTransactions.map((transaction) => (
-                <tr key={transaction._id || transaction.initiateTxId} className="border-b border-gray-100 hover:bg-gray-50 dark:hover:bg-teal-900/40">
+              filteredTransactions.map((transaction, index) => (
+                <tr key={transaction._id || transaction.initiateTxId || `tx-${index}`} className="border-b border-gray-100 hover:bg-gray-50 dark:hover:bg-teal-900/40">
                   {/* ID Column */}
                   <td className="py-4 px-2">
                     <div className="flex items-center gap-1 text-sm text-gray-800 dark:text-gray-400 pl-3">
@@ -135,7 +135,7 @@ const TransactionsHistoryPanel: React.FC<TransactionsHistoryPanelProps> = ({
                   <td className="py-4 px-2">
                     <div className="flex items-center gap-2 text-sm">
                       <Link
-                        uri={getTransactionUrl(transaction.initiateTxId)}
+                        uri={getTransactionUrl(transaction.initiateTxId || '')}
                         asNewTab={true}
                         className="text-blue-600 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
                       >
@@ -143,7 +143,7 @@ const TransactionsHistoryPanel: React.FC<TransactionsHistoryPanelProps> = ({
                       </Link>
                       <span className="text-gray-400 dark:text-gray-600">|</span>
                       <Link
-                        uri={getTransactionUrl(transaction.hyperpayTxId)}
+                        uri={getTransactionUrl(transaction.hyperpayTxId || '')}
                         asNewTab={true}
                         className="text-blue-600 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
                       >
@@ -289,20 +289,20 @@ const TransactionsHistoryPanel: React.FC<TransactionsHistoryPanelProps> = ({
                                   <Button
                                     variant="secondary"
                                     size="sm"
-                                    onClick={() => handleCompleteMemo(transaction._id || transaction.initiateTxId)}
-                                    disabled={completedMemos.has(transaction._id || transaction.initiateTxId)}
+                                    onClick={() => handleCompleteMemo(transaction._id || transaction.initiateTxId || `tx-${index}`)}
+                                    disabled={completedMemos.has(transaction._id || transaction.initiateTxId || `tx-${index}`)}
                                   >
-                                    {completedMemos.has(transaction._id || transaction.initiateTxId) ? 'Completed' : 'Complete'}
+                                    {completedMemos.has(transaction._id || transaction.initiateTxId || `tx-${index}`) ? 'Completed' : 'Complete'}
                                   </Button>
                                   <Button
                                     variant="primary"
                                     size="sm"
-                                    onClick={() => handleLikeMemo(transaction._id || transaction.initiateTxId)}
-                                    disabled={likedMemos.has(transaction._id || transaction.initiateTxId)}
+                                    onClick={() => handleLikeMemo(transaction._id || transaction.initiateTxId || `tx-${index}`)}
+                                    disabled={likedMemos.has(transaction._id || transaction.initiateTxId || `tx-${index}`)}
                                     className="flex items-center gap-1"
                                   >
                                     {getIcon({ iconType: 'likes', className: 'w-4 h-4' })}
-                                    {likedMemos.has(transaction._id || transaction.initiateTxId) ? 'Liked' : 'Like'}
+                                    {likedMemos.has(transaction._id || transaction.initiateTxId || `tx-${index}`) ? 'Liked' : 'Like'}
                                   </Button>
                                 </div>
                               </Popover.Popup>

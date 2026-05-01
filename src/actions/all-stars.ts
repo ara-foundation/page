@@ -1,17 +1,12 @@
 import { defineAction } from 'astro:actions'
 import { z } from 'astro:schema'
-import { Wallet } from 'ethers'
 import { getAllStarStats, checkSolarForgeByIssue, updateIssueStars, getGalaxySpace, getUserStar as getUserStarFromSpace, upsertSpaceUserStar, updateUserStarPosition as updateUserStarPositionDb, createSpaceTracer } from '@/server-side/all-stars'
 import { getAuthUserById } from '@/server-side/auth'
 import { getIssueById, updateIssueSolarForgeTxid } from '@/server-side/issue'
 import { updateStarStars, getStarById } from '@/server-side/star'
-import { getGalaxyById } from '@/server-side/galaxy'
 import { getVersionById } from '@/server-side/roadmap'
 import type { AllStarStats, SolarForgeByIssueResult, SolarForgeByVersionResult, SolarUser } from '@/types/all-stars'
 import { solarForge } from '@/types/all-stars'
-import { send } from '@ara-web/crypto-sockets'
-import type { RequestSolarForge, ReplySolarForge, ReplyError, RequestSpaceCoord, ReplyTx } from '@ara-web/crypto-sockets'
-import type { SerializedSolarForge, SerializedPosition } from '@ara-web/crypto-sockets'
 
 // Shared function for solar forging an issue (used by both action and solarForgeByVersion)
 async function solarForgeByIssue(issueId: string): Promise<SolarForgeByIssueResult> {
@@ -89,28 +84,12 @@ async function solarForgeByIssue(issueId: string): Promise<SolarForgeByIssueResu
         // Update users: increment stars for each stakeholder
         const solarUsers: SolarUser[] = []
         const userIds: string[] = []
-        const userAddresses: string[] = []
 
         for (const [userId, data] of userMap.entries()) {
             const userUpdated = await updateStarStars(userId, data.stars)
             if (userUpdated) {
                 const user = await getStarById(userId)
                 if (!user) {
-                    continue
-                }
-
-                // Derive Ethereum address from demoPrivateKey
-                if (!user.demoPrivateKey) {
-                    console.error(`User ${userId} missing demoPrivateKey, skipping blockchain solar forge`)
-                    continue
-                }
-
-                try {
-                    const wallet = new Wallet(user.demoPrivateKey)
-                    const address = wallet.address
-                    userAddresses.push(address)
-                } catch (error) {
-                    console.error(`Error deriving address for user ${userId}:`, error)
                     continue
                 }
 
@@ -149,77 +128,14 @@ async function solarForgeByIssue(issueId: string): Promise<SolarForgeByIssueResu
             }
         }
 
-        // Check if we have addresses for all stakeholders
-        if (userAddresses.length === 0) {
-            return {
-                users: [],
-                solarForgeId: '',
-                error: 'No valid user addresses found for blockchain solar forge',
-            }
+        const solarForgeId = `local-solarforge-${issueId}-${Date.now()}`
+        const updated = await updateIssueSolarForgeTxid(issueId, solarForgeId)
+        if (!updated) {
+            console.error('Failed to update issue with solarForgeTxid')
         }
-
-        // Get galaxy to get blockchainId
-        const galaxy = await getGalaxyById(issue.galaxy)
-        if (!galaxy || !galaxy.blockchainId) {
-            return {
-                users: [],
-                solarForgeId: '',
-                error: 'Can not solar forge issue, galaxy id invalid or missing blockchainId',
-            }
-        }
-
-        // Create SerializedSolarForge for blockchain
-        const serializedSolarForge: SerializedSolarForge = {
-            _id: issueId,
-            solarForgeType: 'issue',
-            issueId: issueId,
-            users: userAddresses,
-            stars: totalStars,
-        }
-
-        // Call blockchain gateway solarForge
-        try {
-            const request: RequestSolarForge = {
-                cmd: "solarForge",
-                params: {
-                    galaxyId: galaxy.blockchainId,
-                    models: [serializedSolarForge],
-                }
-            }
-
-            const reply = await send(request)
-
-            if ('error' in reply) {
-                const errorReply = reply as ReplyError
-                console.error('Blockchain solar forge error:', errorReply.error)
-                return {
-                    users: [],
-                    solarForgeId: '',
-                    error: `Crypto-sockets error while solar forging issue: ${errorReply.error}`,
-                }
-            }
-
-            const successReply = reply as ReplySolarForge
-            const txHash = successReply.params.txHash
-
-            // Update issue with solarForgeTxid
-            const updated = await updateIssueSolarForgeTxid(issueId, txHash)
-            if (!updated) {
-                console.error('Failed to update issue with solarForgeTxid')
-                // Still return success since blockchain transaction succeeded
-            }
-
-            return {
-                users: solarUsers,
-                solarForgeId: txHash,
-            }
-        } catch (error) {
-            console.error('Error calling blockchain gateway for solar forge:', error)
-            return {
-                users: [],
-                solarForgeId: '',
-                error: `Failed to call blockchain gateway: ${error instanceof Error ? error.message : String(error)}`,
-            }
+        return {
+            users: solarUsers,
+            solarForgeId,
         }
 
     } catch (error) {
@@ -283,77 +199,21 @@ export const server = {
         }),
         handler: async ({ galaxyId, userId, x, y }) => {
             try {
-                // Get user to derive Ethereum address
                 const user = await getStarById(userId)
                 if (!user) {
                     console.error(`User ${userId} not found`)
                     return { success: false }
                 }
-
-                if (!user.demoPrivateKey) {
-                    console.error(`User ${userId} missing demoPrivateKey, cannot update blockchain position`)
-                    return { success: false }
-                }
-
-                // Derive Ethereum address from demoPrivateKey
-                let userAddress: string
-                try {
-                    const wallet = new Wallet(user.demoPrivateKey)
-                    userAddress = wallet.address
-                } catch (error) {
-                    console.error(`Error deriving address for user ${userId}:`, error)
-                    return { success: false }
-                }
-
-                // Get galaxy to get blockchainId
-                const galaxy = await getGalaxyById(galaxyId)
-                if (!galaxy || !galaxy.blockchainId) {
-                    console.error(`Galaxy ${galaxyId} not found or missing blockchainId`)
-                    return { success: false }
-                }
-
-                // Call blockchain gateway spaceCoord
-                try {
-                    const position: SerializedPosition = {
-                        userId: userAddress,
-                        x: x,
-                        y: y,
+                const txId = `local-spacecoord-${galaxyId}-${userId}-${Date.now()}`
+                const success = await updateUserStarPositionDb({ galaxyId, userId, x, y })
+                if (success) {
+                    try {
+                        await createSpaceTracer({ galaxyId, userId, x, y, txId })
+                    } catch (error) {
+                        console.error('Error creating space tracer:', error)
                     }
-
-                    const request: RequestSpaceCoord = {
-                        cmd: "spaceCoord",
-                        params: {
-                            galaxyId: galaxy.blockchainId,
-                            position: position,
-                        }
-                    }
-
-                    const reply = await send(request)
-
-                    if ('error' in reply) {
-                        const errorReply = reply as ReplyError
-                        console.error('Blockchain spaceCoord error:', errorReply.error)
-                        return { success: false }
-                    }
-
-                    const successReply = reply as ReplyTx
-                    const txId = successReply.params.tx
-                    // Blockchain transaction succeeded, now update database
-                    const success = await updateUserStarPositionDb({ galaxyId, userId, x, y })
-                    if (success) {
-                        // Create space-tracer record
-                        try {
-                            await createSpaceTracer({ galaxyId, userId, x, y, txId })
-                        } catch (error) {
-                            console.error('Error creating space tracer:', error)
-                            // Don't fail the whole operation if tracer creation fails
-                        }
-                    }
-                    return { success }
-                } catch (error) {
-                    console.error('Error calling blockchain gateway for spaceCoord:', error)
-                    return { success: false }
                 }
+                return { success }
             } catch (error) {
                 console.error('Error in updateUserStarPosition:', error)
                 return { success: false }

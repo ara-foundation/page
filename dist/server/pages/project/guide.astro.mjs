@@ -1,22 +1,21 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_GKLbOgKM.mjs';
-import { R as RoundedSize, S as ShadowSize, b as bgClassNames, G as GridStyle, M as MenuName } from '../../chunks/PageTransitionProvider_CcvOYXE8.mjs';
+import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_oVHGBu2R.mjs';
+import { R as RoundedSize, S as ShadowSize, b as bgClassNames, B as Badge, G as GridStyle, M as MenuName } from '../../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
 import { ObjectId } from 'mongodb';
-import { g as getGalaxyById } from '../../chunks/galaxy_DZYFcC87.mjs';
+import { g as getGalaxyById } from '../../chunks/galaxy_B3y4ZFqy.mjs';
 import { g as getProjectById } from '../../chunks/project_D5RoIw13.mjs';
-import { P as Panel } from '../../chunks/MenuPanel_-mC6vmPr.mjs';
+import { P as Panel } from '../../chunks/MenuPanel_Po3IDxoi.mjs';
 import { jsx, jsxs } from 'react/jsx-runtime';
 import { useState, useEffect } from 'react';
-import { P as PageLikePanel } from '../../chunks/PageLikePanel_BZgZBCVX.mjs';
-import { B as Badge } from '../../chunks/Badge_B8Esv6UX.mjs';
+import { P as PageLikePanel } from '../../chunks/PageLikePanel_BLKQx34n.mjs';
 import { motion } from 'motion/react';
 import * as LabelPrimitive from '@radix-ui/react-label';
-import { a as cn, g as getIcon } from '../../chunks/Analytics_B_TfxMA7.mjs';
-import { C as Component } from '../../chunks/Tooltip_BRAqOQb0.mjs';
-import { B as Button } from '../../chunks/Button_BDHlQYsK.mjs';
+import { a as cn, g as getIcon } from '../../chunks/Analytics_BsLGyV9d.mjs';
+import { C as Component } from '../../chunks/Tooltip_D9D6Q7V9.mjs';
+import { B as Button } from '../../chunks/Button_DJROADoE.mjs';
 import { useHotkeys } from 'react-hotkeys-hook';
-import { K as Kbd } from '../../chunks/Kbd_Cad6zwzT.mjs';
-import { L as List } from '../../chunks/List_DYYdwlC6.mjs';
+import { K as Kbd } from '../../chunks/Kbd_D88lTA-j.mjs';
+import { L as List } from '../../chunks/List_BxShK1LC.mjs';
 import { H as Hyperspeed } from '../../chunks/Hyperspeed_DO-OOdAF.mjs';
 export { renderers } from '../../renderers.mjs';
 
@@ -389,9 +388,9 @@ const $$Guide = createComponent(async ($$result, $$props, $$slots) => {
       sticks: 16766696
     }
   }, "slot": "background", "className": "fixed h-screen w-screen z-2 pointer-events-none opacity-40", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/Hyperspeed", "client:component-export": "default" })}`, "center": async ($$result2) => renderTemplate`${renderComponent($$result2, "QuestPanel", TasksSection, { "slot": "center", "title": "Automatic Guide", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/quest/QuestPanel", "client:component-export": "default" })}`, "left": async ($$result2) => renderTemplate`${renderComponent($$result2, "MenuPanel", Panel, { "slot": "left", "activeMenuItem": "guide", "galaxy": galaxy, "projectIcon": project.socialLinks?.find((link) => link.type === "project")?.uri, "projectName": galaxy.name, "starCount": galaxy.stars })}` })}`;
-}, "/home/medet/ara-app/src/pages/project/guide.astro", void 0);
+}, "/home/medet/ara/page/src/pages/project/guide.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/project/guide.astro";
+const $$file = "/home/medet/ara/page/src/pages/project/guide.astro";
 const $$url = "/project/guide";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

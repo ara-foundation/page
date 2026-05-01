@@ -1,15 +1,15 @@
 import { j as createComponent, x as renderComponent, r as renderTemplate } from '../../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_GKLbOgKM.mjs';
-import { M as MenuName } from '../../chunks/PageTransitionProvider_CcvOYXE8.mjs';
+import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_oVHGBu2R.mjs';
+import { M as MenuName } from '../../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
 import { jsx, jsxs } from 'react/jsx-runtime';
 import { useState } from 'react';
-import { P as PageLikePanel } from '../../chunks/PageLikePanel_BZgZBCVX.mjs';
+import { P as PageLikePanel } from '../../chunks/PageLikePanel_BLKQx34n.mjs';
 import NumberFlow from '@number-flow/react';
-import { C as Component } from '../../chunks/Tooltip_BRAqOQb0.mjs';
+import { C as Component } from '../../chunks/Tooltip_D9D6Q7V9.mjs';
 import { E as Editable } from '../../chunks/Editable_-ZF1-7I4.mjs';
 import { Popover } from '@base-ui-components/react/popover';
-import { g as getIcon } from '../../chunks/Analytics_B_TfxMA7.mjs';
-import { B as BackButton } from '../../chunks/BackButton_BCkP4KG1.mjs';
+import { g as getIcon } from '../../chunks/Analytics_BsLGyV9d.mjs';
+import { B as BackButton } from '../../chunks/BackButton_CrfcobeW.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const Label = ({ children }) => {
@@ -156,9 +156,9 @@ const UserBalancePanel = () => {
 
 const $$Balance = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "Layout", $$PanelViewLayout, { "hideLinks": Object.keys(MenuName) }, { "center": ($$result2) => renderTemplate`${renderComponent($$result2, "UserBalancePanel", UserBalancePanel, { "slot": "center" })}`, "left": ($$result2) => renderTemplate`${renderComponent($$result2, "BackButton", BackButton, { "slot": "left", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/custom-ui/BackButton", "client:component-export": "default" })}` })}`;
-}, "/home/medet/ara-app/src/pages/star/balance.astro", void 0);
+}, "/home/medet/ara/page/src/pages/star/balance.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/star/balance.astro";
+const $$file = "/home/medet/ara/page/src/pages/star/balance.astro";
 const $$url = "/star/balance";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

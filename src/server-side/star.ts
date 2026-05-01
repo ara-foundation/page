@@ -1,5 +1,4 @@
 import { ObjectId } from 'mongodb'
-import { Wallet } from 'ethers'
 import { getCollection } from './db'
 import type { Star } from '@/types/star'
 
@@ -15,7 +14,6 @@ function starModelToStar(model: StarModel | null): Star | null {
         sunshines: model.sunshines,
         stars: model.stars,
         balance: model.balance,
-        demoPrivateKey: model.demoPrivateKey,
         userId: model.userId,
     }
 }
@@ -26,7 +24,6 @@ function starToStarModel(star: Star): StarModel {
         sunshines: star.sunshines,
         stars: star.stars,
         balance: star.balance,
-        demoPrivateKey: star.demoPrivateKey,
         userId: star.userId,
     }
 }
@@ -118,12 +115,10 @@ export async function createStars(stars: Star[]): Promise<string[]> {
 export async function createStarByUserId(userId: string): Promise<string> {
     try {
         // Create new star if doesn't exist
-        const wallet = Wallet.createRandom()
         const newStar: Star = {
             sunshines: 100,
             stars: 0,
             balance: 0,
-            demoPrivateKey: wallet.privateKey,
             userId: userId,
         }
         const insertedId = await createStar(newStar)

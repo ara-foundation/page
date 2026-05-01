@@ -31,9 +31,9 @@ const $$ = createComponent(($$result, $$props, $$slots) => {
   } else {
     return Astro2.redirect("/star/404?method=blogSlugNotFound");
   }
-}, "/home/medet/ara-app/src/pages/blog/[...slug].astro", void 0);
+}, "/home/medet/ara/page/src/pages/blog/[...slug].astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/blog/[...slug].astro";
+const $$file = "/home/medet/ara/page/src/pages/blog/[...slug].astro";
 const $$url = "/blog/[...slug]";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

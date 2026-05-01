@@ -3,7 +3,6 @@ import { server as starActions } from './star'
 import { server as issueActions } from './issue'
 import { server as galaxyActions } from './galaxy'
 import { server as roadmapActions } from './roadmap'
-import { server as blockchainGatewayActions } from './crypto-sockets'
 import { server as personalizationActions } from './personalization'
 import { server as blogActions } from './blog'
 import { server as authActions } from './auth'
@@ -14,7 +13,6 @@ export const server = {
     ...issueActions,
     ...galaxyActions,
     ...roadmapActions,
-    ...blockchainGatewayActions,
     ...personalizationActions,
     ...blogActions,
     ...authActions,

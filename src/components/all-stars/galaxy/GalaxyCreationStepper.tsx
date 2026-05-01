@@ -1,10 +1,9 @@
-import React, { useState, useEffect, use } from 'react';
+import React, { useState, useEffect } from 'react';
 import Stepper from '../../Stepper';
 import GitUrlInputPanel from '@/components/all-stars/GitUrlInputPanel';
 import RepositoryAnalysisPanel from '@/components/all-stars/RepositoryAnalysisPanel';
 import GalaxyCreationPanel from '@/components/all-stars/GalaxyCreationPanel';
 import GalaxyAgreementDialog from '@/components/all-stars/GalaxyAgreementDialog';
-import BlockchainTransactionPanel from '@/components/all-stars/BlockchainTransactionPanel';
 import { fetchReadmeContent, validateGitUrl } from '@/lib/git-repository';
 import { Galaxy } from '@/types/galaxy';
 import { RepositoryAnalysis } from '@/types/git-repository';
@@ -67,15 +66,10 @@ const GalaxyCreationStepper: React.FC<AddingStepperProps> = ({ onCancel, onCompl
         setAutoAdvanceStep(3);
     };
 
-    const handleBlockchainComplete = () => {
-        // Trigger auto-advance
-        setAutoAdvanceStep(5);
-    };
-
     const handlePlacement = () => {
         setGalaxyPlaced(true);
         // Trigger auto-advance
-        setAutoAdvanceStep(6);
+        setAutoAdvanceStep(5);
     };
 
     // Validate before allowing step navigation
@@ -98,8 +92,8 @@ const GalaxyCreationStepper: React.FC<AddingStepperProps> = ({ onCancel, onCompl
                     setAgreementAccepted(true);
                 }
             } else
-                // If trying to advance from step 6 (placement), check if placed
-                if (currentStepNum === 6 && nextStepNum === 7) {
+                // If trying to advance from step 5 (placement), check if placed
+                if (currentStepNum === 5 && nextStepNum === 6) {
                     if (!galaxyPlaced) {
                         // Trigger placement
                         handlePlacement();
@@ -186,22 +180,10 @@ const GalaxyCreationStepper: React.FC<AddingStepperProps> = ({ onCancel, onCompl
                 galaxyName={galaxyData?.name || 'Galaxy'}
             />
 
-            {/* Step 5: Blockchain Transaction (auto-advances) */}
-            <div>
-                <BlockchainTransactionPanel
-                    galaxyId={galaxyData?._id || ''}
-                    onComplete={handleBlockchainComplete}
-                    onError={(error) => {
-                        alert(error);
-                        handleCancel();
-                    }}
-                />
-            </div>
-
-            {/* Step 6: Placement */}
+            {/* Step 5: Placement */}
             <GalaxyPlacementPanel galaxyName={galaxyData?.name || 'Galaxy'} isPlaced={galaxyPlaced} />
 
-            {/* Step 7: Complete */}
+            {/* Step 6: Complete */}
             <PageLikePanel
                 icon="check"
                 titleCenter={true}

@@ -11,8 +11,6 @@ export interface Galaxy {
     x: number;
     y: number;
     tags?: string[];
-    blockchainId?: string; // 0x EVM address
-    blockchainTx?: string;
 }
 
 export const GALAXY_ZOOM_EVENTS = {

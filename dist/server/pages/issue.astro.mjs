@@ -1,24 +1,23 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$PanelViewLayout } from '../chunks/PanelViewLayout_GKLbOgKM.mjs';
-import { B as BackButton } from '../chunks/BackButton_BCkP4KG1.mjs';
+import { $ as $$PanelViewLayout } from '../chunks/PanelViewLayout_oVHGBu2R.mjs';
+import { B as BackButton } from '../chunks/BackButton_CrfcobeW.mjs';
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import { useState, useEffect } from 'react';
-import { B as BasePanel } from '../chunks/accordion_CxbLWJxy.mjs';
-import '../chunks/ripple_B1rJ34Ke.mjs';
+import { B as BasePanel } from '../chunks/accordion_FJb782-q.mjs';
+import '../chunks/ripple_B-7jWwot.mjs';
 import 'clsx';
 import { TheaterIcon } from 'lucide-react';
-import { a as cn, g as getIcon, C as Component } from '../chunks/Analytics_B_TfxMA7.mjs';
-import { A as Accordion, a as AccordionItem, b as AccordionTrigger, c as AccordionContent, P as PanelAction } from '../chunks/PanelAction_ColBy7mv.mjs';
-import { B as Badge } from '../chunks/Badge_B8Esv6UX.mjs';
-import { B as Button } from '../chunks/Button_BDHlQYsK.mjs';
+import { a as cn, g as getIcon, C as Component } from '../chunks/Analytics_BsLGyV9d.mjs';
+import { A as Accordion, a as AccordionItem, b as AccordionTrigger, c as AccordionContent, P as PanelAction } from '../chunks/PanelAction_B68CFDAk.mjs';
+import { a as BorderSize, B as Badge, M as MenuName } from '../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
+import { B as Button } from '../chunks/Button_DJROADoE.mjs';
 import { E as Editable } from '../chunks/Editable_-ZF1-7I4.mjs';
 import { useEditorState } from '@tiptap/react';
-import { B as BorderSize, M as MenuName } from '../chunks/PageTransitionProvider_CcvOYXE8.mjs';
-import { C as Component$1 } from '../chunks/Tooltip_BRAqOQb0.mjs';
-import { P as PanelFooter, F as Followings } from '../chunks/PanelStat_C7759abm.mjs';
-import { A as AuthStar, T as TimeAgo } from '../chunks/timeago-react_CnhZTSS_.mjs';
-import { S as Spinner } from '../chunks/index_BxxX6ksh.mjs';
-import { K as Kbd } from '../chunks/Kbd_Cad6zwzT.mjs';
+import { C as Component$1 } from '../chunks/Tooltip_D9D6Q7V9.mjs';
+import { P as PanelFooter, F as Followings } from '../chunks/PanelStat_jM4l-lvB.mjs';
+import { A as AuthStar, T as TimeAgo } from '../chunks/timeago-react_B2WyFZMt.mjs';
+import { S as Spinner } from '../chunks/index_B3M-CAmC.mjs';
+import { K as Kbd } from '../chunks/Kbd_D88lTA-j.mjs';
 import { a as actions } from '../chunks/virtual_2-AggwCs.mjs';
 import { a as authClient, g as getAuthUserById } from '../chunks/auth_ipNrKfVc.mjs';
 import { a as getStarByUserId } from '../chunks/star_DT2Zxl9Y.mjs';
@@ -796,9 +795,9 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
     return Astro2.redirect("/project/404?method=getIssueById");
   }
   return renderTemplate`${renderComponent($$result, "Layout", $$PanelViewLayout, { "hideLinks": Object.keys(MenuName) }, { "center": async ($$result2) => renderTemplate`${renderComponent($$result2, "IssuePanel", IssueContentPanel, { "slot": "center", ...issue, "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/issue/IssuePanel", "client:component-export": "default" })}${renderComponent($$result2, "AssignToMeCTA", null, { "slot": "center", "client:only": "react", "issueId": issueIdParam, "client:component-hydration": "only", "client:component-path": "@/components/issue/AssignToMeCTA", "client:component-export": "default" })}`, "left": async ($$result2) => renderTemplate`${renderComponent($$result2, "BackButton", BackButton, { "slot": "left", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/custom-ui/BackButton", "client:component-export": "default" })}` })}`;
-}, "/home/medet/ara-app/src/pages/issue/index.astro", void 0);
+}, "/home/medet/ara/page/src/pages/issue/index.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/issue/index.astro";
+const $$file = "/home/medet/ara/page/src/pages/issue/index.astro";
 const $$url = "/issue";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

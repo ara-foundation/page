@@ -1,6 +1,6 @@
 import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead, p as addAttribute } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$MinimalDarkLayout } from '../chunks/MinimalDarkLayout_DRUSXn-b.mjs';
-import { c as companyInfo, s as socialLinks } from '../chunks/Analytics_B_TfxMA7.mjs';
+import { $ as $$MinimalDarkLayout } from '../chunks/MinimalDarkLayout_CttNH107.mjs';
+import { c as companyInfo, s as socialLinks } from '../chunks/Analytics_BsLGyV9d.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Aratalk = createComponent(($$result, $$props, $$slots) => {
@@ -53,9 +53,9 @@ For collaboration, please reach out only by email:${" "} <a${addAttribute(mailto
 </p> </div> </section> <footer class="mt-20 border-t border-neutral-200 pt-10 text-sm text-neutral-600 dark:border-white/10 dark:text-neutral-500" aria-label="AraTalk page footer"> <p class="text-neutral-600 dark:text-neutral-500">
 © ${companyInfo.copyrightYear} Ara Foundation.
 </p> </footer> </div> ` })}`;
-}, "/home/medet/ara-app/src/pages/aratalk.astro", void 0);
+}, "/home/medet/ara/page/src/pages/aratalk.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/aratalk.astro";
+const $$file = "/home/medet/ara/page/src/pages/aratalk.astro";
 const $$url = "/aratalk";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

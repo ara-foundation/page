@@ -1,6 +1,6 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Bg6Ix_fh.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_CcvOYXE8.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Ct6HZhHl.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
 import { a as mockUserStars } from '../chunks/mock-data_BUp0vQNE.mjs';
 export { renderers } from '../renderers.mjs';
 
@@ -142,9 +142,9 @@ How Ara Works
 A cosmic ecosystem where projects are Galaxies, people are Stars, and
         everything is tracked on the blockchain.
 </p> </div> </section>` })}`;
-}, "/home/medet/ara-app/src/pages/how-it-works.astro", void 0);
+}, "/home/medet/ara/page/src/pages/how-it-works.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/how-it-works.astro";
+const $$file = "/home/medet/ara/page/src/pages/how-it-works.astro";
 const $$url = "/how-it-works";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

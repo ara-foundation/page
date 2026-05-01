@@ -1,10 +1,10 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_GKLbOgKM.mjs';
-import { M as MenuName } from '../../chunks/PageTransitionProvider_CcvOYXE8.mjs';
+import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_oVHGBu2R.mjs';
+import { M as MenuName } from '../../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
 import { ObjectId } from 'mongodb';
-import { g as getGalaxyById } from '../../chunks/galaxy_DZYFcC87.mjs';
+import { g as getGalaxyById } from '../../chunks/galaxy_B3y4ZFqy.mjs';
 import { g as getProjectById } from '../../chunks/project_D5RoIw13.mjs';
-import { B as BackButton } from '../../chunks/BackButton_BCkP4KG1.mjs';
+import { B as BackButton } from '../../chunks/BackButton_CrfcobeW.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Astro = createAstro();
@@ -31,9 +31,9 @@ const $$Transactions = createComponent(async ($$result, $$props, $$slots) => {
   const cascaded = Astro2.url.searchParams.get("cascaded");
   const defaultShowCascaded = cascaded === "true";
   return renderTemplate`${renderComponent($$result, "Layout", $$PanelViewLayout, { "hideLinks": Object.keys(MenuName) }, { "center": async ($$result2) => renderTemplate`${renderComponent($$result2, "TransactionsHistoryPanel", null, { "galaxyId": galaxyIdParam, "defaultShowCascaded": defaultShowCascaded, "slot": "center", "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/maintainer/TransactionsHistoryPanel", "client:component-export": "default" })}`, "left": async ($$result2) => renderTemplate`${renderComponent($$result2, "BackButton", BackButton, { "slot": "left", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/custom-ui/BackButton", "client:component-export": "default" })}` })}`;
-}, "/home/medet/ara-app/src/pages/project/transactions.astro", void 0);
+}, "/home/medet/ara/page/src/pages/project/transactions.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/project/transactions.astro";
+const $$file = "/home/medet/ara/page/src/pages/project/transactions.astro";
 const $$url = "/project/transactions";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

@@ -1,6 +1,6 @@
 import { renderers } from './renderers.mjs';
 import { c as createExports, s as serverEntrypointModule } from './chunks/_@astrojs-ssr-adapter_BsjSDW6f.mjs';
-import { manifest } from './manifest_zzrd-dwa.mjs';
+import { manifest } from './manifest_KU4gj9Cf.mjs';
 
 const serverIslandMap = new Map();;
 
@@ -27,10 +27,11 @@ const _page19 = () => import('./pages/project/roadmap.astro.mjs');
 const _page20 = () => import('./pages/project/share-btn.astro.mjs');
 const _page21 = () => import('./pages/project/transactions.astro.mjs');
 const _page22 = () => import('./pages/project.astro.mjs');
-const _page23 = () => import('./pages/star/404.astro.mjs');
-const _page24 = () => import('./pages/star/balance.astro.mjs');
-const _page25 = () => import('./pages/star.astro.mjs');
-const _page26 = () => import('./pages/index.astro.mjs');
+const _page23 = () => import('./pages/roadmap.astro.mjs');
+const _page24 = () => import('./pages/star/404.astro.mjs');
+const _page25 = () => import('./pages/star/balance.astro.mjs');
+const _page26 = () => import('./pages/star.astro.mjs');
+const _page27 = () => import('./pages/index.astro.mjs');
 const pageMap = new Map([
     ["node_modules/.pnpm/astro@5.15.3_@types+node@24.10.0_@vercel+functions@2.2.13_jiti@2.6.1_lightningcss@1.30._9a9bea42e0c44ef794a5a52fe5586ada/node_modules/astro/dist/assets/endpoint/generic.js", _page0],
     ["node_modules/.pnpm/astro@5.15.3_@types+node@24.10.0_@vercel+functions@2.2.13_jiti@2.6.1_lightningcss@1.30._9a9bea42e0c44ef794a5a52fe5586ada/node_modules/astro/dist/actions/runtime/route.js", _page1],
@@ -55,10 +56,11 @@ const pageMap = new Map([
     ["src/pages/project/share-btn.astro", _page20],
     ["src/pages/project/transactions.astro", _page21],
     ["src/pages/project/index.astro", _page22],
-    ["src/pages/star/404.astro", _page23],
-    ["src/pages/star/balance.astro", _page24],
-    ["src/pages/star/index.astro", _page25],
-    ["src/pages/index.astro", _page26]
+    ["src/pages/roadmap.astro", _page23],
+    ["src/pages/star/404.astro", _page24],
+    ["src/pages/star/balance.astro", _page25],
+    ["src/pages/star/index.astro", _page26],
+    ["src/pages/index.astro", _page27]
 ]);
 
 const _manifest = Object.assign(manifest, {
@@ -69,7 +71,7 @@ const _manifest = Object.assign(manifest, {
     middleware: () => import('./_astro-internal_middleware.mjs')
 });
 const _args = {
-    "middlewareSecret": "a684671a-28f3-4642-b7b1-e5d772f5bfab",
+    "middlewareSecret": "f92fba80-0bf1-4b92-aff6-b12a8aa34de1",
     "skewProtection": false
 };
 const _exports = createExports(_manifest, _args);

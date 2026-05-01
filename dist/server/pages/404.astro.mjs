@@ -1,9 +1,9 @@
 import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$PanelViewLayout } from '../chunks/PanelViewLayout_GKLbOgKM.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_CcvOYXE8.mjs';
+import { $ as $$PanelViewLayout } from '../chunks/PanelViewLayout_oVHGBu2R.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
 import { H as Hyperspeed } from '../chunks/Hyperspeed_DO-OOdAF.mjs';
 import { a as mockUserStars } from '../chunks/mock-data_BUp0vQNE.mjs';
-import { C as Component } from '../chunks/Analytics_B_TfxMA7.mjs';
+import { C as Component } from '../chunks/Analytics_BsLGyV9d.mjs';
 /* empty css                               */
 export { renderers } from '../renderers.mjs';
 
@@ -135,9 +135,9 @@ Check out all stars page to explore projects
 ` })} <span class="text-slate-500 dark:text-slate-500">or</span> ${renderComponent($$result2, "Link", Component, { "uri": "/", "className": "text-lg font-medium underline underline-offset-4" }, { "default": ($$result3) => renderTemplate`
 learn more about Ara: /main page
 ` })} </div> </div>`, "default": ($$result2) => renderTemplate`   <div class="fixed top-0 left-0 w-screen h-screen z-10 pointer-events-none" id="galaxy-space" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; transform-origin: center center;"> ${renderComponent($$result2, "Space", null, { "client:only": "react", "users": mockUserStars, "className": "z-10", "projectGalaxies": mockGalaxies, "client:component-hydration": "only", "client:component-path": "@/components/all-stars/Space", "client:component-export": "default" })} </div>   ` })} `;
-}, "/home/medet/ara-app/src/pages/404.astro", void 0);
+}, "/home/medet/ara/page/src/pages/404.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/404.astro";
+const $$file = "/home/medet/ara/page/src/pages/404.astro";
 const $$url = "/404";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

@@ -1,25 +1,24 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate, m as maybeRenderHead, p as addAttribute } from '../../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_GKLbOgKM.mjs';
-import { P as Panel } from '../../chunks/MenuPanel_-mC6vmPr.mjs';
-import { M as MenuName } from '../../chunks/PageTransitionProvider_CcvOYXE8.mjs';
+import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_oVHGBu2R.mjs';
+import { P as Panel } from '../../chunks/MenuPanel_Po3IDxoi.mjs';
+import { B as Badge, M as MenuName } from '../../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
 import { ObjectId } from 'mongodb';
-import { g as getGalaxyById } from '../../chunks/galaxy_DZYFcC87.mjs';
+import { g as getGalaxyById } from '../../chunks/galaxy_B3y4ZFqy.mjs';
 import { g as getProjectById } from '../../chunks/project_D5RoIw13.mjs';
 import { jsxs, jsx, Fragment } from 'react/jsx-runtime';
 import * as React from 'react';
 import { useState, useEffect, memo, useRef, useMemo, useCallback } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { a as cn, E as ElectricBorder, t as truncateStr, g as getIcon, s as socialLinks, d as SocialLink } from '../../chunks/Analytics_B_TfxMA7.mjs';
-import { g as getStrictContext, S as Slot, C as Component } from '../../chunks/Tooltip_BRAqOQb0.mjs';
-import { B as Badge } from '../../chunks/Badge_B8Esv6UX.mjs';
-import { u as useControlledState, B as BasePanel } from '../../chunks/accordion_CxbLWJxy.mjs';
-import { P as PageLikePanel } from '../../chunks/PageLikePanel_BZgZBCVX.mjs';
-import { g as getAnimationColors, B as Button } from '../../chunks/Button_BDHlQYsK.mjs';
-import { P as PanelFooter, F as Followings } from '../../chunks/PanelStat_C7759abm.mjs';
+import { a as cn, E as ElectricBorder, t as truncateStr, g as getIcon, s as socialLinks, d as SocialLink } from '../../chunks/Analytics_BsLGyV9d.mjs';
+import { g as getStrictContext, S as Slot, C as Component } from '../../chunks/Tooltip_D9D6Q7V9.mjs';
+import { u as useControlledState, B as BasePanel } from '../../chunks/accordion_FJb782-q.mjs';
+import { P as PageLikePanel } from '../../chunks/PageLikePanel_BLKQx34n.mjs';
+import { g as getAnimationColors, B as Button } from '../../chunks/Button_DJROADoE.mjs';
+import { P as PanelFooter, F as Followings } from '../../chunks/PanelStat_jM4l-lvB.mjs';
 import NumberFlow from '@number-flow/react';
 import * as RadixSlider from '@radix-ui/react-slider';
 import { Checkbox as Checkbox$1 } from 'radix-ui';
-import { A as AuthStar, T as TimeAgo } from '../../chunks/timeago-react_CnhZTSS_.mjs';
+import { A as AuthStar, T as TimeAgo } from '../../chunks/timeago-react_B2WyFZMt.mjs';
 import { A as AvatarList, P as ProfileRating } from '../../chunks/AvatarList_QbL7je5L.mjs';
 import { useDrop, useDrag, DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -1902,7 +1901,7 @@ const $$Astro = createAstro();
 const $$Roadmap = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Roadmap;
-  const whitepaperUrl = "https://bitcointalk.org/index.php?topic=5579945.new";
+  const whitepaperUrl = "/ara.pdf";
   const araFoundationGithub = {
     url: "https://github.com/ara-foundation",
     type: "github",
@@ -1933,12 +1932,10 @@ const $$Roadmap = createComponent(async ($$result, $$props, $$slots) => {
   if (!project) {
     return Astro2.redirect("/project/404?method=getProjectById");
   }
-  return renderTemplate`${renderComponent($$result, "Layout", $$PanelViewLayout, { "hideLinks": Object.keys(MenuName) }, { "center": async ($$result2) => renderTemplate`${renderComponent($$result2, "RoadmapTabs", RoadmapTabs, { "slot": "center", "galaxyId": galaxyIdParam, "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/roadmap/RoadmapTabs", "client:component-export": "default" })}${renderComponent($$result2, "CreateVersionCTA", null, { "slot": "center", "galaxyId": galaxyIdParam, "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/roadmap/CreateVersionCTA", "client:component-export": "default" })}${renderComponent($$result2, "VersionSolarForge", null, { "slot": "center", "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/roadmap/VersionSolarForge", "client:component-export": "default" })}${maybeRenderHead()}<footer class="mt-20 border-t border-white/10 pt-10 text-sm text-neutral-500" aria-label="Site footer"> <div class="flex flex-col gap-10 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between"> <nav class="flex flex-row gap-3 text-neutral-400" aria-label="Primary footer links"> <a${addAttribute(whitepaperUrl, "href")} target="_blank" rel="noopener noreferrer" class="w-fit hover:text-neutral-200">
-Whitepaper
-</a> <a href="/about" class="w-fit hover:text-neutral-200">About Author</a> </nav> <div class="flex flex-wrap items-center gap-2" aria-label="Social media"> ${footerSocial.map((link) => renderTemplate`${renderComponent($$result2, "SocialLink", SocialLink, { "client:load": true, "link": link, "className": "flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-neutral-400 transition-colors hover:border-white/20 hover:bg-white/[0.06] hover:text-white", "client:component-hydration": "load", "client:component-path": "@/components/utilitified_decorations/SocialLink", "client:component-export": "default" })}`)} </div> </div> </footer>`, "left": async ($$result2) => renderTemplate`${renderComponent($$result2, "MenuPanel", Panel, { "activeMenuItem": "roadmap", "slot": "left", "galaxy": galaxy, "projectName": galaxy.name, "starCount": galaxy.stars })}`, "right": async ($$result2) => renderTemplate`${renderComponent($$result2, "PatcherPanel", null, { "slot": "right", "client:only": "react", "galaxyId": galaxyIdParam, "client:component-hydration": "only", "client:component-path": "@/components/roadmap/PatcherPanel", "client:component-export": "default" })}` })}`;
-}, "/home/medet/ara-app/src/pages/project/roadmap.astro", void 0);
+  return renderTemplate`${renderComponent($$result, "Layout", $$PanelViewLayout, { "hideLinks": Object.keys(MenuName) }, { "center": async ($$result2) => renderTemplate`${renderComponent($$result2, "RoadmapTabs", RoadmapTabs, { "slot": "center", "galaxyId": galaxyIdParam, "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/roadmap/RoadmapTabs", "client:component-export": "default" })}${renderComponent($$result2, "CreateVersionCTA", null, { "slot": "center", "galaxyId": galaxyIdParam, "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/roadmap/CreateVersionCTA", "client:component-export": "default" })}${renderComponent($$result2, "VersionSolarForge", null, { "slot": "center", "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/roadmap/VersionSolarForge", "client:component-export": "default" })}${maybeRenderHead()}<footer class="mt-20 border-t border-white/10 pt-10 text-sm text-neutral-500" aria-label="Site footer"> <div class="flex flex-col gap-10 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between"> <nav class="flex flex-row gap-3 text-neutral-400" aria-label="Primary footer links"> <a${addAttribute(whitepaperUrl, "href")} class="w-fit hover:text-neutral-200">Whitepaper</a> <a href="/about" class="w-fit hover:text-neutral-200">About Author</a> </nav> <div class="flex flex-wrap items-center gap-2" aria-label="Social media"> ${footerSocial.map((link) => renderTemplate`${renderComponent($$result2, "SocialLink", SocialLink, { "client:load": true, "link": link, "className": "flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-neutral-400 transition-colors hover:border-white/20 hover:bg-white/[0.06] hover:text-white", "client:component-hydration": "load", "client:component-path": "@/components/utilitified_decorations/SocialLink", "client:component-export": "default" })}`)} </div> </div> </footer>`, "left": async ($$result2) => renderTemplate`${renderComponent($$result2, "MenuPanel", Panel, { "activeMenuItem": "roadmap", "slot": "left", "galaxy": galaxy, "projectName": galaxy.name, "starCount": galaxy.stars })}`, "right": async ($$result2) => renderTemplate`${renderComponent($$result2, "PatcherPanel", null, { "slot": "right", "client:only": "react", "galaxyId": galaxyIdParam, "client:component-hydration": "only", "client:component-path": "@/components/roadmap/PatcherPanel", "client:component-export": "default" })}` })}`;
+}, "/home/medet/ara/page/src/pages/project/roadmap.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/project/roadmap.astro";
+const $$file = "/home/medet/ara/page/src/pages/project/roadmap.astro";
 const $$url = "/project/roadmap";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

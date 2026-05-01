@@ -1,14 +1,14 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Bg6Ix_fh.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_CcvOYXE8.mjs';
-import { B as BackButton } from '../chunks/BackButton_BCkP4KG1.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Ct6HZhHl.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
+import { B as BackButton } from '../chunks/BackButton_CrfcobeW.mjs';
 import { jsx } from 'react/jsx-runtime';
 import { useState, useEffect } from 'react';
-import { B as Button } from '../chunks/Button_BDHlQYsK.mjs';
+import { B as Button } from '../chunks/Button_DJROADoE.mjs';
 import { a as authClient } from '../chunks/auth_ipNrKfVc.mjs';
-import { g as getStarById, b as getStarByUserId } from '../chunks/star_C-7xRUFB.mjs';
+import { g as getStarById, b as getStarByUserId } from '../chunks/star_BBCR59FZ.mjs';
 import { g as getAuthUserById } from '../chunks/auth_CQWknQ_2.mjs';
-import { a as getGalaxiesByMaintainer } from '../chunks/galaxy_DZYFcC87.mjs';
+import { a as getGalaxiesByMaintainer } from '../chunks/galaxy_B3y4ZFqy.mjs';
 import { a as getBlogsByAuthor } from '../chunks/blog_DQQNeQxJ.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
@@ -131,9 +131,9 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
     }
   }
   return renderTemplate`${renderComponent($$result, "GalaxyLayout", $$GalaxyLayout, { "active": MenuName.ProjectName, "hideLinks": Object.keys(MenuName), "projectName": displayName, "projectX": 0, "projectY": 0, "projectGalaxies": allGalaxies }, { "center": async ($$result2) => renderTemplate`${renderComponent($$result2, "StarProfileHero", null, { "slot": "center", "user": user, "galaxies": userGalaxies, "blogs": userBlogs, "authUser": starAuthUser, "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/user/StarProfileHero", "client:component-export": "default" })}`, "default": async ($$result2) => renderTemplate`      ${renderComponent($$result2, "GalaxyAutoZoom", null, { "client:only": "react", "galaxyX": 0, "galaxyY": 0, "client:component-hydration": "only", "client:component-path": "@/components/all-stars/GalaxyAutoZoom", "client:component-export": "default" })} `, "footer": async ($$result2) => renderTemplate`${renderComponent($$result2, "StarBar", null, { "slot": "footer", "authorId": user._id, "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/user/StarBar", "client:component-export": "default" })}`, "left": async ($$result2) => renderTemplate`${renderComponent($$result2, "BackButton", BackButton, { "slot": "left", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/custom-ui/BackButton", "client:component-export": "default" })}`, "right": async ($$result2) => renderTemplate`${renderComponent($$result2, "ConditionalSignOutButton", ConditionalSignOutButton, { "slot": "right", "starEmail": starAuthUser?.email, "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/auth/ConditionalSignOutButton", "client:component-export": "default" })}${renderComponent($$result2, "UserAccountPanel", null, { "slot": "right", "user": user, "authUser": starAuthUser, "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/user/UserAccountPanel", "client:component-export": "default" })}` })} `;
-}, "/home/medet/ara-app/src/pages/star/index.astro", void 0);
+}, "/home/medet/ara/page/src/pages/star/index.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/star/index.astro";
+const $$file = "/home/medet/ara/page/src/pages/star/index.astro";
 const $$url = "/star";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

@@ -1,7 +1,7 @@
 import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$GalaxyLayout } from '../../chunks/GalaxyLayout_Bg6Ix_fh.mjs';
-import { M as MenuName } from '../../chunks/PageTransitionProvider_CcvOYXE8.mjs';
-import { B as BackButton } from '../../chunks/BackButton_BCkP4KG1.mjs';
+import { $ as $$GalaxyLayout } from '../../chunks/GalaxyLayout_Ct6HZhHl.mjs';
+import { M as MenuName } from '../../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
+import { B as BackButton } from '../../chunks/BackButton_CrfcobeW.mjs';
 import { a as mockUserStars } from '../../chunks/mock-data_BUp0vQNE.mjs';
 export { renderers } from '../../renderers.mjs';
 
@@ -17,9 +17,9 @@ const $$404 = createComponent(($$result, $$props, $$slots) => {
 The project or galaxy you're looking for doesn't exist or has been
             removed.
 </p> </div>`, "left": ($$result2) => renderTemplate`${renderComponent($$result2, "BackButton", BackButton, { "slot": "left", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/custom-ui/BackButton", "client:component-export": "default" })}` })}`;
-}, "/home/medet/ara-app/src/pages/project/404.astro", void 0);
+}, "/home/medet/ara/page/src/pages/project/404.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/project/404.astro";
+const $$file = "/home/medet/ara/page/src/pages/project/404.astro";
 const $$url = "/project/404";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

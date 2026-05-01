@@ -1,7 +1,7 @@
 import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Bg6Ix_fh.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_CcvOYXE8.mjs';
-import { B as BackButton } from '../chunks/BackButton_BCkP4KG1.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Ct6HZhHl.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
+import { B as BackButton } from '../chunks/BackButton_CrfcobeW.mjs';
 import { a as mockUserStars } from '../chunks/mock-data_BUp0vQNE.mjs';
 /* empty css                                  */
 export { renderers } from '../renderers.mjs';
@@ -41,9 +41,9 @@ Instead of building a new operating system or breaking existing ones
 After many iterations, and with today's technology, it finally
             became possible.
 </p> </div> </div>  <div class="w-full flex justify-center py-4"> ${renderComponent($$result2, "MedetSocialLinks", null, { "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/people/MedetSocialLinks", "client:component-export": "default" })} </div>  <div class="w-full"> ${renderComponent($$result2, "MedetTimeline", null, { "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/people/MedetTimeline", "client:component-export": "default" })} </div> </div>  <div class="absolute top-20 right-8 md:right-16 z-20" style="pointer-events: auto;"> ${renderComponent($$result2, "SergeyStar", null, { "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/people/SergeyStar", "client:component-export": "default" })} </div> </div>`, "default": ($$result2) => renderTemplate`   ${renderComponent($$result2, "GalaxyAutoZoom", null, { "client:only": "react", "galaxyX": userX, "galaxyY": userY, "client:component-hydration": "only", "client:component-path": "@/components/all-stars/GalaxyAutoZoom", "client:component-export": "default" })} `, "left": ($$result2) => renderTemplate`${renderComponent($$result2, "BackButton", BackButton, { "slot": "left", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/custom-ui/BackButton", "client:component-export": "default" })}` })} `;
-}, "/home/medet/ara-app/src/pages/people.astro", void 0);
+}, "/home/medet/ara/page/src/pages/people.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/people.astro";
+const $$file = "/home/medet/ara/page/src/pages/people.astro";
 const $$url = "/people";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

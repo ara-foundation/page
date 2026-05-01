@@ -1,7 +1,6 @@
 import { defineAction } from 'astro:actions';
 import { z } from 'astro:schema';
 import { ObjectId } from 'mongodb';
-import { Wallet } from 'ethers';
 import {
     detectGitProvider,
     normalizeGitUrl,
@@ -17,8 +16,6 @@ import { createGalaxy, getGalaxyById, updateGalaxyPosition, getGalaxiesByMaintai
 import { getStarByUserId } from '@/server-side/star';
 import { createGalaxyPositionTracer, getGalaxyPositionHistory } from '@/server-side/all-stars';
 import { getCollection } from '@/server-side/db';
-import { send } from '@ara-web/crypto-sockets';
-import type { RequestAddGalaxy, ReplyGalaxyCreation, ReplyError } from '@ara-web/crypto-sockets';
 import type { Project } from '@/types/project';
 import type { Galaxy } from '@/types/galaxy';
 import { LicenseInfo, RepositoryAnalysis } from '@/types/git-repository';
@@ -333,129 +330,6 @@ export const server = {
     }),
 
     /**
-     * Create blockchain transaction for galaxy
-     */
-    createGalaxyBlockchainTransaction: defineAction({
-        input: z.object({
-            galaxyId: z.string(),
-            userId: z.string(),
-        }),
-        handler: async ({ galaxyId, userId }) => {
-            try {
-                // Get user/star
-                const star = await getStarByUserId(userId);
-                if (!star || !star._id || !star.demoPrivateKey) {
-                    return {
-                        success: false,
-                        error: 'Can not create blockchain transaction, user id invalid or missing private key',
-                    };
-                }
-
-                // Get galaxy
-                const galaxy = await getGalaxyById(galaxyId);
-                if (!galaxy) {
-                    return {
-                        success: false,
-                        error: 'Can not create blockchain transaction, galaxy id invalid: "' + galaxyId + '"',
-                    };
-                }
-
-                // Check if already has blockchain ID
-                if (galaxy.blockchainId) {
-                    return {
-                        success: true,
-                        data: {
-                            blockchainId: galaxy.blockchainId,
-                            blockchainTx: galaxy.blockchainTx,
-                        },
-                    };
-                }
-
-                // Get project
-                const project = await getProjectById(galaxy.projectLink);
-                if (!project) {
-                    return {
-                        success: false,
-                        error: 'Can not create blockchain transaction, project not found',
-                    };
-                }
-
-                // Get maintainer wallet
-                const maintainerWallet = new Wallet(star.demoPrivateKey);
-                const maintainerAddress = maintainerWallet.address;
-
-                // Generate random Ethereum account (20 bytes) and convert to 32-byte hex string
-                const randomWallet = Wallet.createRandom();
-                const address20Bytes = randomWallet.address;
-                const galaxyId32Bytes = `0x${address20Bytes.slice(2).padStart(64, '0')}`;
-
-                // Get repo URL from socialLinks
-                const repoUrl = project.socialLinks?.find(link =>
-                    link.type === 'github' || link.type === 'gitlab'
-                )?.uri || '';
-
-                // Construct issues URL
-                const issuesUrl = `https://app.ara.foundation/project/issues?galaxy=${galaxyId}`;
-
-                // Prepare addGalaxy request
-                const request: RequestAddGalaxy = {
-                    cmd: 'addGalaxy',
-                    params: {
-                        owner: maintainerAddress,
-                        repoUrl: repoUrl,
-                        issuesUrl: issuesUrl,
-                        name: galaxy.name,
-                        id: galaxyId32Bytes,
-                        minX: galaxy.x,
-                        maxX: galaxy.x + 100,
-                        minY: galaxy.y,
-                        maxY: galaxy.y + 100,
-                    },
-                };
-
-                // Call blockchain gateway
-                const reply = await send(request);
-
-                if ('error' in reply) {
-                    const errorReply = reply as ReplyError;
-                    return {
-                        success: false,
-                        error: `Crypto-sockets error while creating blockchain transaction: ${errorReply.error}`,
-                    };
-                }
-
-                const successReply = reply as ReplyGalaxyCreation;
-
-                // Update galaxy in database
-                const collection = await getCollection<any>('galaxies');
-                await collection.updateOne(
-                    { _id: new ObjectId(galaxyId) },
-                    {
-                        $set: {
-                            blockchainId: galaxyId32Bytes,
-                            blockchainTx: successReply.params.txHash,
-                        },
-                    }
-                );
-
-                return {
-                    success: true,
-                    data: {
-                        blockchainId: galaxyId32Bytes,
-                        blockchainTx: successReply.params.txHash,
-                    },
-                };
-            } catch (error) {
-                console.error('Error creating blockchain transaction:', error);
-                return {
-                    success: false,
-                    error: error instanceof Error ? error.message : 'Failed to create blockchain transaction',
-                };
-            }
-        },
-    }),
-
-    /**
      * Update project README content
      */
     updateProjectReadme: defineAction({
@@ -707,19 +581,7 @@ export const server = {
                     };
                 }
 
-                // Try to call blockchain if galaxy has blockchainId
                 let txId: string | undefined;
-                if (galaxy.blockchainId) {
-                    try {
-                        // For now, we'll use database-only updates
-                        // TODO: Implement blockchain call when available
-                        // Similar to updateUserStarPosition but for galaxy coordinates
-                        console.log(`Galaxy ${galaxyId} has blockchainId ${galaxy.blockchainId}, but blockchain update not yet implemented for galaxy coordinates`);
-                    } catch (error) {
-                        console.error('Error calling blockchain for galaxy coordinates:', error);
-                        // Continue with database update even if blockchain fails
-                    }
-                }
 
                 // Create position tracer record
                 try {

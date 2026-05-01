@@ -1,19 +1,18 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$PanelViewLayout } from '../chunks/PanelViewLayout_GKLbOgKM.mjs';
-import { B as BackButton } from '../chunks/BackButton_BCkP4KG1.mjs';
+import { $ as $$PanelViewLayout } from '../chunks/PanelViewLayout_oVHGBu2R.mjs';
+import { B as BackButton } from '../chunks/BackButton_CrfcobeW.mjs';
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import { useState, useEffect } from 'react';
-import { B as BasePanel } from '../chunks/accordion_CxbLWJxy.mjs';
-import '../chunks/ripple_B1rJ34Ke.mjs';
+import { B as BasePanel } from '../chunks/accordion_FJb782-q.mjs';
+import '../chunks/ripple_B-7jWwot.mjs';
 import 'clsx';
-import { g as getIcon } from '../chunks/Analytics_B_TfxMA7.mjs';
-import { B as Badge } from '../chunks/Badge_B8Esv6UX.mjs';
-import { A as AuthStar, T as TimeAgo } from '../chunks/timeago-react_CnhZTSS_.mjs';
+import { g as getIcon } from '../chunks/Analytics_BsLGyV9d.mjs';
+import { B as Badge, M as MenuName } from '../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
+import { A as AuthStar, T as TimeAgo } from '../chunks/timeago-react_B2WyFZMt.mjs';
 import { g as getStarById } from '../chunks/star_DT2Zxl9Y.mjs';
 import { g as getAuthUserById } from '../chunks/auth_ipNrKfVc.mjs';
 import { b as getBlogById } from '../chunks/blog_DQQNeQxJ.mjs';
 import { ObjectId } from 'mongodb';
-import { M as MenuName } from '../chunks/PageTransitionProvider_CcvOYXE8.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
@@ -148,9 +147,9 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
     return Astro2.redirect("/star/404?method=getBlogById");
   }
   return renderTemplate`${renderComponent($$result, "Layout", $$PanelViewLayout, { "hideLinks": Object.keys(MenuName) }, { "center": async ($$result2) => renderTemplate`${renderComponent($$result2, "BlogPanel", BlogPanel, { "slot": "center", ...blog })}`, "left": async ($$result2) => renderTemplate`${renderComponent($$result2, "BackButton", BackButton, { "slot": "left", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/custom-ui/BackButton", "client:component-export": "default" })}` })} `;
-}, "/home/medet/ara-app/src/pages/blog/index.astro", void 0);
+}, "/home/medet/ara/page/src/pages/blog/index.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/blog/index.astro";
+const $$file = "/home/medet/ara/page/src/pages/blog/index.astro";
 const $$url = "/blog";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

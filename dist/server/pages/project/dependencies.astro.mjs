@@ -1,23 +1,22 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_GKLbOgKM.mjs';
-import { M as MenuName } from '../../chunks/PageTransitionProvider_CcvOYXE8.mjs';
+import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_oVHGBu2R.mjs';
+import { B as Badge, M as MenuName } from '../../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
 import { ObjectId } from 'mongodb';
-import { g as getGalaxyById } from '../../chunks/galaxy_DZYFcC87.mjs';
+import { g as getGalaxyById } from '../../chunks/galaxy_B3y4ZFqy.mjs';
 import { g as getProjectById } from '../../chunks/project_D5RoIw13.mjs';
-import { P as Panel } from '../../chunks/MenuPanel_-mC6vmPr.mjs';
+import { P as Panel } from '../../chunks/MenuPanel_Po3IDxoi.mjs';
 import { jsxs, jsx, Fragment } from 'react/jsx-runtime';
 import { useState, useEffect, useMemo } from 'react';
-import { a as cn, g as getIcon, C as Component$1 } from '../../chunks/Analytics_B_TfxMA7.mjs';
-import { B as Button } from '../../chunks/Button_BDHlQYsK.mjs';
-import { L as List } from '../../chunks/List_DYYdwlC6.mjs';
-import { B as Badge } from '../../chunks/Badge_B8Esv6UX.mjs';
+import { a as cn, g as getIcon, C as Component$1 } from '../../chunks/Analytics_BsLGyV9d.mjs';
+import { B as Button } from '../../chunks/Button_DJROADoE.mjs';
+import { L as List } from '../../chunks/List_BxShK1LC.mjs';
 import NumberFlow, { NumberFlowGroup } from '@number-flow/react';
-import { B as BasePanel } from '../../chunks/accordion_CxbLWJxy.mjs';
-import { P as PanelFooter, F as Followings$1 } from '../../chunks/PanelStat_C7759abm.mjs';
-import { T as TimeAgo, A as AuthStar } from '../../chunks/timeago-react_CnhZTSS_.mjs';
-import { C as Component } from '../../chunks/Tooltip_BRAqOQb0.mjs';
-import { S as Spinner } from '../../chunks/index_BxxX6ksh.mjs';
-import { P as PanelAction } from '../../chunks/PanelAction_ColBy7mv.mjs';
+import { B as BasePanel } from '../../chunks/accordion_FJb782-q.mjs';
+import { P as PanelFooter, F as Followings$1 } from '../../chunks/PanelStat_jM4l-lvB.mjs';
+import { T as TimeAgo, A as AuthStar } from '../../chunks/timeago-react_B2WyFZMt.mjs';
+import { C as Component } from '../../chunks/Tooltip_D9D6Q7V9.mjs';
+import { S as Spinner } from '../../chunks/index_B3M-CAmC.mjs';
+import { P as PanelAction } from '../../chunks/PanelAction_B68CFDAk.mjs';
 import { A as AvatarList } from '../../chunks/AvatarList_QbL7je5L.mjs';
 import { Popover } from '@base-ui-components/react/popover';
 export { renderers } from '../../renderers.mjs';
@@ -751,9 +750,9 @@ const $$Dependencies = createComponent(async ($$result, $$props, $$slots) => {
     return Astro2.redirect("/project/404?method=getProjectById");
   }
   return renderTemplate`${renderComponent($$result, "Layout", $$PanelViewLayout, { "active": MenuName.ProjectName, "hideLinks": Object.keys(MenuName) }, { "center": async ($$result2) => renderTemplate`${renderComponent($$result2, "CworkPanel", CworkPanel, { "slot": "center", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/maintainer/CworkPanel", "client:component-export": "default" })}`, "left": async ($$result2) => renderTemplate`${renderComponent($$result2, "MenuPanel", Panel, { "slot": "left", "activeMenuItem": "dependencies", "galaxy": galaxy, "projectIcon": project.socialLinks?.find((link) => link.type === "project")?.uri, "projectName": galaxy.name, "starCount": galaxy.stars })}` })}`;
-}, "/home/medet/ara-app/src/pages/project/dependencies.astro", void 0);
+}, "/home/medet/ara/page/src/pages/project/dependencies.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/project/dependencies.astro";
+const $$file = "/home/medet/ara/page/src/pages/project/dependencies.astro";
 const $$url = "/project/dependencies";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

@@ -1,15 +1,15 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Bg6Ix_fh.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_CcvOYXE8.mjs';
-import { B as BackButton } from '../chunks/BackButton_BCkP4KG1.mjs';
-import { a as getGalaxySpace, k as getSBOMByProjectId, g as getUserStar } from '../chunks/sbom_DPjiDJ8j.mjs';
-import { g as getGalaxyById, d as getAllGalaxies } from '../chunks/galaxy_DZYFcC87.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Ct6HZhHl.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
+import { B as BackButton } from '../chunks/BackButton_CrfcobeW.mjs';
+import { a as getGalaxySpace, k as getSBOMByProjectId, g as getUserStar } from '../chunks/sbom_Cx9bohXC.mjs';
+import { g as getGalaxyById, d as getAllGalaxies } from '../chunks/galaxy_B3y4ZFqy.mjs';
 import { g as getProjectById } from '../chunks/project_D5RoIw13.mjs';
-import { g as getStarById, b as getStarByUserId } from '../chunks/star_C-7xRUFB.mjs';
+import { g as getStarById, b as getStarByUserId } from '../chunks/star_BBCR59FZ.mjs';
 import { g as getAuthUserById } from '../chunks/auth_CQWknQ_2.mjs';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { useState } from 'react';
-import { P as PageLikePanel } from '../chunks/PageLikePanel_BZgZBCVX.mjs';
+import { P as PageLikePanel } from '../chunks/PageLikePanel_BLKQx34n.mjs';
 export { renderers } from '../renderers.mjs';
 
 const LabelValue = ({ label, value }) => /* @__PURE__ */ jsxs("div", { className: "flex justify-between items-center py-1", children: [
@@ -104,10 +104,7 @@ const RepositoryInfoPanel = ({
               ]
             }
           ),
-          expandedSections.has("galaxy") && /* @__PURE__ */ jsxs("div", { className: "space-y-2 pl-4 border-l-2 border-slate-200 dark:border-slate-700", children: [
-            galaxy.blockchainId && /* @__PURE__ */ jsx(LabelValue, { label: "Blockchain ID", value: galaxy.blockchainId }),
-            galaxy.blockchainTx && /* @__PURE__ */ jsx(LabelValue, { label: "Blockchain Transaction", value: galaxy.blockchainTx })
-          ] })
+          expandedSections.has("galaxy") && /* @__PURE__ */ jsx("div", { className: "space-y-2 pl-4 border-l-2 border-slate-200 dark:border-slate-700", children: /* @__PURE__ */ jsx(LabelValue, { label: "Galaxy ID", value: galaxy._id || "N/A" }) })
         ] }),
         sbom && /* @__PURE__ */ jsxs("div", { className: "space-y-4 mt-6", children: [
           /* @__PURE__ */ jsxs(
@@ -315,9 +312,9 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
     contestToDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1e3)
     // 30 days from now
   }, "client:component-hydration": "only", "client:component-path": "@/components/all-stars/AllStarsContest", "client:component-export": "default" })}`, "left": async ($$result2) => renderTemplate`${renderComponent($$result2, "BackButton", BackButton, { "slot": "left", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/custom-ui/BackButton", "client:component-export": "default" })}${renderComponent($$result2, "AllStarsUniversePanel", null, { "slot": "left", "client:only": "react", "galaxyId": galaxyIdParam, "galaxyX": galaxy.x, "galaxyY": galaxy.y, "universeBounds": { minX, maxX, minY, maxY }, "maintainerId": galaxy.maintainer, "currentUserId": currentUserId, "client:component-hydration": "only", "client:component-path": "@/components/project/AllStarsUniversePanel", "client:component-export": "default" })}`, "right": async ($$result2) => renderTemplate`${renderComponent($$result2, "ProjectGoalPanel", null, { "slot": "right", "client:only": "react", "stars": projectData.stars, "totalStars": projectData.rating.stars, "totalSunshines": projectData.rating.sunshines, "goalStars": 100, "projectGoal": projectData.projectGoal, "goalDonations": projectData.balance * 10, "projectName": projectData.title, "donationAmount": galaxy.donationAmount, "maintainerName": authorName, "maintainerImage": maintainerSrc, "maintainerId": maintainer?._id?.toString(), "ownershipGoal": 1e3, "client:component-hydration": "only", "client:component-path": "@/components/project/ProjectGoalPanel", "client:component-export": "default" })}` })}`;
-}, "/home/medet/ara-app/src/pages/project/index.astro", void 0);
+}, "/home/medet/ara/page/src/pages/project/index.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/project/index.astro";
+const $$file = "/home/medet/ara/page/src/pages/project/index.astro";
 const $$url = "/project";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

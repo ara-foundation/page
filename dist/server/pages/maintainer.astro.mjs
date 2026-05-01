@@ -1,7 +1,7 @@
 import { j as createComponent, m as maybeRenderHead, x as renderComponent, r as renderTemplate, p as addAttribute } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Bg6Ix_fh.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_CcvOYXE8.mjs';
-import { S as StarIcon, s as socialLinks } from '../chunks/Analytics_B_TfxMA7.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Ct6HZhHl.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
+import { S as StarIcon, s as socialLinks } from '../chunks/Analytics_BsLGyV9d.mjs';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import 'clsx';
 import { motion } from 'motion/react';
@@ -292,11 +292,11 @@ const BlueskyIcon = ({ className = "", ...props }) => /* @__PURE__ */ jsx(
 
 const $$DecorativeStarSeparator = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`<!-- Decorative separator -->${maybeRenderHead()}<div class="flex items-center justify-center gap-4"> <div class="flex-1 h-px bg-gradient-to-r from-transparent via-slate-300 to-slate-300 dark:via-slate-600 dark:to-slate-600"></div> <div class="flex items-center gap-2"> ${renderComponent($$result, "StarIcon", StarIcon, { "className": "w-4 h-4 text-yellow-500 dark:text-yellow-600" })} ${renderComponent($$result, "StarIcon", StarIcon, { "className": "w-4 h-4 text-yellow-500 dark:text-yellow-600" })} ${renderComponent($$result, "StarIcon", StarIcon, { "className": "w-4 h-4 text-yellow-500 dark:text-yellow-600" })} </div> <div class="flex-1 h-px bg-gradient-to-l from-transparent via-slate-300 to-slate-300 dark:via-slate-600 dark:to-slate-600"></div> </div>`;
-}, "/home/medet/ara-app/src/components/utilitified_decorations/DecorativeStarSeparator.astro", void 0);
+}, "/home/medet/ara/page/src/components/utilitified_decorations/DecorativeStarSeparator.astro", void 0);
 
 const $$DecorativeSeparator = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`<!-- Decorative separator -->${maybeRenderHead()}<div class="flex items-center justify-center gap-2 opacity-50"> <div class="w-1 h-1 rounded-full bg-slate-400 dark:bg-slate-500"></div> <div class="w-2 h-2 rounded-full bg-slate-400 dark:bg-slate-500"></div> <div class="w-1 h-1 rounded-full bg-slate-400 dark:bg-slate-500"></div> </div>`;
-}, "/home/medet/ara-app/src/components/utilitified_decorations/DecorativeSeparator.astro", void 0);
+}, "/home/medet/ara/page/src/components/utilitified_decorations/DecorativeSeparator.astro", void 0);
 
 const AraLayerStack = ({
   className = ""
@@ -795,9 +795,9 @@ Maintainer-centric funding & coordination layer
 </p> <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 space-y-4">
 for open source users, project owners, and people who learn programming.
 </p> </div> </section>` })} `;
-}, "/home/medet/ara-app/src/pages/maintainer.astro", void 0);
+}, "/home/medet/ara/page/src/pages/maintainer.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/maintainer.astro";
+const $$file = "/home/medet/ara/page/src/pages/maintainer.astro";
 const $$url = "/maintainer";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

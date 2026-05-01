@@ -1,8 +1,8 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Bg6Ix_fh.mjs';
-import { M as MenuName } from '../chunks/PageTransitionProvider_CcvOYXE8.mjs';
-import { B as BackButton } from '../chunks/BackButton_BCkP4KG1.mjs';
-import { g as getGalaxyById, d as getAllGalaxies } from '../chunks/galaxy_DZYFcC87.mjs';
+import { $ as $$GalaxyLayout } from '../chunks/GalaxyLayout_Ct6HZhHl.mjs';
+import { M as MenuName } from '../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
+import { B as BackButton } from '../chunks/BackButton_CrfcobeW.mjs';
+import { g as getGalaxyById, d as getAllGalaxies } from '../chunks/galaxy_B3y4ZFqy.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
@@ -55,9 +55,9 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
     `[all-stars] Total frontmatter execution time: ${totalFrontmatterTime.toFixed(2)}ms`
   );
   return renderTemplate`${renderComponent($$result, "GalaxyLayout", $$GalaxyLayout, { "active": MenuName.ProjectList, "hideLinks": Object.keys(MenuName), "projectName": "Ara Universe", "projectX": 0, "projectY": 0, "projectGalaxies": allGalaxies, "isStatic": true }, { "center": async ($$result2) => renderTemplate`${renderComponent($$result2, "UniverseHero", null, { "slot": "center", "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/all-stars/UniverseHero", "client:component-export": "default" })}`, "default": async ($$result2) => renderTemplate`    ${renderComponent($$result2, "GalaxyAutoZoom", null, { "client:only": "react", "galaxyX": selectedGalaxy?.x || 0, "galaxyY": selectedGalaxy?.y || 0, "client:component-hydration": "only", "client:component-path": "@/components/all-stars/GalaxyAutoZoom", "client:component-export": "default" })} `, "footer": async ($$result2) => renderTemplate`${renderComponent($$result2, "UniverseResearchPanel", null, { "slot": "footer", "client:only": "react", "starsunshines": currentStarsunshines, "client:component-hydration": "only", "client:component-path": "@/components/all-stars/UniverseResearchPanel", "client:component-export": "default" })}`, "left": async ($$result2) => renderTemplate`${renderComponent($$result2, "BackButton", BackButton, { "slot": "left", "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/custom-ui/BackButton", "client:component-export": "default" })}` })} `;
-}, "/home/medet/ara-app/src/pages/all-stars/index.astro", void 0);
+}, "/home/medet/ara/page/src/pages/all-stars/index.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/all-stars/index.astro";
+const $$file = "/home/medet/ara/page/src/pages/all-stars/index.astro";
 const $$url = "/all-stars";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

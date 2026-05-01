@@ -1,16 +1,14 @@
 import './chunks/virtual_2-AggwCs.mjs';
-import { Wallet } from 'ethers';
-import { u as updateUserStarPosition, c as createSpaceTracer, g as getUserStar, a as getGalaxySpace, b as getAllStarStats, d as checkSolarForgeByIssue, e as updateIssueStars, f as upsertSpaceUserStar, h as createSBOM, i as getGalaxyPositionHistory$1, j as createGalaxyPositionTracer } from './chunks/sbom_DPjiDJ8j.mjs';
+import { u as updateUserStarPosition, c as createSpaceTracer, g as getUserStar, a as getGalaxySpace, b as getAllStarStats, d as checkSolarForgeByIssue, e as updateIssueStars, f as upsertSpaceUserStar, h as createSBOM, i as getGalaxyPositionHistory$1, j as createGalaxyPositionTracer } from './chunks/sbom_Cx9bohXC.mjs';
 import { g as getAuthUserById, a as getAccountsByUserId } from './chunks/auth_CQWknQ_2.mjs';
 import { g as getIssueById, u as updateIssueSolarForgeTxid, a as updateIssue, b as unpatchIssue, p as patchIssue, c as unsetIssueContributor, s as setIssueContributor, d as updateIssueSunshines, e as createIssue, f as getPublicBacklogIssues, h as getShiningIssues, i as getIssuesByGalaxy } from './chunks/issue_BPuFioY0.mjs';
-import { g as getStarById, u as updateStarStars, a as updateStarSunshines, c as createStarByUserId, b as getStarByUserId } from './chunks/star_C-7xRUFB.mjs';
-import { g as getGalaxyById, u as updateGalaxySunshines, a as getGalaxiesByMaintainer, b as updateGalaxyPosition, c as createGalaxy } from './chunks/galaxy_DZYFcC87.mjs';
+import { g as getStarById, u as updateStarStars, a as updateStarSunshines, c as createStarByUserId, b as getStarByUserId } from './chunks/star_BBCR59FZ.mjs';
 import { ObjectId } from 'mongodb';
 import { g as getCollection, c as create } from './chunks/db_DAacEHY_.mjs';
-import { send } from '@ara-web/crypto-sockets';
 import { a as defineAction } from './chunks/index_BFAyHFtU.mjs';
 import { o as objectType, s as stringType, n as numberType, a as arrayType, b as nativeEnumType, e as enumType, c as anyType, d as booleanType } from './chunks/astro/server_DQ3wOqi7.mjs';
-import { a as auth } from './chunks/auth_Bzq8sfeI.mjs';
+import { a as auth } from './chunks/auth_DNh0kpf3.mjs';
+import { u as updateGalaxySunshines, g as getGalaxyById, a as getGalaxiesByMaintainer, b as updateGalaxyPosition, c as createGalaxy } from './chunks/galaxy_B3y4ZFqy.mjs';
 import { I as IssueTag } from './chunks/issue_Dl_7o4gD.mjs';
 import { m as mockRepositoryAnalysis } from './chunks/mock-data_BUp0vQNE.mjs';
 import { c as checkDuplicateGitUrl, g as getProjectById, a as getOrCreateProject } from './chunks/project_D5RoIw13.mjs';
@@ -282,24 +280,11 @@ async function solarForgeByIssue(issueId) {
     }
     const solarUsers = [];
     const userIds = [];
-    const userAddresses = [];
     for (const [userId, data] of userMap.entries()) {
       const userUpdated = await updateStarStars(userId, data.stars);
       if (userUpdated) {
         const user = await getStarById(userId);
         if (!user) {
-          continue;
-        }
-        if (!user.demoPrivateKey) {
-          console.error(`User ${userId} missing demoPrivateKey, skipping blockchain solar forge`);
-          continue;
-        }
-        try {
-          const wallet = new Wallet(user.demoPrivateKey);
-          const address = wallet.address;
-          userAddresses.push(address);
-        } catch (error) {
-          console.error(`Error deriving address for user ${userId}:`, error);
           continue;
         }
         if (issue.galaxy) {
@@ -334,64 +319,15 @@ async function solarForgeByIssue(issueId) {
         userIds.push(userId);
       }
     }
-    if (userAddresses.length === 0) {
-      return {
-        users: [],
-        solarForgeId: "",
-        error: "No valid user addresses found for blockchain solar forge"
-      };
+    const solarForgeId = `local-solarforge-${issueId}-${Date.now()}`;
+    const updated = await updateIssueSolarForgeTxid(issueId, solarForgeId);
+    if (!updated) {
+      console.error("Failed to update issue with solarForgeTxid");
     }
-    const galaxy = await getGalaxyById(issue.galaxy);
-    if (!galaxy || !galaxy.blockchainId) {
-      return {
-        users: [],
-        solarForgeId: "",
-        error: "Can not solar forge issue, galaxy id invalid or missing blockchainId"
-      };
-    }
-    const serializedSolarForge = {
-      _id: issueId,
-      solarForgeType: "issue",
-      issueId,
-      users: userAddresses,
-      stars: totalStars
+    return {
+      users: solarUsers,
+      solarForgeId
     };
-    try {
-      const request = {
-        cmd: "solarForge",
-        params: {
-          galaxyId: galaxy.blockchainId,
-          models: [serializedSolarForge]
-        }
-      };
-      const reply = await send(request);
-      if ("error" in reply) {
-        const errorReply = reply;
-        console.error("Blockchain solar forge error:", errorReply.error);
-        return {
-          users: [],
-          solarForgeId: "",
-          error: `Crypto-sockets error while solar forging issue: ${errorReply.error}`
-        };
-      }
-      const successReply = reply;
-      const txHash = successReply.params.txHash;
-      const updated = await updateIssueSolarForgeTxid(issueId, txHash);
-      if (!updated) {
-        console.error("Failed to update issue with solarForgeTxid");
-      }
-      return {
-        users: solarUsers,
-        solarForgeId: txHash
-      };
-    } catch (error) {
-      console.error("Error calling blockchain gateway for solar forge:", error);
-      return {
-        users: [],
-        solarForgeId: "",
-        error: `Failed to call blockchain gateway: ${error instanceof Error ? error.message : String(error)}`
-      };
-    }
   } catch (error) {
     console.error("Error in solarForgeByIssue:", error);
     return {
@@ -401,7 +337,7 @@ async function solarForgeByIssue(issueId) {
     };
   }
 }
-const server$9 = {
+const server$8 = {
   allStarStats: defineAction({
     accept: "json",
     input: objectType({}),
@@ -456,57 +392,16 @@ const server$9 = {
           console.error(`User ${userId} not found`);
           return { success: false };
         }
-        if (!user.demoPrivateKey) {
-          console.error(`User ${userId} missing demoPrivateKey, cannot update blockchain position`);
-          return { success: false };
-        }
-        let userAddress;
-        try {
-          const wallet = new Wallet(user.demoPrivateKey);
-          userAddress = wallet.address;
-        } catch (error) {
-          console.error(`Error deriving address for user ${userId}:`, error);
-          return { success: false };
-        }
-        const galaxy = await getGalaxyById(galaxyId);
-        if (!galaxy || !galaxy.blockchainId) {
-          console.error(`Galaxy ${galaxyId} not found or missing blockchainId`);
-          return { success: false };
-        }
-        try {
-          const position = {
-            userId: userAddress,
-            x,
-            y
-          };
-          const request = {
-            cmd: "spaceCoord",
-            params: {
-              galaxyId: galaxy.blockchainId,
-              position
-            }
-          };
-          const reply = await send(request);
-          if ("error" in reply) {
-            const errorReply = reply;
-            console.error("Blockchain spaceCoord error:", errorReply.error);
-            return { success: false };
+        const txId = `local-spacecoord-${galaxyId}-${userId}-${Date.now()}`;
+        const success = await updateUserStarPosition({ galaxyId, userId, x, y });
+        if (success) {
+          try {
+            await createSpaceTracer({ galaxyId, userId, x, y, txId });
+          } catch (error) {
+            console.error("Error creating space tracer:", error);
           }
-          const successReply = reply;
-          const txId = successReply.params.tx;
-          const success = await updateUserStarPosition({ galaxyId, userId, x, y });
-          if (success) {
-            try {
-              await createSpaceTracer({ galaxyId, userId, x, y, txId });
-            } catch (error) {
-              console.error("Error creating space tracer:", error);
-            }
-          }
-          return { success };
-        } catch (error) {
-          console.error("Error calling blockchain gateway for spaceCoord:", error);
-          return { success: false };
         }
+        return { success };
       } catch (error) {
         console.error("Error in updateUserStarPosition:", error);
         return { success: false };
@@ -734,7 +629,7 @@ const server$9 = {
   })
 };
 
-const server$8 = {
+const server$7 = {
   getStarById: defineAction({
     input: objectType({
       starId: stringType()
@@ -867,7 +762,7 @@ function serializeIssue(issue) {
     listHistory: issue.listHistory || []
   };
 }
-const server$7 = {
+const server$6 = {
   getIssuesByGalaxy: defineAction({
     input: objectType({
       galaxyId: stringType(),
@@ -2548,7 +2443,7 @@ Return only valid JSON, no additional text.`;
   }
 }
 
-const server$6 = {
+const server$5 = {
   /**
    * Analyze Git repository (validate, detect provider, fetch metadata, detect license, discover links, build dependency tree)
    */
@@ -2813,104 +2708,6 @@ const server$6 = {
     }
   }),
   /**
-   * Create blockchain transaction for galaxy
-   */
-  createGalaxyBlockchainTransaction: defineAction({
-    input: objectType({
-      galaxyId: stringType(),
-      userId: stringType()
-    }),
-    handler: async ({ galaxyId, userId }) => {
-      try {
-        const star = await getStarByUserId(userId);
-        if (!star || !star._id || !star.demoPrivateKey) {
-          return {
-            success: false,
-            error: "Can not create blockchain transaction, user id invalid or missing private key"
-          };
-        }
-        const galaxy = await getGalaxyById(galaxyId);
-        if (!galaxy) {
-          return {
-            success: false,
-            error: 'Can not create blockchain transaction, galaxy id invalid: "' + galaxyId + '"'
-          };
-        }
-        if (galaxy.blockchainId) {
-          return {
-            success: true,
-            data: {
-              blockchainId: galaxy.blockchainId,
-              blockchainTx: galaxy.blockchainTx
-            }
-          };
-        }
-        const project = await getProjectById(galaxy.projectLink);
-        if (!project) {
-          return {
-            success: false,
-            error: "Can not create blockchain transaction, project not found"
-          };
-        }
-        const maintainerWallet = new Wallet(star.demoPrivateKey);
-        const maintainerAddress = maintainerWallet.address;
-        const randomWallet = Wallet.createRandom();
-        const address20Bytes = randomWallet.address;
-        const galaxyId32Bytes = `0x${address20Bytes.slice(2).padStart(64, "0")}`;
-        const repoUrl = project.socialLinks?.find(
-          (link) => link.type === "github" || link.type === "gitlab"
-        )?.uri || "";
-        const issuesUrl = `https://app.ara.foundation/project/issues?galaxy=${galaxyId}`;
-        const request = {
-          cmd: "addGalaxy",
-          params: {
-            owner: maintainerAddress,
-            repoUrl,
-            issuesUrl,
-            name: galaxy.name,
-            id: galaxyId32Bytes,
-            minX: galaxy.x,
-            maxX: galaxy.x + 100,
-            minY: galaxy.y,
-            maxY: galaxy.y + 100
-          }
-        };
-        const reply = await send(request);
-        if ("error" in reply) {
-          const errorReply = reply;
-          return {
-            success: false,
-            error: `Crypto-sockets error while creating blockchain transaction: ${errorReply.error}`
-          };
-        }
-        const successReply = reply;
-        const collection = await getCollection("galaxies");
-        await collection.updateOne(
-          { _id: new ObjectId(galaxyId) },
-          {
-            $set: {
-              blockchainId: galaxyId32Bytes,
-              blockchainTx: successReply.params.txHash
-            }
-          }
-        );
-        return {
-          success: true,
-          data: {
-            blockchainId: galaxyId32Bytes,
-            blockchainTx: successReply.params.txHash
-          }
-        };
-      } catch (error) {
-        console.error("Error creating blockchain transaction:", error);
-        return {
-          success: false,
-          error: error instanceof Error ? error.message : "Failed to create blockchain transaction"
-        };
-      }
-    }
-  }),
-  /**
    * Update project README content
    */
   updateProjectReadme: defineAction({
@@ -3115,13 +2912,6 @@ const server$6 = {
           };
         }
         let txId;
-        if (galaxy.blockchainId) {
-          try {
-            console.log(`Galaxy ${galaxyId} has blockchainId ${galaxy.blockchainId}, but blockchain update not yet implemented for galaxy coordinates`);
-          } catch (error) {
-            console.error("Error calling blockchain for galaxy coordinates:", error);
-          }
-        }
         try {
           await createGalaxyPositionTracer({
             galaxyId,
@@ -3177,7 +2967,7 @@ const server$6 = {
   })
 };
 
-const server$5 = {
+const server$4 = {
   getVersionsByGalaxy: defineAction({
     input: objectType({
       galaxyId: stringType()
@@ -3438,58 +3228,6 @@ const server$5 = {
         return {
           success: false,
           error: "An error occurred while updating patch tested status"
-        };
-      }
-    }
-  })
-};
-
-function donationModelToDonation(model) {
-  if (!model) return null;
-  return {
-    _id: model._id?.toString(),
-    userId: model.userId.toString(),
-    galaxy: model.galaxy.toString(),
-    // Convert ObjectId to string
-    counter: model.counter,
-    initiateTxId: model.initiateTxId,
-    hyperpayTxId: model.hyperpayTxId,
-    sunshinesAmount: model.sunshinesAmount,
-    spendUsdAmount: model.spendUsdAmount,
-    memo: model.memo,
-    createdAt: model.createdAt ? Math.floor(model.createdAt.getTime() / 1e3) : void 0
-    // Convert Date to Unix timestamp
-  };
-}
-async function getDonationsByGalaxyId(galaxyId) {
-  try {
-    const collection = await getCollection("donations");
-    const objectId = typeof galaxyId === "string" ? new ObjectId(galaxyId) : galaxyId;
-    const results = await collection.find({ galaxy: objectId }).sort({ createdAt: -1 }).toArray();
-    return results.map(donationModelToDonation).filter((d) => d !== null);
-  } catch (error) {
-    console.error("Error getting donations by galaxy id:", error);
-    return [];
-  }
-}
-
-const server$4 = {
-  getDonationsByGalaxyId: defineAction({
-    input: objectType({
-      galaxyId: stringType()
-    }),
-    handler: async ({ galaxyId }) => {
-      try {
-        const donations = await getDonationsByGalaxyId(galaxyId);
-        return {
-          success: true,
-          data: donations
-        };
-      } catch (error) {
-        console.error("Error getting donations by galaxy id:", error);
-        return {
-          success: false,
-          error: "An error occurred while getting donations"
         };
       }
     }
@@ -3924,7 +3662,6 @@ const server$1 = {
 };
 
 const server = {
-  ...server$9,
   ...server$8,
   ...server$7,
   ...server$6,

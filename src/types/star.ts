@@ -5,7 +5,6 @@ export interface Star {
     sunshines?: number
     stars?: number
     balance?: number
-    demoPrivateKey?: string
     userId?: string // Reference to better-auth User id (ObjectId as string)
 }
 

@@ -1,9 +1,9 @@
 import { j as createComponent, k as createAstro, x as renderComponent, r as renderTemplate } from '../../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_GKLbOgKM.mjs';
-import { P as Panel } from '../../chunks/MenuPanel_-mC6vmPr.mjs';
-import { M as MenuName } from '../../chunks/PageTransitionProvider_CcvOYXE8.mjs';
+import { $ as $$PanelViewLayout } from '../../chunks/PanelViewLayout_oVHGBu2R.mjs';
+import { P as Panel } from '../../chunks/MenuPanel_Po3IDxoi.mjs';
+import { M as MenuName } from '../../chunks/PageTransitionProvider_Bh2cOy5w.mjs';
 import { ObjectId } from 'mongodb';
-import { g as getGalaxyById } from '../../chunks/galaxy_DZYFcC87.mjs';
+import { g as getGalaxyById } from '../../chunks/galaxy_B3y4ZFqy.mjs';
 import { g as getProjectById } from '../../chunks/project_D5RoIw13.mjs';
 export { renderers } from '../../renderers.mjs';
 
@@ -29,9 +29,9 @@ const $$Issues = createComponent(async ($$result, $$props, $$slots) => {
     return Astro2.redirect("/project/404?method=getProjectById");
   }
   return renderTemplate`${renderComponent($$result, "Layout", $$PanelViewLayout, { "hideLinks": Object.keys(MenuName) }, { "center": async ($$result2) => renderTemplate`${renderComponent($$result2, "WorkPanel", null, { "slot": "center", "client:only": "react", "galaxyId": galaxyIdParam, "client:component-hydration": "only", "client:component-path": "@/components/maintainer/WorkPanel", "client:component-export": "default" })}${renderComponent($$result2, "CreateIssueCTA", null, { "slot": "center", "client:only": "react", "galaxyId": galaxyIdParam, "client:component-hydration": "only", "client:component-path": "@/components/issue/CreateIssueCTA", "client:component-export": "default" })}`, "left": async ($$result2) => renderTemplate`${renderComponent($$result2, "MenuPanel", Panel, { "activeMenuItem": "issues", "slot": "left", "galaxy": galaxy, "projectIcon": project.socialLinks?.find((link) => link.type === "project")?.uri, "projectName": galaxy.name, "starCount": galaxy.stars })}`, "right": async ($$result2) => renderTemplate`${renderComponent($$result2, "PatcherPanel", null, { "slot": "right", "client:only": "react", "client:component-hydration": "only", "client:component-path": "@/components/issue/PatchableIssuesListPanel", "client:component-export": "default" })}` })}`;
-}, "/home/medet/ara-app/src/pages/project/issues.astro", void 0);
+}, "/home/medet/ara/page/src/pages/project/issues.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/project/issues.astro";
+const $$file = "/home/medet/ara/page/src/pages/project/issues.astro";
 const $$url = "/project/issues";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

@@ -1,678 +1,134 @@
-import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead, p as addAttribute } from '../chunks/astro/server_DQ3wOqi7.mjs';
-import { $ as $$MinimalDarkLayout } from '../chunks/MinimalDarkLayout_DRUSXn-b.mjs';
-import { jsx, Fragment, jsxs } from 'react/jsx-runtime';
-import React__default from 'react';
-import { B as Badge } from '../chunks/Badge_B8Esv6UX.mjs';
-import { C as Component, T as TooltipProvider, a as Tooltip, b as TooltipTrigger, c as TooltipContent } from '../chunks/Tooltip_BRAqOQb0.mjs';
-import { a as cn, c as companyInfo, s as socialLinks } from '../chunks/Analytics_B_TfxMA7.mjs';
+import { j as createComponent, x as renderComponent, r as renderTemplate, m as maybeRenderHead, B as renderScript } from '../chunks/astro/server_DQ3wOqi7.mjs';
+import { $ as $$MinimalDarkLayout } from '../chunks/MinimalDarkLayout_CttNH107.mjs';
+import { c as companyInfo } from '../chunks/Analytics_BsLGyV9d.mjs';
+/* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
-function Term({ href, label, tooltip }) {
-  const body = /* @__PURE__ */ jsxs("div", { className: "max-w-sm space-y-2 text-sm leading-snug", children: [
-    /* @__PURE__ */ jsx("p", { children: tooltip }),
-    /* @__PURE__ */ jsx("p", { className: "underline", children: "Visit the link to view more." })
-  ] });
-  return /* @__PURE__ */ jsxs("div", { className: "inline-flex items-baseline gap-0.5", children: [
-    /* @__PURE__ */ jsx(
-      "a",
-      {
-        href,
-        target: "_blank",
-        rel: "noopener noreferrer",
-        className: "text-inherit underline underline-offset-2 decoration-neutral-400 transition-opacity hover:opacity-90 dark:decoration-neutral-500",
-        children: label
-      }
-    ),
-    /* @__PURE__ */ jsx(Component, { content: body, openDelay: 100, tooltipClassName: "text-sm", children: /* @__PURE__ */ jsx(
-      "span",
-      {
-        className: "inline-flex translate-y-px cursor-help select-none",
-        tabIndex: 0,
-        "aria-label": `Short definition of ${label}`,
-        children: /* @__PURE__ */ jsx(Badge, { variant: "info", static: true, className: "px-1 py-0 text-[0.65rem] leading-none", children: "?" })
-      }
-    ) })
-  ] });
-}
-const TERMS = [
-  {
-    href: "https://en.wikipedia.org/wiki/Blockchain",
-    label: "blockchain",
-    tooltip: "Decentralized deterministic state machine, others call it decentralized public ledger."
-  },
-  {
-    href: "https://www.inkandswitch.com/essay/malleable-software/",
-    label: "malleable software",
-    tooltip: "Tools that users can reshape with minimal friction to suit their unique needs. Modification becomes routine, not exceptional."
-  },
-  {
-    href: "https://en.wikipedia.org/wiki/Semantic_Web",
-    label: "semantic web",
-    tooltip: "Make internet data machine readable."
-  },
-  {
-    href: "https://en.wikipedia.org/wiki/Open-source_software",
-    label: "open-source software",
-    tooltip: "Software released under license and copyright distributing with source code."
-  }
-];
-function WhatIsAraIntersectionTerms() {
-  return /* @__PURE__ */ jsx(Fragment, { children: TERMS.map((t, i) => /* @__PURE__ */ jsxs(React__default.Fragment, { children: [
-    i > 0 && (i === TERMS.length - 1 ? " and " : ", "),
-    /* @__PURE__ */ jsx(Term, { ...t })
-  ] }, t.href)) });
-}
-
-const tooltipSurface = cn(
-  "rounded-xs max-w-md h-auto text-pretty",
-  "bg-white/90 backdrop-blur-md text-slate-800",
-  "dark:bg-white/10 dark:backdrop-blur-md dark:text-slate-100",
-  "border border-slate-200/50 dark:border-slate-700/50",
-  "shadow-lg text-sm leading-snug"
-);
-const TOOLTIPS = {
-  ckMalleable: "Ara combines blockchain, semantic web and open source to address malleable systems' problem. Blockchain provides an economy, semantic web provides description, open source provides software worth describing.",
-  ckBlockchain: "Ara combines malleable systems, semantic web and open source to address blockchain's problem. Software semantics gives it a real use case: decentralized storage of what software means, combining open source with user agency.",
-  ckSemantic: "Ara combines malleable systems, blockchain and open source to address semantic web's problem. Using it for open source apps and giving them malleability makes it valuable by storing on blockchain as collectively owned data.",
-  ckOss: "Ara combines malleable systems, semantic web and blockchain to address open source's problem. Semantics and malleability make it modular. Blockchain provides money flow cascading to all modules and contributors.",
-  softwareOwnership: "The result of malleable systems and blockchain combined. A protocol-level agreement that software is user-centric. Users can compose and reshape it beyond what was originally provided.",
-  softwareSemantic: "Software semantic is using semantic web to describe web applications — making software discoverable and composable by meaning, not by platform curation.",
-  ara: "Your device is a creative workspace, the internet is collective wisdom. Software ownership is possible through blockchain, because Ara acts as semantic storage and provides environment for software on computers."
-};
-function TooltipBody({ text }) {
-  const parts = text.split(/(?<=\.)\s+/);
-  return /* @__PURE__ */ jsx("div", { className: "space-y-2", children: parts.map((chunk, i) => /* @__PURE__ */ jsx("p", { children: chunk }, i)) });
-}
-function DiagramHelpMark() {
-  return /* @__PURE__ */ jsxs("svg", { width: "24", height: "24", viewBox: "0 0 24 24", className: "shrink-0", "aria-hidden": "true", children: [
-    /* @__PURE__ */ jsx(
-      "circle",
-      {
-        className: "fill-[#FAF9F6] stroke-[#1a1a18] dark:fill-[#2c2c2a] dark:stroke-[#F1EFE8]",
-        cx: "12",
-        cy: "12",
-        r: "11",
-        strokeWidth: "1"
-      }
-    ),
-    /* @__PURE__ */ jsx(
-      "text",
-      {
-        x: "12",
-        y: "12",
-        className: "fill-[#1a1a18] font-serif text-[13px] font-semibold dark:fill-[#F1EFE8]",
-        dominantBaseline: "central",
-        textAnchor: "middle",
-        children: "?"
-      }
-    )
-  ] });
-}
-function TermBadge({
-  text,
-  ariaLabel
-}) {
-  return /* @__PURE__ */ jsxs(Tooltip, { sideOffset: 10, children: [
-    /* @__PURE__ */ jsx(TooltipTrigger, { asChild: true, children: /* @__PURE__ */ jsx(
-      "span",
-      {
-        className: "inline-flex translate-y-px cursor-help select-none",
-        tabIndex: 0,
-        "aria-label": ariaLabel,
-        children: /* @__PURE__ */ jsx(Badge, { variant: "info", static: true, className: "px-1 py-0 text-[0.65rem] leading-none", children: "?" })
-      }
-    ) }),
-    /* @__PURE__ */ jsx(TooltipContent, { className: tooltipSurface, layout: "preserve-aspect", children: /* @__PURE__ */ jsx(TooltipBody, { text }) })
-  ] });
-}
-function CheckHelpBadge({
-  text,
-  ariaLabel
-}) {
-  return /* @__PURE__ */ jsxs(Tooltip, { sideOffset: 10, children: [
-    /* @__PURE__ */ jsx(TooltipTrigger, { asChild: true, children: /* @__PURE__ */ jsx(
-      "span",
-      {
-        className: "inline-flex cursor-help select-none items-center",
-        tabIndex: 0,
-        "aria-label": ariaLabel,
-        children: /* @__PURE__ */ jsx(DiagramHelpMark, {})
-      }
-    ) }),
-    /* @__PURE__ */ jsx(TooltipContent, { className: tooltipSurface, layout: "preserve-aspect", children: /* @__PURE__ */ jsx(TooltipBody, { text }) })
-  ] });
-}
-function UnderlineRow({
-  label,
-  tooltipKey,
-  ariaLabel
-}) {
-  return /* @__PURE__ */ jsxs("div", { className: "inline-flex h-full w-full items-center justify-center gap-0.5 px-1", children: [
-    /* @__PURE__ */ jsx(
-      "span",
-      {
-        className: cn(
-          "font-serif text-[12px] tracking-wide text-[#FAF9F6] dark:text-[#1a1a18]"
-        ),
-        children: label
-      }
-    ),
-    /* @__PURE__ */ jsx(TermBadge, { text: TOOLTIPS[tooltipKey], ariaLabel })
-  ] });
-}
-const CHECK_PATH = "M7 12 L11 16 L18 8";
-function DiagramCheckmarks() {
-  const mark = (cx, cy) => /* @__PURE__ */ jsxs("g", { children: [
-    /* @__PURE__ */ jsx(
-      "circle",
-      {
-        className: "fill-[#FAF9F6] stroke-[#1a1a18] dark:fill-[#2c2c2a] dark:stroke-[#F1EFE8]",
-        cx,
-        cy,
-        r: "11",
-        strokeWidth: "1"
-      }
-    ),
-    /* @__PURE__ */ jsx(
-      "path",
-      {
-        className: "fill-none stroke-[#1a1a18] stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round] dark:stroke-[#F1EFE8]",
-        transform: `translate(${cx - 12} ${cy - 12})`,
-        d: CHECK_PATH
-      }
-    )
-  ] }, `${cx}-${cy}`);
-  return /* @__PURE__ */ jsxs("g", { "aria-hidden": "true", children: [
-    mark(272, 211),
-    mark(408, 211),
-    mark(272, 361),
-    mark(408, 361)
-  ] });
-}
-function CheckHelpHotspot({
-  x,
-  y,
-  tooltipKey,
-  ariaLabel
-}) {
-  return /* @__PURE__ */ jsx("foreignObject", { x, y, width: "28", height: "28", children: /* @__PURE__ */ jsx(
-    "div",
-    {
-      ...{ xmlns: "http://www.w3.org/1999/xhtml" },
-      className: "flex h-full w-full items-center justify-center",
-      children: /* @__PURE__ */ jsx(CheckHelpBadge, { text: TOOLTIPS[tooltipKey], ariaLabel })
-    }
-  ) });
-}
-function AraIntersectionDiagram() {
-  return /* @__PURE__ */ jsx(TooltipProvider, { openDelay: 100, children: /* @__PURE__ */ jsxs(
-    "svg",
-    {
-      width: "680",
-      height: "580",
-      viewBox: "0 0 680 580",
-      role: "img",
-      "aria-label": "Ara at the intersection of four fields, shown as a hexagon diagram",
-      className: "mx-auto h-auto w-full max-w-full",
-      xmlns: "http://www.w3.org/2000/svg",
-      children: [
-        /* @__PURE__ */ jsx("title", { children: "Ara intersection" }),
-        /* @__PURE__ */ jsx("desc", { children: "Hexagon layout with Ara at center; solid connectors run from Ara outward to the four corner ideas and to software ownership / software semantic." }),
-        /* @__PURE__ */ jsx("defs", { children: /* @__PURE__ */ jsx(
-          "marker",
-          {
-            id: "arr-ara-diagram",
-            viewBox: "0 0 8 8",
-            refX: "6.5",
-            refY: "4",
-            markerWidth: "4.5",
-            markerHeight: "4.5",
-            orient: "auto",
-            children: /* @__PURE__ */ jsx(
-              "path",
-              {
-                d: "M1 1.5 L6.5 4 L1 6.5",
-                fill: "none",
-                stroke: "context-stroke",
-                strokeWidth: "1.15",
-                strokeLinecap: "round",
-                strokeLinejoin: "round"
-              }
-            )
-          }
-        ) }),
-        /* @__PURE__ */ jsx(
-          "polygon",
-          {
-            className: "fill-none stroke-neutral-300 dark:stroke-neutral-600",
-            points: "340,58 555,168 555,398 340,508 125,398 125,168",
-            strokeWidth: "1.25",
-            strokeDasharray: "6 4"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "line",
-          {
-            className: "fill-none stroke-neutral-900/85 dark:stroke-[#F1EFE8]/90",
-            x1: "317.6",
-            y1: "257.3",
-            x2: "266.8",
-            y2: "205",
-            strokeWidth: "1",
-            strokeLinecap: "round",
-            markerEnd: "url(#arr-ara-diagram)"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "line",
-          {
-            className: "fill-none stroke-neutral-900/85 dark:stroke-[#F1EFE8]/90",
-            x1: "362.4",
-            y1: "257.3",
-            x2: "415",
-            y2: "205",
-            strokeWidth: "1",
-            strokeLinecap: "round",
-            markerEnd: "url(#arr-ara-diagram)"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "line",
-          {
-            className: "fill-none stroke-neutral-900/85 dark:stroke-[#F1EFE8]/90",
-            x1: "322",
-            y1: "298.3",
-            x2: "267.4",
-            y2: "367.6",
-            strokeWidth: "1",
-            strokeLinecap: "round",
-            markerEnd: "url(#arr-ara-diagram)"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "line",
-          {
-            className: "fill-none stroke-neutral-900/85 dark:stroke-[#F1EFE8]/90",
-            x1: "358",
-            y1: "298.3",
-            x2: "414.3",
-            y2: "367.6",
-            strokeWidth: "1",
-            strokeLinecap: "round",
-            markerEnd: "url(#arr-ara-diagram)"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "line",
-          {
-            className: "fill-none stroke-neutral-900/85 dark:stroke-[#F1EFE8]/90",
-            x1: "340",
-            y1: "256",
-            x2: "340",
-            y2: "68",
-            strokeWidth: "1",
-            strokeLinecap: "round",
-            markerEnd: "url(#arr-ara-diagram)"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "line",
-          {
-            className: "fill-none stroke-neutral-900/85 dark:stroke-[#F1EFE8]/90",
-            x1: "340",
-            y1: "300",
-            x2: "340",
-            y2: "512",
-            strokeWidth: "1",
-            strokeLinecap: "round",
-            markerEnd: "url(#arr-ara-diagram)"
-          }
-        ),
-        /* @__PURE__ */ jsx(DiagramCheckmarks, {}),
-        /* @__PURE__ */ jsx(
-          "rect",
-          {
-            className: "fill-[#1a1a18] dark:fill-[#F1EFE8]",
-            x: "210",
-            y: "34",
-            width: "260",
-            height: "34",
-            rx: "17"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "rect",
-          {
-            className: "fill-[#1a1a18] dark:fill-[#F1EFE8]",
-            x: "210",
-            y: "512",
-            width: "260",
-            height: "34",
-            rx: "17"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "rect",
-          {
-            className: "fill-none stroke-neutral-900 dark:fill-[#2c2c2a] dark:stroke-[#9a9a92]",
-            x: "52",
-            y: "132",
-            width: "196",
-            height: "58",
-            rx: "5",
-            strokeWidth: "1"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "text",
-          {
-            className: "fill-neutral-900 font-serif text-[13px] font-bold dark:fill-[#F1EFE8]",
-            x: "150",
-            y: "155",
-            textAnchor: "middle",
-            children: "Malleable systems"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "text",
-          {
-            className: "fill-[#5a5a55] font-serif text-[11px] dark:fill-[#B4B2A9]",
-            x: "150",
-            y: "176",
-            textAnchor: "middle",
-            children: "No platform to compete"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "rect",
-          {
-            className: "fill-none stroke-neutral-900 dark:fill-[#2c2c2a] dark:stroke-[#9a9a92]",
-            x: "432",
-            y: "132",
-            width: "196",
-            height: "58",
-            rx: "5",
-            strokeWidth: "1"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "text",
-          {
-            className: "fill-neutral-900 font-serif text-[13px] font-bold dark:fill-[#F1EFE8]",
-            x: "530",
-            y: "155",
-            textAnchor: "middle",
-            children: "Blockchain"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "text",
-          {
-            className: "fill-[#5a5a55] font-serif text-[11px] dark:fill-[#B4B2A9]",
-            x: "530",
-            y: "176",
-            textAnchor: "middle",
-            children: "Needs a real use case"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "rect",
-          {
-            className: "fill-none stroke-neutral-900 dark:fill-[#2c2c2a] dark:stroke-[#9a9a92]",
-            x: "52",
-            y: "390",
-            width: "196",
-            height: "58",
-            rx: "5",
-            strokeWidth: "1"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "text",
-          {
-            className: "fill-neutral-900 font-serif text-[13px] font-bold dark:fill-[#F1EFE8]",
-            x: "150",
-            y: "413",
-            textAnchor: "middle",
-            children: "Semantic web"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "text",
-          {
-            className: "fill-[#5a5a55] font-serif text-[11px] dark:fill-[#B4B2A9]",
-            x: "150",
-            y: "434",
-            textAnchor: "middle",
-            children: "Built for data, didn't work"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "rect",
-          {
-            className: "fill-none stroke-neutral-900 dark:fill-[#2c2c2a] dark:stroke-[#9a9a92]",
-            x: "432",
-            y: "390",
-            width: "196",
-            height: "58",
-            rx: "5",
-            strokeWidth: "1"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "text",
-          {
-            className: "fill-neutral-900 font-serif text-[13px] font-bold dark:fill-[#F1EFE8]",
-            x: "530",
-            y: "413",
-            textAnchor: "middle",
-            children: "Open source"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "text",
-          {
-            className: "fill-[#5a5a55] font-serif text-[11px] dark:fill-[#B4B2A9]",
-            x: "530",
-            y: "434",
-            textAnchor: "middle",
-            children: "Needs sustainability"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "rect",
-          {
-            className: "fill-[#1a1a18] dark:fill-[#F1EFE8]",
-            x: "286",
-            y: "256",
-            width: "108",
-            height: "44",
-            rx: "5"
-          }
-        ),
-        /* @__PURE__ */ jsx("foreignObject", { x: "210", y: "34", width: "260", height: "34", children: /* @__PURE__ */ jsx(
-          "div",
-          {
-            ...{ xmlns: "http://www.w3.org/1999/xhtml" },
-            className: "flex h-full w-full items-stretch",
-            children: /* @__PURE__ */ jsx(
-              UnderlineRow,
-              {
-                label: "software ownership",
-                tooltipKey: "softwareOwnership",
-                ariaLabel: "Tooltip: software ownership"
-              }
-            )
-          }
-        ) }),
-        /* @__PURE__ */ jsx("foreignObject", { x: "210", y: "512", width: "260", height: "34", children: /* @__PURE__ */ jsx(
-          "div",
-          {
-            ...{ xmlns: "http://www.w3.org/1999/xhtml" },
-            className: "flex h-full w-full items-stretch",
-            children: /* @__PURE__ */ jsx(
-              UnderlineRow,
-              {
-                label: "software semantic",
-                tooltipKey: "softwareSemantic",
-                ariaLabel: "Tooltip: software semantic"
-              }
-            )
-          }
-        ) }),
-        /* @__PURE__ */ jsx("foreignObject", { x: "286", y: "256", width: "108", height: "44", children: /* @__PURE__ */ jsx(
-          "div",
-          {
-            ...{ xmlns: "http://www.w3.org/1999/xhtml" },
-            className: "flex h-full w-full items-center justify-center",
-            children: /* @__PURE__ */ jsxs("div", { className: "inline-flex items-baseline gap-0.5", children: [
-              /* @__PURE__ */ jsx(
-                "span",
-                {
-                  className: cn(
-                    "font-serif text-[15px] font-bold tracking-wide text-[#FAF9F6] dark:text-[#1a1a18]"
-                  ),
-                  children: "Ara"
-                }
-              ),
-              /* @__PURE__ */ jsx(TermBadge, { text: TOOLTIPS.ara, ariaLabel: "Tooltip: Ara" })
-            ] })
-          }
-        ) }),
-        /* @__PURE__ */ jsx(
-          CheckHelpHotspot,
-          {
-            x: 285,
-            y: 199,
-            tooltipKey: "ckMalleable",
-            ariaLabel: "Why Ara addresses malleable systems"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          CheckHelpHotspot,
-          {
-            x: 367,
-            y: 199,
-            tooltipKey: "ckBlockchain",
-            ariaLabel: "Why Ara addresses blockchain"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          CheckHelpHotspot,
-          {
-            x: 285,
-            y: 349,
-            tooltipKey: "ckSemantic",
-            ariaLabel: "Why Ara addresses semantic web"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          CheckHelpHotspot,
-          {
-            x: 367,
-            y: 349,
-            tooltipKey: "ckOss",
-            ariaLabel: "Why Ara addresses open source"
-          }
-        )
-      ]
-    }
-  ) });
-}
-
 const $$Index = createComponent(($$result, $$props, $$slots) => {
-  const whitepaperUrl = "https://bitcointalk.org/index.php?topic=5579945.new";
-  return renderTemplate`${renderComponent($$result, "MinimalDarkLayout", $$MinimalDarkLayout, { "title": "Ara" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="mx-auto max-w-3xl px-6 pb-24 pt-12 text-left md:px-8 md:pt-16 [&_p]:text-pretty"> <!-- Hero --> <section class="space-y-8"> <h1 class="text-center text-3xl font-normal leading-tight text-neutral-900 md:text-4xl md:leading-tight dark:text-white">
-Ara
-</h1> <div class="-mt-4 text-center space-y-2 text-lg leading-relaxed text-neutral-700 md:text-xl dark:text-neutral-300"> <p>Your device is a creative workspace,</p> <p>The internet is collective wisdom.</p> </div> <div class="space-y-4 text-base leading-relaxed text-neutral-700 dark:text-neutral-300"> <p>
-You use software every day that you cannot reshape. Over time, the
-          interface nudges you toward revenue increase and vendor lock-in. Ara
-          is a desktop environment and dual-blockchain protocol for <a href="#software-ownership" class="text-inherit underline underline-offset-2 hover:opacity-90">software ownership.</a> </p> </div> </section> <!-- Software ownership --> <section id="software-ownership" class="mt-20 border-t border-neutral-200 pt-16 md:mt-24 md:pt-20 dark:border-white/10"> <h2 class="text-xl font-normal italic leading-snug text-neutral-900 md:text-2xl md:leading-snug dark:text-white">
-Software ownership
-</h2> <p class="mt-6 text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-Compose apps like lego components.
-</p><p>
-Modify the interface beyond what the developer originally built.
-</p> </section> <!-- What is Ara? --> <section id="what-is-ara" class="mt-10 border-t border-neutral-200 pt-16 md:mt-24 md:pt-20 dark:border-white/10"> <h2 class="text-2xl font-normal text-neutral-900 md:text-3xl dark:text-white">
-What is Ara?
-</h2> <div role="paragraph" class="mt-6 text-pretty text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-Ara is at the intersection of${" "} ${renderComponent($$result2, "WhatIsAraIntersectionTerms", WhatIsAraIntersectionTerms, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/landing/WhatIsAraIntersectionTerms", "client:component-export": "default" })}. Each of those fields has
-        unsolved problems that are resolved when they are combined together.
-</div> <div class="mt-10 overflow-x-auto rounded-xl border border-neutral-200 bg-neutral-50 p-4 dark:border-white/10 dark:bg-white/[0.03] md:p-6"> ${renderComponent($$result2, "AraIntersectionDiagram", AraIntersectionDiagram, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@/components/landing/AraIntersectionDiagram", "client:component-export": "default" })} </div> <p class="mx-auto mt-10 max-w-2xl text-center text-lg font-bold leading-snug tracking-tight text-neutral-900 md:mt-12 md:text-xl dark:text-white">
-Each of them aims for user agency and decentralized yet accessible for
-        all network. Together they achieve it.
-</p> <h3 class="mt-12 text-xl font-normal text-neutral-900 md:text-2xl dark:text-white">
-Three core components
-</h3> <div class="mt-8 border-t border-neutral-200 pt-10 dark:border-white/10"> <div class="grid gap-8 border-b border-neutral-200 pb-10 md:grid-cols-[minmax(0,12rem)_1fr] md:gap-x-10 md:gap-y-0 dark:border-white/10"> <div> <p class="text-xs font-medium uppercase tracking-[0.15em] text-neutral-600 dark:text-neutral-500">
-Desktop shell
-</p> <p class="mt-3 font-serif text-xl font-normal text-neutral-900 md:text-2xl dark:text-white">
-Maydan
-</p> </div> <div class="space-y-4 self-start text-base leading-relaxed text-neutral-700 md:pt-1 dark:text-neutral-300"> <p>
-You open a video tutorial and a code editor side by side. You tag
-              them together semantically as &ldquo;Learn programming&rdquo;: the
-              code editor follows the video player. As you type, video pauses,
-              as you complete coding, the video continues automatically.
-</p> <p>
-But code doesn&apos;t compile. Maydan surfaces a hint from another
-              user who hit the same failure. You apply it. A short clip overlays
-              explaining the packages to install. You install, compile, overlay
-              disappears, tutorial continues.
-</p> </div> </div> <div class="grid gap-8 border-b border-neutral-200 py-10 md:grid-cols-[minmax(0,12rem)_1fr] md:gap-x-10 md:gap-y-0 dark:border-white/10"> <div> <p class="text-xs font-medium uppercase tracking-[0.15em] text-neutral-600 dark:text-neutral-500">
-Blockchain A
-</p> <p class="mt-3 font-serif text-xl font-normal text-neutral-900 md:text-2xl dark:text-white">
-Arada
-</p> </div> <p class="self-start text-base leading-relaxed text-neutral-700 md:pt-1 dark:text-neutral-300">
-Open-source authors publish
-<code class="rounded-md bg-neutral-100 px-2 py-0.5 font-mono text-sm text-neutral-800 dark:bg-white/10 dark:text-neutral-200">ara.json</code>, a machine-readable description of their software&apos;s meaning.
-            Registered apps grant software ownership to the user.
-</p> </div> <div class="grid gap-8 pt-10 md:grid-cols-[minmax(0,12rem)_1fr] md:gap-x-10 md:gap-y-0"> <div> <p class="text-xs font-medium uppercase tracking-[0.15em] text-neutral-600 dark:text-neutral-500">
-Blockchain B
-</p> <p class="mt-3 font-serif text-xl font-normal text-neutral-900 md:text-2xl dark:text-white">
-Aramak
-</p> </div> <p class="self-start text-base leading-relaxed text-neutral-700 md:pt-1 dark:text-neutral-300">
-A decentralized recommendation engine. Software surfaces through
-            real user behavior, not platform curation. No actual user data —
-            only semantics tracked.
-</p> </div> </div> </section> <!-- User-centric AI --> <section id="user-centric-ai" class="mt-20 border-t border-neutral-200 pt-16 md:mt-24 md:pt-20 dark:border-white/10"> <h2 class="text-2xl font-normal text-neutral-900 md:text-3xl dark:text-white">
-Ara is a foundation for user-centric AI.
-</h2> <p class="mt-6 text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-You can use any AI. With Ara, they get full functional over the apps
-        without being pretrained. They work locally with semantics only, without
-        touching your data.
-</p> <p class="mt-4 text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-Those same semantics, collectively contributed by all users, become the
-        network data for Aramak. Available for anyone to train own local AI on
-        verifiable public data.
-</p> </section> <!-- Metaverse reimagined --> <section id="metaverse-reimagined" class="mt-20 border-t border-neutral-200 pt-16 md:mt-24 md:pt-20 dark:border-white/10"> <h2 class="text-2xl font-normal text-neutral-900 md:text-3xl dark:text-white">
-Metaverse reimagined.
-</h2> <div class="mt-6 space-y-4 text-base leading-relaxed text-neutral-700 dark:text-neutral-300"> <p>
-Metaverse is not a virtual reality based social network, but your
-          computer as a creative space.
-</p> <p>
-Think of your device as Macromedia Flash or HyperCard but unlike them,
-          the lego bricks for creativity is the software. Any user can compose
-          them, change their interfaces and share it.
-</p> </div> </section> <!-- Participation --> <section id="participation" class="mt-20 border-t border-neutral-200 pt-16 md:mt-24 md:pt-20 dark:border-white/10"> <h2 class="text-2xl font-normal leading-snug text-neutral-900 md:text-3xl md:leading-snug dark:text-white">
-What is ready and what you can do if you want to be part of it.
-</h2> <div class="mt-8 space-y-6 text-base leading-relaxed text-neutral-700 dark:text-neutral-300"> <p>
-The whitepaper is released under CC0 (public domain). Although it is
-          from a blockchain perspective, it explains the Ara framework and its
-          applications.
-</p> <p> <a${addAttribute(whitepaperUrl, "href")} target="_blank" rel="noopener noreferrer" class="font-medium text-neutral-900 underline decoration-neutral-400 underline-offset-[0.2em] transition-colors hover:decoration-neutral-600 dark:text-white dark:decoration-white/30 dark:hover:decoration-white">
-READ THE WHITEPAPER →
-</a> </p> <p>
-For feedback on the whitepaper, visit the${" "} <a href="/aratalk" class="text-neutral-900 underline decoration-neutral-400 underline-offset-[0.2em] transition-colors hover:decoration-neutral-600 dark:text-neutral-200 dark:decoration-neutral-500 dark:hover:decoration-neutral-300">discussion page</a>, find the appropriate community and leave your message there.
-</p> <p>
-Whitepaper is the result of multiple experiments since 2024. The
-          source code links and how idea of Ara came to live on the${" "} <a href="/about" class="text-neutral-900 underline decoration-neutral-400 underline-offset-[0.2em] transition-colors hover:decoration-neutral-600 dark:text-neutral-200 dark:decoration-neutral-500 dark:hover:decoration-neutral-300">about page</a>.
-</p> <p>
-The whitepaper is done. Now comes implementation. Follow us on${" "} <a${addAttribute(socialLinks.twitter.url, "href")} target="_blank" rel="noopener noreferrer" class="text-neutral-900 underline decoration-neutral-400 underline-offset-[0.2em] transition-colors hover:decoration-neutral-600 dark:text-neutral-200 dark:decoration-neutral-500 dark:hover:decoration-neutral-300">X</a>,${" "} <a${addAttribute(socialLinks.bluesky.url, "href")} target="_blank" rel="noopener noreferrer" class="text-neutral-900 underline decoration-neutral-400 underline-offset-[0.2em] transition-colors hover:decoration-neutral-600 dark:text-neutral-200 dark:decoration-neutral-500 dark:hover:decoration-neutral-300">Bluesky</a>, or${" "} <a${addAttribute(socialLinks.linkedin.url, "href")} target="_blank" rel="noopener noreferrer" class="text-neutral-900 underline decoration-neutral-400 underline-offset-[0.2em] transition-colors hover:decoration-neutral-600 dark:text-neutral-200 dark:decoration-neutral-500 dark:hover:decoration-neutral-300">LinkedIn</a>${" "}for roadmap release.
-</p> </div> </section> <footer class="mt-20 border-t border-neutral-200 pt-10 text-sm text-neutral-600 dark:border-white/10 dark:text-neutral-500" aria-label="Site footer"> <p class="text-neutral-600 dark:text-neutral-500">
+  return renderTemplate`${renderComponent($$result, "MinimalDarkLayout", $$MinimalDarkLayout, { "title": "Ara", "data-astro-cid-j7pv25f6": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="ara-main" data-astro-cid-j7pv25f6> <div class="hero" data-astro-cid-j7pv25f6> <p class="hero-mono" data-astro-cid-j7pv25f6>ara.foundation</p> <h1 class="hero-slogan" data-astro-cid-j7pv25f6> <em data-astro-cid-j7pv25f6>Creative workspace</em> 💻<br data-astro-cid-j7pv25f6>
+on collective wisdom 🌐
+</h1> <p class="hero-subtitle" data-astro-cid-j7pv25f6>
+Ara is a set open-source technologies and protocols to organize Web
+        semantically. <br data-astro-cid-j7pv25f6>It brings ownership over computer to users. Lead
+        designer is
+<a href="https://ahmetson.com/" data-astro-cid-j7pv25f6>Medet Ahmetson</a>.
+</p> </div> <section id="pillars" data-astro-cid-j7pv25f6> <p class="s-label reveal" data-astro-cid-j7pv25f6>What it means for You?</p> <div class="pillars reveal" data-astro-cid-j7pv25f6> <div class="pillar pillar-wide" data-astro-cid-j7pv25f6> <p class="pillar-num" data-astro-cid-j7pv25f6>01</p> <span class="pillar-icon" data-astro-cid-j7pv25f6>💻</span> <h3 class="pillar-title" data-astro-cid-j7pv25f6>Your device is your creative workspace</h3> <p class="pillar-body" data-astro-cid-j7pv25f6>
+Your computer is the center. A workspace where you create, compose,
+            share and optionally earn on what you make.
+</p> <p class="pillar-body pillar-body-top" data-astro-cid-j7pv25f6>
+To see how it will look, check out
+<a href="https://flipbook.page" target="_blank" rel="noopener" data-astro-cid-j7pv25f6>Flipbook.page</a>: upload an image and it turns into a "page". Click on any object
+            in the page and you get a new image exploring that thing in more
+            depth. Pages are generated on demand. <br data-astro-cid-j7pv25f6><br data-astro-cid-j7pv25f6>Ara is similar,
+            but instead of images, it is software interfaces. UX researchers
+            call this a
+<a href="https://www.inkandswitch.com/malleable-software/" target="_blank" rel="noopener" data-astro-cid-j7pv25f6>malleable system</a>: software that reshapes around how you actually work.
+</p> </div> <div class="pillar" data-astro-cid-j7pv25f6> <p class="pillar-num" data-astro-cid-j7pv25f6>02</p> <span class="pillar-icon" data-astro-cid-j7pv25f6>🧱</span> <h3 class="pillar-title" data-astro-cid-j7pv25f6>
+Your data local. Apps & UI are Lego bricks
+</h3> <p class="pillar-body" data-astro-cid-j7pv25f6>
+Your data always stays on your local computer.
+</p> <p class="pillar-body pillar-body-mid" data-astro-cid-j7pv25f6>
+Meanwhile, you can create, move, and combine visual interfaces and
+            pipe apps in whatever way you want.
+<br data-astro-cid-j7pv25f6><br data-astro-cid-j7pv25f6>
+Ara is complementary with existing OS and Web. Turning existing apps into
+            malleable, personalizable building blocks for you.
+<br data-astro-cid-j7pv25f6><br data-astro-cid-j7pv25f6> <strong data-astro-cid-j7pv25f6>The apps are required to be open-source.</strong> </p> </div> <div class="pillar" data-astro-cid-j7pv25f6> <p class="pillar-num" data-astro-cid-j7pv25f6>03</p> <span class="pillar-icon" data-astro-cid-j7pv25f6>🌐</span> <h3 class="pillar-title" data-astro-cid-j7pv25f6>Blockchain is collective wisdom</h3> <p class="pillar-body" data-astro-cid-j7pv25f6>
+The blockchain stores app <strong data-astro-cid-j7pv25f6>semantics</strong>: what app is
+            composed of, relationships to other apps, and to the user.
+</p> <p class="pillar-body pillar-body-mid" data-astro-cid-j7pv25f6>
+Additionally, this blockchain is a p2p recommendation engine, that
+            lets you share and discover apps built with lego bricks.
+<br data-astro-cid-j7pv25f6><br data-astro-cid-j7pv25f6>
+Blockchain means discoveribility by user intent, instead of attention
+            grabbing.
+</p> </div> </div> </section> <section id="examples" class="examples-section" data-astro-cid-j7pv25f6> <h2 class="examples-heading reveal text-center" data-astro-cid-j7pv25f6>Use cases</h2> <p class="example-label" data-astro-cid-j7pv25f6>
+Computers communicate each other via blockchain. How you personalize
+        your apps is helped by people who have same apps and similar situation.
+</p> <div class="example-cards reveal" data-astro-cid-j7pv25f6> <button class="example-card" data-comic-id="teacher" type="button" data-astro-cid-j7pv25f6> <div class="ec-corner ec-corner-teacher" aria-hidden="true" data-astro-cid-j7pv25f6> <div class="ec-window-head" data-astro-cid-j7pv25f6> <span class="ec-dot ec-dot-red" data-astro-cid-j7pv25f6></span> <span class="ec-dot ec-dot-yellow" data-astro-cid-j7pv25f6></span> <span class="ec-dot ec-dot-green" data-astro-cid-j7pv25f6></span> <span class="ec-window-title" data-astro-cid-j7pv25f6>presentation.ara — slide 4</span> </div> <div class="ec-teacher-tools" data-astro-cid-j7pv25f6> <span class="ec-tool-cell" data-astro-cid-j7pv25f6>T</span> <span class="ec-tool-cell" data-astro-cid-j7pv25f6>⬜</span> <span class="ec-tool-cell" data-astro-cid-j7pv25f6>📷</span> <span class="ec-tool-cell" data-astro-cid-j7pv25f6>≡</span> </div> </div> <p class="ec-who" data-astro-cid-j7pv25f6>A teacher</p> <h3 class="ec-title" data-astro-cid-j7pv25f6>
+Building a presentation about ancient scripts
+</h3> </button> <button class="example-card" data-comic-id="programmer" type="button" data-astro-cid-j7pv25f6> <div class="ec-corner ec-corner-student" aria-hidden="true" data-astro-cid-j7pv25f6> <div class="ec-window-head" data-astro-cid-j7pv25f6> <span class="ec-dot ec-dot-red" data-astro-cid-j7pv25f6></span> <span class="ec-dot ec-dot-yellow" data-astro-cid-j7pv25f6></span> <span class="ec-dot ec-dot-green" data-astro-cid-j7pv25f6></span> <span class="ec-window-title" data-astro-cid-j7pv25f6>tutorial-player</span> </div> <div class="ec-student-tools" data-astro-cid-j7pv25f6> <span class="ec-play-chip" data-astro-cid-j7pv25f6>▶</span> <span class="ec-terminal-chip" data-astro-cid-j7pv25f6> <span class="ec-terminal-head" data-astro-cid-j7pv25f6>main.rs</span> <span class="ec-terminal-row" data-astro-cid-j7pv25f6> <span class="ec-terminal-prompt" data-astro-cid-j7pv25f6>&gt;</span> <span class="ec-terminal-input" data-astro-cid-j7pv25f6></span> <span class="ec-terminal-cursor" data-astro-cid-j7pv25f6></span> </span> </span> </div> </div> <p class="ec-who" data-astro-cid-j7pv25f6>A student</p> <h3 class="ec-title" data-astro-cid-j7pv25f6>Tired of pausing a video every time he types</h3> </button> </div> </section> <div class="comic-overlay" id="comicOverlay" data-astro-cid-j7pv25f6> <div class="comic-header" data-astro-cid-j7pv25f6> <button class="comic-close" id="comicCloseBtn" type="button" data-astro-cid-j7pv25f6>Back</button> </div> <div class="comic-scroll" id="comicScroll" data-astro-cid-j7pv25f6></div> </div> <section id="ai" class="ai-section" data-astro-cid-j7pv25f6> <p class="s-label reveal" data-astro-cid-j7pv25f6>Foundation for empowering AI</p> <div class="ai-inner" data-astro-cid-j7pv25f6> <div class="reveal" data-astro-cid-j7pv25f6> <h2 class="ai-heading" data-astro-cid-j7pv25f6>
+Ara is a foundation for local-first AI & public training data.
+</h2> <p class="ai-body" data-astro-cid-j7pv25f6>
+Your data stays on your device. Your computer uses open-source apps
+            with semantics.
+<br data-astro-cid-j7pv25f6><br data-astro-cid-j7pv25f6>
+Then any AI keeps data locally & knows all app functionality: no need
+            for MCP, no need for complicated screenshot analyzing.
+<br data-astro-cid-j7pv25f6><br data-astro-cid-j7pv25f6>
+The blockchain keeps the public semantics and intent-tracking data available
+            for verifiable training. <strong data-astro-cid-j7pv25f6>Ara blockchains becomes the first public training data for AI.</strong> </p> </div> <div class="ai-diagram reveal reveal-d" data-astro-cid-j7pv25f6> <svg viewBox="0 0 1200 520" role="img" aria-label="Balanced architecture diagram showing robot, app UI, semantic layer, and GitHub/blockchain inputs." data-astro-cid-j7pv25f6> <title>
+              Robot assistant uses app semantics from GitHub and blockchain
+            </title> <defs data-astro-cid-j7pv25f6> <marker id="aiArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse" data-astro-cid-j7pv25f6> <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" data-astro-cid-j7pv25f6></path> </marker> </defs> <g class="diagram-wires" data-astro-cid-j7pv25f6> <line x1="1020" y1="195" x2="840" y2="278" marker-end="url(#aiArrow)" data-astro-cid-j7pv25f6></line> <line x1="1020" y1="322" x2="850" y2="340" marker-end="url(#aiArrow)" data-astro-cid-j7pv25f6></line> <line x1="640" y1="266" x2="210" y2="255" marker-end="url(#aiArrow)" data-astro-cid-j7pv25f6></line> </g> <g class="diagram-robot" data-astro-cid-j7pv25f6> <circle cx="130" cy="220" r="55" data-astro-cid-j7pv25f6></circle> <rect x="70" y="280" width="120" height="120" rx="36" data-astro-cid-j7pv25f6></rect> <circle cx="112" cy="215" r="7" data-astro-cid-j7pv25f6></circle> <circle cx="148" cy="215" r="7" data-astro-cid-j7pv25f6></circle> <path d="M 108 240 Q 130 258 152 240" data-astro-cid-j7pv25f6></path> <line x1="130" y1="160" x2="130" y2="145" data-astro-cid-j7pv25f6></line> <circle cx="130" cy="138" r="8" data-astro-cid-j7pv25f6></circle> </g> <text x="130" y="430" class="diagram-label" text-anchor="middle" data-astro-cid-j7pv25f6>Robot Assistant</text> <g class="diagram-screen-ghost" transform="translate(80 24) skewX(7) skewY(5)" data-astro-cid-j7pv25f6> <rect x="448" y="138" width="280" height="220" rx="18" data-astro-cid-j7pv25f6></rect> <rect x="534" y="224" width="172" height="36" rx="10" data-astro-cid-j7pv25f6></rect> <rect x="534" y="272" width="172" height="36" rx="10" data-astro-cid-j7pv25f6></rect> <text x="636" y="247" class="diagram-chip" text-anchor="middle" data-astro-cid-j7pv25f6>Interface</text> <text x="636" y="295" class="diagram-chip" text-anchor="middle" data-astro-cid-j7pv25f6>Logic</text> </g> <text x="808" y="418" class="diagram-label diagram-label-skew" text-anchor="end" transform="skewX(7) skewY(5)" data-astro-cid-j7pv25f6>
+Semantic
+</text> <g class="diagram-screen-main" transform="translate(52 22) skewX(7) skewY(5)" data-astro-cid-j7pv25f6> <g class="diagram-cube" data-astro-cid-j7pv25f6> <polygon points="246,250 276,232 308,250 278,268" data-astro-cid-j7pv25f6></polygon> <polygon points="246,250 246,288 278,306 278,268" data-astro-cid-j7pv25f6></polygon> <polygon points="278,268 308,250 308,288 278,306" data-astro-cid-j7pv25f6></polygon> <text x="266" y="295" class="diagram-cube-face-label" text-anchor="middle" transform="rotate(30 286 283)" data-astro-cid-j7pv25f6>
+data
+</text> </g> <text x="277" y="328" class="diagram-note diagram-cube-label" text-anchor="middle" data-astro-cid-j7pv25f6>
+Kept locally
+</text> <rect x="320" y="152" width="310" height="250" rx="18" data-astro-cid-j7pv25f6></rect> <rect x="340" y="172" width="270" height="26" rx="10" data-astro-cid-j7pv25f6></rect> <rect x="340" y="212" width="270" height="150" rx="14" data-astro-cid-j7pv25f6></rect> <polygon points="450,262 450,312 500,287" data-astro-cid-j7pv25f6></polygon> <rect x="340" y="375" width="180" height="10" rx="5" data-astro-cid-j7pv25f6></rect> <circle cx="352" cy="185" r="4" data-astro-cid-j7pv25f6></circle> <circle cx="366" cy="185" r="4" data-astro-cid-j7pv25f6></circle> <circle cx="380" cy="185" r="4" data-astro-cid-j7pv25f6></circle> </g> <text x="500" y="440" class="diagram-label diagram-label-skew" text-anchor="middle" transform="skewX(7) skewY(5)" data-astro-cid-j7pv25f6>
+App UI
+</text> <g class="diagram-source" data-astro-cid-j7pv25f6> <g data-astro-cid-j7pv25f6> <circle cx="1020" cy="180" r="54" data-astro-cid-j7pv25f6></circle> <path d="M 990 200 Q 992 168 1020 168 Q 1048 168 1050 200" data-astro-cid-j7pv25f6></path> <path d="M 1000 165 L 1008 153 L 1016 165" data-astro-cid-j7pv25f6></path> <path d="M 1024 165 L 1032 153 L 1040 165" data-astro-cid-j7pv25f6></path> </g> <text x="1020" y="245" class="diagram-label" text-anchor="middle" data-astro-cid-j7pv25f6>GitHub</text> <text x="1020" y="266" class="diagram-note" text-anchor="middle" data-astro-cid-j7pv25f6>source code of app</text> </g> <g class="diagram-source" data-astro-cid-j7pv25f6> <g data-astro-cid-j7pv25f6> <rect x="960" y="290" width="120" height="72" rx="18" data-astro-cid-j7pv25f6></rect> <rect x="970" y="302" width="100" height="14" rx="7" data-astro-cid-j7pv25f6></rect> <rect x="970" y="324" width="100" height="14" rx="7" data-astro-cid-j7pv25f6></rect> <rect x="970" y="346" width="100" height="14" rx="7" data-astro-cid-j7pv25f6></rect> </g> <text x="1020" y="390" class="diagram-label" text-anchor="middle" data-astro-cid-j7pv25f6>Blockchain</text> <text x="1020" y="411" class="diagram-note" text-anchor="middle" data-astro-cid-j7pv25f6>semantic of app</text> </g> </svg> </div> </div> </section> <section id="people" data-astro-cid-j7pv25f6> <p class="s-label reveal" data-astro-cid-j7pv25f6>For whom and why</p> <div class="people-header reveal" data-astro-cid-j7pv25f6> <h2 class="people-heading" data-astro-cid-j7pv25f6>Technology is not the point. People are.</h2> <p class="people-sub" data-astro-cid-j7pv25f6> <em data-astro-cid-j7pv25f6>Ara</em> from Turkmen language translated as a "space in between", or
+          medium as abstract. That's goal of Ara to be abstract and invisible without
+          pointing out to any technology or protocol. Instead, it's pointing on alignment
+          of four groups of people who build, run, and semantically align the Web
+          for the benefit of all.
+</p> </div> <div class="people-grid reveal" data-astro-cid-j7pv25f6> <div class="person" data-astro-cid-j7pv25f6> <div class="person-role-row" data-astro-cid-j7pv25f6> <p class="person-role" data-astro-cid-j7pv25f6>Users</p> <span class="person-bust person-bust-user" aria-hidden="true" data-astro-cid-j7pv25f6> <svg viewBox="0 0 80 92" xmlns="http://www.w3.org/2000/svg" data-astro-cid-j7pv25f6> <ellipse cx="40" cy="28" rx="18" ry="19" fill="#c8a87a" data-astro-cid-j7pv25f6></ellipse> <path d="M22 24 Q 24 8 40 6 Q 56 8 58 24" fill="#1a1408" data-astro-cid-j7pv25f6></path> <ellipse cx="33" cy="27" rx="3" ry="4" fill="#1a1408" data-astro-cid-j7pv25f6></ellipse> <ellipse cx="47" cy="27" rx="3" ry="4" fill="#1a1408" data-astro-cid-j7pv25f6></ellipse> <rect x="34" y="44" width="12" height="10" rx="3" fill="#b89060" data-astro-cid-j7pv25f6></rect> <rect x="18" y="52" width="44" height="28" rx="8" fill="#2a3545" data-astro-cid-j7pv25f6></rect> <path d="M18 58 Q 40 70 62 58 L 62 80 L 18 80 Z" fill="#242e3e" data-astro-cid-j7pv25f6></path> </svg> </span> </div> <h3 class="person-title" data-astro-cid-j7pv25f6>You are king of computer</h3> <p class="person-desc" data-astro-cid-j7pv25f6>
+Your device adapts to you and work on your terms
+<br data-astro-cid-j7pv25f6><i data-astro-cid-j7pv25f6>user sama &ndash; thats how <strong data-astro-cid-j7pv25f6>you</strong> are called by AI minions</i> </p> </div> <div class="person" data-astro-cid-j7pv25f6> <div class="person-role-row" data-astro-cid-j7pv25f6> <p class="person-role" data-astro-cid-j7pv25f6>Designers</p> <span class="person-bust person-bust-designer" aria-hidden="true" data-astro-cid-j7pv25f6> <svg viewBox="0 0 80 92" xmlns="http://www.w3.org/2000/svg" data-astro-cid-j7pv25f6> <ellipse cx="40" cy="29" rx="17" ry="18" fill="#e8c49a" data-astro-cid-j7pv25f6></ellipse> <path d="M22 24 Q 25 11 40 9 Q 55 11 58 24 Q 53 15 40 15 Q 27 15 22 24" fill="#432918" data-astro-cid-j7pv25f6></path> <ellipse cx="33" cy="29" rx="2.8" ry="3.6" fill="#2a1a10" data-astro-cid-j7pv25f6></ellipse> <ellipse cx="47" cy="29" rx="2.8" ry="3.6" fill="#2a1a10" data-astro-cid-j7pv25f6></ellipse> <rect x="34" y="46" width="12" height="9" rx="3" fill="#d4a87a" data-astro-cid-j7pv25f6></rect> <rect x="18" y="54" width="44" height="26" rx="8" fill="#5b2f52" data-astro-cid-j7pv25f6></rect> <path d="M18 62 Q 40 52 62 62 L 62 80 L 18 80 Z" fill="#47213f" data-astro-cid-j7pv25f6></path> </svg> </span> </div> <h3 class="person-title" data-astro-cid-j7pv25f6>Experiment and go viral</h3> <p class="person-desc" data-astro-cid-j7pv25f6>
+Build interfaces as an Art. Get funds and go viral by users who
+            appreciate your work and use it as lego brick.
+</p> </div> <div class="person" data-astro-cid-j7pv25f6> <div class="person-role-row" data-astro-cid-j7pv25f6> <p class="person-role" data-astro-cid-j7pv25f6>Open Source Developers</p> <span class="person-bust person-bust-dev" aria-hidden="true" data-astro-cid-j7pv25f6> <svg viewBox="0 0 80 92" xmlns="http://www.w3.org/2000/svg" data-astro-cid-j7pv25f6> <ellipse cx="40" cy="28" rx="17" ry="18" fill="#d6b182" data-astro-cid-j7pv25f6></ellipse> <path d="M22 25 Q 25 8 40 7 Q 55 8 58 25" fill="#1a1408" data-astro-cid-j7pv25f6></path> <rect x="28" y="25" width="24" height="10" rx="5" fill="none" stroke="#3a4a5a" stroke-width="3" data-astro-cid-j7pv25f6></rect> <ellipse cx="34" cy="30" rx="2.5" ry="3.5" fill="#1a1408" data-astro-cid-j7pv25f6></ellipse> <ellipse cx="46" cy="30" rx="2.5" ry="3.5" fill="#1a1408" data-astro-cid-j7pv25f6></ellipse> <rect x="34" y="45" width="12" height="9" rx="3" fill="#bc9668" data-astro-cid-j7pv25f6></rect> <rect x="18" y="54" width="44" height="26" rx="8" fill="#2a3a4a" data-astro-cid-j7pv25f6></rect> <rect x="26" y="61" width="28" height="7" rx="3" fill="#1f2c3b" data-astro-cid-j7pv25f6></rect> <rect x="56" y="60" width="8" height="10" rx="2" fill="#78c878" data-astro-cid-j7pv25f6></rect> </svg> </span> </div> <h3 class="person-title" data-astro-cid-j7pv25f6>Build the backbone, set the protocols</h3> <p class="person-desc" data-astro-cid-j7pv25f6>
+No worry about sophisticated UI. Make your source code as a craft.
+            Design data models to connect with other apps and set protocol
+            standard without consortiums.
+<br data-astro-cid-j7pv25f6><br data-astro-cid-j7pv25f6>
+Get funds and go viral by users who appreciate your work and use it as
+            lego brick.
+</p> </div> <div class="person" data-astro-cid-j7pv25f6> <p class="person-role" data-astro-cid-j7pv25f6>Node Operators</p> <h3 class="person-title" data-astro-cid-j7pv25f6>Find the best path between all three</h3> <p class="person-desc" data-astro-cid-j7pv25f6>
+You are the connective tissue. Your work routes meaning through the
+            network, keeping users, designers, and developers in alignment.
+</p> </div> </div> </section> <section id="pilot" class="pilot-section" data-astro-cid-j7pv25f6> <p class="s-label reveal" data-astro-cid-j7pv25f6>Now</p> <div class="pilot-inner" data-astro-cid-j7pv25f6> <div class="reveal" data-astro-cid-j7pv25f6> <div class="pilot-tag" data-astro-cid-j7pv25f6>Pilot version</div> <h2 class="pilot-heading" data-astro-cid-j7pv25f6>Join us.</h2> <p class="pilot-body" data-astro-cid-j7pv25f6>
+Before making computers communicate and share user experience on
+            software use, we need to solve another problem: open-source is not
+            sustainable. Our current phase is solving that and seeks a grant.
+            For more information reach out to me on
+<a href="mailto:medet@ara.foundation" data-astro-cid-j7pv25f6>medet@ara.foundation</a>.
+</p> <p class="pilot-body pilot-body-extra" data-astro-cid-j7pv25f6>
+For technical readers to dig deeper check out our
+<a href="/ara.pdf" target="_blank" rel="noopener" data-astro-cid-j7pv25f6>whitepaper</a>.
+            Otherwise follow on
+</p> <div class="pilot-social" data-astro-cid-j7pv25f6> <a href="https://www.linkedin.com/in/ahmetson" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="pilot-social-link" data-astro-cid-j7pv25f6>
+in
+</a> <a href="https://x.com/MAhmetson" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="pilot-social-link" data-astro-cid-j7pv25f6>
+X
+</a> <a href="https://bsky.app/profile/ahmetson.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky" class="pilot-social-link" data-astro-cid-j7pv25f6>
+B
+</a> </div> <p class="pilot-signoff" data-astro-cid-j7pv25f6>With passion, Medet Ahmetson!</p> </div> <div class="reveal reveal-d" data-astro-cid-j7pv25f6> <div class="pilot-roadmap" data-astro-cid-j7pv25f6> <article class="pilot-roadmap-item" data-astro-cid-j7pv25f6> <h3 class="pilot-roadmap-title" data-astro-cid-j7pv25f6>1. Whitepaper foundation</h3> <p class="pilot-roadmap-desc" data-astro-cid-j7pv25f6>
+Design and all code details are ready after
+<strong data-astro-cid-j7pv25f6>3 years of experiment</strong>. Result is whitepaper.
+</p> </article> <article class="pilot-roadmap-item pilot-roadmap-item-current" data-astro-cid-j7pv25f6> <h3 class="pilot-roadmap-title" data-astro-cid-j7pv25f6>
+2. Pilot version: cascadefund
+<span class="pilot-current-badge" data-astro-cid-j7pv25f6>current</span> </h3> <p class="pilot-roadmap-desc" data-astro-cid-j7pv25f6>
+Pre-blockchain, pre-holographic. Onboard open-source developers
+                and users to make the open-source ecosystem sustainable and
+                user-centric.
+</p> </article> <article class="pilot-roadmap-item" data-astro-cid-j7pv25f6> <h3 class="pilot-roadmap-title" data-astro-cid-j7pv25f6>
+3. Local data project management
+</h3> <p class="pilot-roadmap-desc" data-astro-cid-j7pv25f6>
+Local data version for project management made from open-source
+                with local AI. Onboarding the node operators on your browser.
+</p> </article> <article class="pilot-roadmap-item" data-astro-cid-j7pv25f6> <h3 class="pilot-roadmap-title" data-astro-cid-j7pv25f6>
+4. Recommendation engine and desktop shell
+</h3> <p class="pilot-roadmap-desc" data-astro-cid-j7pv25f6>
+Recommendation engine and desktop shell, onboarding designers.
+</p> </article> <p class="pilot-roadmap-note" data-astro-cid-j7pv25f6>
+More information on the <a href="/roadmap" data-astro-cid-j7pv25f6>roadmap page</a>.
+</p> </div> </div> </div> </section> <footer class="mt-20 border-t border-neutral-200 pb-10 pt-10 text-center text-sm text-neutral-600 dark:border-white/10 dark:text-neutral-500" aria-label="Home page footer" data-astro-cid-j7pv25f6> <p class="text-neutral-600 dark:text-neutral-500" data-astro-cid-j7pv25f6>
 © ${companyInfo.copyrightYear} Ara Foundation.
-</p> </footer> </div> ` })}`;
-}, "/home/medet/ara-app/src/pages/index.astro", void 0);
+</p> </footer> </div> ${renderScript($$result2, "/home/medet/ara/page/src/pages/index.astro?astro&type=script&index=0&lang.ts")} ` })} `;
+}, "/home/medet/ara/page/src/pages/index.astro", void 0);
 
-const $$file = "/home/medet/ara-app/src/pages/index.astro";
+const $$file = "/home/medet/ara/page/src/pages/index.astro";
 const $$url = "";
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
